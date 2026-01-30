@@ -73,6 +73,12 @@
       margin: 20px 0;
     }
 
+    #countdown {
+      margin-top: 15px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
     form {
       display: grid;
       gap: 15px;
@@ -83,7 +89,7 @@
       font-weight: bold;
     }
 
-    input, textarea {
+    input {
       padding: 10px;
       font-size: 15px;
       border-radius: 4px;
@@ -121,6 +127,36 @@
       font-size: 14px;
       color: #666;
     }
+
+    /* MOBILE-FIRST IMPROVEMENTS */
+    @media (max-width: 768px) {
+
+      header h1 {
+        font-size: 24px;
+      }
+
+      nav {
+        flex-direction: column;
+      }
+
+      nav button {
+        width: 100%;
+        border-bottom: 1px solid rgba(255,255,255,0.2);
+      }
+
+      .container {
+        margin: 15px;
+        padding: 18px;
+      }
+
+      form {
+        width: 100%;
+      }
+
+      input, button.submit {
+        font-size: 16px;
+      }
+    }
   </style>
 </head>
 
@@ -144,33 +180,22 @@
   <div id="history" class="tab active">
     <h2>The History of the Occoquan River</h2>
     <p>
-      The Occoquan River has served as a vital waterway in Northern Virginia for
-      centuries. From its early use by Indigenous peoples, to its role in colonial
-      trade, milling, and shipbuilding, the river has long been a lifeline for the
-      surrounding communities.
-    </p>
-
-    <p>
-      During the 18th and 19th centuries, the Town of Occoquan flourished as a
-      commercial port, exporting grain, lumber, and goods throughout the region.
-      Today, the river remains a treasured natural and cultural resource.
+      The Occoquan River has been a vital waterway in Northern Virginia for centuries.
+      From Indigenous use to colonial trade and shipbuilding, it remains a defining
+      feature of the region’s maritime heritage.
     </p>
 
     <h2>The Blessing of the Fleet</h2>
     <p>
-      The Blessing of the Fleet is a centuries-old maritime tradition offering
-      prayers for safety, calm seas, and prosperity for vessels and crews.
-    </p>
-
-    <p>
-      On the Occoquan River, this event unites boaters, clergy, families, and the
-      community in honoring our shared maritime heritage.
+      The Blessing of the Fleet is a centuries-old maritime tradition offering prayers
+      for safety, calm seas, and prosperity for vessels and their crews.
     </p>
 
     <div class="event-highlight">
       <strong>2026 Blessing of the Fleet</strong><br>
       📅 <strong>May 16, 2026</strong><br>
       📍 Occoquan River, Virginia
+      <div id="countdown"></div>
     </div>
   </div>
 
@@ -179,24 +204,30 @@
     <h2>Register for the 2026 Blessing of the Fleet</h2>
 
     <p>
-      Complete the form below to register your vessel and receive event updates.
+      Complete the form below to register your vessel and receive confirmation by email.
     </p>
 
-    <!-- Replace ACTION with your Google Form or Apps Script endpoint -->
-    <form action="PASTE_YOUR_FORM_ENDPOINT_HERE" method="POST">
-      <label>Full Name
+    <form
+      action="https://script.google.com/macros/s/AKfycbyUWBNGuZcsMfjqIllvyDw3joqpsfd5CjdcrVXdH8s0YY_eEc_TXTJPXSC21Zku0Fhr/exec"
+      method="POST"
+    >
+      <label>
+        Full Name
         <input name="name" type="text" required>
       </label>
 
-      <label>Email Address
+      <label>
+        Email Address
         <input name="email" type="email" required>
       </label>
 
-      <label>Vessel Name
+      <label>
+        Vessel Name
         <input name="vessel" type="text">
       </label>
 
-      <label>Vessel Length (ft)
+      <label>
+        Vessel Length (ft)
         <input name="length" type="number">
       </label>
 
@@ -209,13 +240,8 @@
   <!-- CONTACT TAB -->
   <div id="contact" class="tab">
     <h2>Contact ORMA</h2>
-
     <p>
-      Questions about ORMA or the Blessing of the Fleet?
-    </p>
-
-    <p>
-      📧 <strong>Email:</strong> darren@ormava.org<br>
+      📧 <strong>Email:</strong> info@occoquanriverma.org<br>
       📍 <strong>Location:</strong> Occoquan, Virginia
     </p>
   </div>
@@ -230,10 +256,30 @@
   function showTab(tabId, button) {
     document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
     document.querySelectorAll('nav button').forEach(btn => btn.classList.remove('active'));
-
     document.getElementById(tabId).classList.add('active');
     button.classList.add('active');
   }
+
+  /* COUNTDOWN TIMER */
+  const eventDate = new Date("May 16, 2026 09:00:00").getTime();
+
+  setInterval(() => {
+    const now = new Date().getTime();
+    const distance = eventDate - now;
+
+    if (distance < 0) {
+      document.getElementById("countdown").innerHTML =
+        "🚤 The Blessing of the Fleet is happening today!";
+      return;
+    }
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+    document.getElementById("countdown").innerHTML =
+      `⏳ ${days} days, ${hours} hours, ${minutes} minutes until the Blessing of the Fleet`;
+  }, 1000);
 </script>
 
 <!-- GOOGLE TRANSLATE -->
