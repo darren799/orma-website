@@ -51,7 +51,7 @@
     }
 
     .container {
-      max-width: 950px;
+      max-width: 1000px;
       margin: 30px auto;
       padding: 25px;
       background: white;
@@ -72,10 +72,7 @@
       margin: 25px 0;
     }
 
-    #countdown {
-      font-weight: bold;
-      margin-top: 10px;
-    }
+    #countdown { font-weight: bold; margin-top: 10px; }
 
     .timeline {
       border-left: 3px solid #1d6fa5;
@@ -83,25 +80,15 @@
       padding-left: 20px;
     }
 
-    .timeline-item { margin-bottom: 18px; }
+    .timeline-item { margin-bottom: 15px; }
     .timeline-item span { font-weight: bold; color: #1d6fa5; }
-
-    .partners ul {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    .partners li {
-      padding: 8px 0;
-      border-bottom: 1px solid #eee;
-    }
 
     .resource-box {
       background: #f8fbfd;
       border: 1px solid #ddd;
-      padding: 18px;
-      border-radius: 5px;
-      margin-bottom: 20px;
+      padding: 20px;
+      border-radius: 6px;
+      margin-bottom: 25px;
     }
 
     footer {
@@ -132,120 +119,115 @@
 </header>
 
 <nav>
-  <button class="active" onclick="showTab('history', this)">History & America 250</button>
-  <button onclick="showTab('resources', this)">Student & Educator Resources</button>
+  <button class="active" onclick="showTab('history', this)">History</button>
   <button onclick="showTab('register', this)">2026 Registration</button>
   <button onclick="showTab('contact', this)">Contact</button>
+  <button onclick="showTab('resources', this)">Students & Educators</button>
 </nav>
 
 <div class="container">
 
-  <!-- HISTORY -->
-  <div id="history" class="tab active">
-    <h2>The Occoquan River: A Waterway at the Birth of a Nation</h2>
+<!-- HISTORY -->
+<div id="history" class="tab active">
+  <h2>The Occoquan River & America’s Founding</h2>
 
+  <p>
+    The Occoquan River was a critical inland waterway during the colonial period.
+    Its mills produced flour that supplied the Continental Army, while its protected
+    location helped safeguard vital resources during the Revolutionary War.
+  </p>
+
+  <div class="timeline">
+    <div class="timeline-item"><span>Pre-1700s:</span> Indigenous communities rely on the river</div>
+    <div class="timeline-item"><span>1720s–1770s:</span> Major colonial port and milling center</div>
+    <div class="timeline-item"><span>1775–1783:</span> Support for Washington’s army</div>
+    <div class="timeline-item"><span>2026:</span> America’s Semiquincentennial</div>
+  </div>
+
+  <div class="event-highlight">
+    <strong>2026 Blessing of the Fleet</strong><br>
+    📅 May 16, 2026 • 📍 Occoquan River, Virginia
+    <div id="countdown"></div>
+  </div>
+</div>
+
+<!-- REGISTER -->
+<div id="register" class="tab">
+  <h2>Register for the 2026 Blessing of the Fleet</h2>
+  <form action="https://script.google.com/macros/s/AKfycbyUWBNGuZcsMfjqIllvyDw3joqpsfd5CjdcrVXdH8s0YY_eEc_TXTJPXSC21Zku0Fhr/exec" method="POST">
+    <input name="name" placeholder="Full Name" required>
+    <input name="email" type="email" placeholder="Email Address" required>
+    <input name="vessel" placeholder="Vessel Name">
+    <input name="length" type="number" placeholder="Vessel Length (ft)">
+    <button type="submit">Register</button>
+  </form>
+</div>
+
+<!-- CONTACT -->
+<div id="contact" class="tab">
+  <h2>Contact ORMA</h2>
+  <p>📧 info@occoquanriverma.org</p>
+  <p>📍 Occoquan, Virginia</p>
+</div>
+
+<!-- STUDENT & EDUCATOR RESOURCES -->
+<div id="resources" class="tab">
+
+  <h2>Student & Educator Resources</h2>
+
+  <!-- RESOURCE 1 -->
+  <div class="resource-box">
+    <h3>1. Lesson Overview: Rivers & the American Revolution</h3>
     <p>
-      The Occoquan River has been a vital waterway for thousands of years. Indigenous
-      peoples first relied on it for transportation, food, and trade. During the
-      colonial era, the river became one of Virginia’s most productive inland ports.
+      Students explore how rivers like the Occoquan supported colonial trade,
+      transportation, and military logistics. Emphasis is placed on how geography
+      influenced the success of the American Revolution.
     </p>
+  </div>
 
+  <!-- RESOURCE 2 -->
+  <div class="resource-box">
+    <h3>2. Student Worksheet: Build a Historical Timeline</h3>
     <p>
-      In the years leading up to the American Revolution, flour milled along the
-      Occoquan River helped supply the Continental Army under General George Washington.
-      The river’s location provided a strategic advantage by supporting logistics while
-      remaining protected from British naval forces.
+      Students create a timeline tracing the Occoquan River from Indigenous use
+      through the Revolutionary War to modern-day commemorations. Encourages
+      chronological thinking and cause-and-effect analysis.
     </p>
-
-    <div class="timeline">
-      <div class="timeline-item"><span>Pre-1700s:</span> Indigenous use of the river</div>
-      <div class="timeline-item"><span>1720s–1770s:</span> Major colonial milling port</div>
-      <div class="timeline-item"><span>1775–1783:</span> Support for the Revolutionary War</div>
-      <div class="timeline-item"><span>2026:</span> America’s 250th Anniversary</div>
-    </div>
-
-    <div class="event-highlight">
-      <strong>2026 Blessing of the Fleet</strong><br>
-      📅 May 16, 2026 • 📍 Occoquan River, Virginia
-      <div id="countdown"></div>
-    </div>
-
-    <h2>Partner Acknowledgements</h2>
-    <div class="partners">
-      <ul>
-        <li><strong>America250</strong></li>
-        <li><strong>VA250</strong></li>
-        <li><strong>Town of Occoquan</strong></li>
-        <li><strong>Prince William County</strong></li>
-        <li><strong>Community Volunteers & Sponsors</strong></li>
-      </ul>
-    </div>
   </div>
 
-  <!-- RESOURCES -->
-  <div id="resources" class="tab">
-    <h2>Student & Educator Resources</h2>
-
+  <!-- RESOURCE 3 -->
+  <div class="resource-box">
+    <h3>3. Virtual Field Trip Guide (Classroom or Home)</h3>
     <p>
-      ORMA is committed to supporting educators and students by providing local history
-      resources connected to America’s 250th Anniversary. These materials are designed
-      to encourage critical thinking, civic understanding, and place-based learning.
-    </p>
-
-    <div class="resource-box">
-      <h3>For Students</h3>
-      <ul>
-        <li>How rivers helped the American colonies grow and trade</li>
-        <li>The role of local communities during the American Revolution</li>
-        <li>Why waterways like the Occoquan were critical to independence</li>
-        <li>How maritime traditions continue today</li>
-      </ul>
-    </div>
-
-    <div class="resource-box">
-      <h3>For Educators</h3>
-      <ul>
-        <li>Local history connections to Revolutionary War studies</li>
-        <li>Primary-source discussion prompts</li>
-        <li>Field trip and walking tour opportunities</li>
-        <li>Alignment with Virginia Standards of Learning (SOLs)</li>
-      </ul>
-    </div>
-
-    <div class="resource-box">
-      <h3>Suggested Classroom Activities</h3>
-      <ul>
-        <li>Create a timeline of the Occoquan River during the 1700s</li>
-        <li>Map Revolutionary-era supply routes</li>
-        <li>Discuss how geography influences history</li>
-        <li>Compare colonial and modern river use</li>
-      </ul>
-    </div>
-
-    <p style="font-size:14px; color:#555;">
-      Educators interested in customized programming or materials are encouraged to
-      contact ORMA.
+      A guided discussion experience that walks students through the Occoquan River’s
+      geography, colonial mills, and maritime traditions. Designed for use with maps,
+      photos, or recorded video.
     </p>
   </div>
 
-  <!-- REGISTER -->
-  <div id="register" class="tab">
-    <h2>Register for the 2026 Blessing of the Fleet</h2>
-    <form action="https://script.google.com/macros/s/AKfycbyUWBNGuZcsMfjqIllvyDw3joqpsfd5CjdcrVXdH8s0YY_eEc_TXTJPXSC21Zku0Fhr/exec" method="POST">
-      <input name="name" placeholder="Full Name" required>
-      <input name="email" type="email" placeholder="Email Address" required>
-      <input name="vessel" placeholder="Vessel Name">
-      <input name="length" type="number" placeholder="Vessel Length (ft)">
-      <button type="submit">Register</button>
-    </form>
+  <!-- RESOURCE 4 -->
+  <div class="resource-box">
+    <h3>4. Discussion Prompts & Primary-Source Thinking</h3>
+    <ul>
+      <li>Why were rivers essential to colonial economies?</li>
+      <li>How did local communities support the Continental Army?</li>
+      <li>What risks did civilians take during the Revolutionary War?</li>
+      <li>How do waterways still shape communities today?</li>
+    </ul>
   </div>
 
-  <!-- CONTACT -->
-  <div id="contact" class="tab">
-    <h2>Contact ORMA</h2>
-    <p>📧 info@occoquanriverma.org</p>
-    <p>📍 Occoquan, Virginia</p>
+  <!-- RESOURCE 5 -->
+  <div class="resource-box">
+    <h3>5. Virginia Standards of Learning (SOL) Alignment</h3>
+    <ul>
+      <li><strong>Grade 4:</strong> Virginia Studies – Geography & colonial economy</li>
+      <li><strong>Grade 5:</strong> U.S. History – Causes and outcomes of the Revolution</li>
+      <li><strong>Middle School:</strong> Civics, regional history, critical thinking</li>
+      <li><strong>High School:</strong> U.S. History & Government – primary sources</li>
+    </ul>
   </div>
+
+</div>
 
 </div>
 
