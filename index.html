@@ -16,12 +16,13 @@
     header {
       background: #0b3c5d;
       color: white;
-      padding: 20px;
+      padding: 25px;
       text-align: center;
     }
 
     header h1 {
       margin: 0;
+      font-size: 30px;
     }
 
     nav {
@@ -47,7 +48,7 @@
     .container {
       max-width: 900px;
       margin: 30px auto;
-      padding: 20px;
+      padding: 25px;
       background: white;
       border-radius: 6px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
@@ -103,6 +104,17 @@
       background: #14537a;
     }
 
+    #google_translate_element {
+      margin-top: 12px;
+    }
+
+    #google_translate_element select {
+      padding: 6px;
+      border-radius: 4px;
+      border: none;
+      font-size: 14px;
+    }
+
     footer {
       text-align: center;
       padding: 15px;
@@ -117,12 +129,13 @@
 <header>
   <h1>Occoquan River Maritime Association</h1>
   <p>Preserving History • Honoring Tradition • Building Community</p>
+  <div id="google_translate_element"></div>
 </header>
 
 <nav>
-  <button class="active" onclick="showTab('history')">History</button>
-  <button onclick="showTab('register')">2026 Registration</button>
-  <button onclick="showTab('contact')">Contact</button>
+  <button class="active" onclick="showTab('history', this)">History</button>
+  <button onclick="showTab('register', this)">2026 Registration</button>
+  <button onclick="showTab('contact', this)">Contact</button>
 </nav>
 
 <div class="container">
@@ -140,21 +153,18 @@
     <p>
       During the 18th and 19th centuries, the Town of Occoquan flourished as a
       commercial port, exporting grain, lumber, and goods throughout the region.
-      Today, the river remains a treasured natural and cultural resource,
-      supporting recreation, wildlife, and maritime traditions.
+      Today, the river remains a treasured natural and cultural resource.
     </p>
 
     <h2>The Blessing of the Fleet</h2>
     <p>
-      The Blessing of the Fleet is a time-honored maritime tradition dating back
-      hundreds of years. The ceremony offers prayers for safety, prosperity, and
-      calm seas for vessels and those who sail them.
+      The Blessing of the Fleet is a centuries-old maritime tradition offering
+      prayers for safety, calm seas, and prosperity for vessels and crews.
     </p>
 
     <p>
-      On the Occoquan River, this event brings together boaters, families, clergy,
-      and the community to celebrate our shared maritime heritage and to honor
-      those who make their lives on the water.
+      On the Occoquan River, this event unites boaters, clergy, families, and the
+      community in honoring our shared maritime heritage.
     </p>
 
     <div class="event-highlight">
@@ -169,34 +179,26 @@
     <h2>Register for the 2026 Blessing of the Fleet</h2>
 
     <p>
-      Please complete the form below to register your vessel and receive event
-      updates by email.
+      Complete the form below to register your vessel and receive event updates.
     </p>
 
-    <!-- 
-      Replace the ACTION URL below with your Google Form or
-      Google Apps Script endpoint that writes to your spreadsheet
-    -->
+    <!-- Replace ACTION with your Google Form or Apps Script endpoint -->
     <form action="PASTE_YOUR_FORM_ENDPOINT_HERE" method="POST">
-      <div>
-        <label for="name">Full Name</label>
-        <input id="name" name="name" type="text" required>
-      </div>
+      <label>Full Name
+        <input name="name" type="text" required>
+      </label>
 
-      <div>
-        <label for="email">Email Address</label>
-        <input id="email" name="email" type="email" required>
-      </div>
+      <label>Email Address
+        <input name="email" type="email" required>
+      </label>
 
-      <div>
-        <label for="vessel">Vessel Name</label>
-        <input id="vessel" name="vessel" type="text">
-      </div>
+      <label>Vessel Name
+        <input name="vessel" type="text">
+      </label>
 
-      <div>
-        <label for="length">Vessel Length (ft)</label>
-        <input id="length" name="length" type="number">
-      </div>
+      <label>Vessel Length (ft)
+        <input name="length" type="number">
+      </label>
 
       <button class="submit" type="submit">
         Register for May 16, 2026
@@ -209,17 +211,12 @@
     <h2>Contact ORMA</h2>
 
     <p>
-      For questions about the Occoquan River Maritime Association or the
-      Blessing of the Fleet, please reach out to us.
+      Questions about ORMA or the Blessing of the Fleet?
     </p>
 
     <p>
-      📧 <strong>Email:</strong> info@occquanriverma.org<br>
+      📧 <strong>Email:</strong> info@occoquanriverma.org<br>
       📍 <strong>Location:</strong> Occoquan, Virginia
-    </p>
-
-    <p>
-      Follow us on social media for updates and event announcements.
     </p>
   </div>
 
@@ -230,17 +227,30 @@
 </footer>
 
 <script>
-  function showTab(tabId) {
-    const tabs = document.querySelectorAll('.tab');
-    const buttons = document.querySelectorAll('nav button');
-
-    tabs.forEach(tab => tab.classList.remove('active'));
-    buttons.forEach(btn => btn.classList.remove('active'));
+  function showTab(tabId, button) {
+    document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+    document.querySelectorAll('nav button').forEach(btn => btn.classList.remove('active'));
 
     document.getElementById(tabId).classList.add('active');
-    event.target.classList.add('active');
+    button.classList.add('active');
   }
 </script>
+
+<!-- GOOGLE TRANSLATE -->
+<script>
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement(
+      {
+        pageLanguage: 'en',
+        includedLanguages: 'es,fr,de,it,pt,zh-CN,ja,ko',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      },
+      'google_translate_element'
+    );
+  }
+</script>
+
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </body>
 </html>
