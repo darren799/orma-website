@@ -33,13 +33,14 @@
       display: flex;
       justify-content: center;
       background: #1d6fa5;
+      flex-wrap: wrap;
     }
 
     nav button {
       background: none;
       border: none;
       color: white;
-      padding: 15px 25px;
+      padding: 15px 20px;
       cursor: pointer;
       font-size: 16px;
     }
@@ -50,7 +51,7 @@
     }
 
     .container {
-      max-width: 900px;
+      max-width: 950px;
       margin: 30px auto;
       padding: 25px;
       background: white;
@@ -61,10 +62,8 @@
     .tab { display: none; }
     .tab.active { display: block; }
 
-    h2 {
-      color: #0b3c5d;
-      margin-top: 30px;
-    }
+    h2 { color: #0b3c5d; margin-top: 30px; }
+    h3 { color: #1d6fa5; }
 
     .event-highlight {
       background: #eef6fb;
@@ -78,23 +77,15 @@
       margin-top: 10px;
     }
 
-    /* TIMELINE */
     .timeline {
       border-left: 3px solid #1d6fa5;
       margin: 25px 0;
       padding-left: 20px;
     }
 
-    .timeline-item {
-      margin-bottom: 20px;
-    }
+    .timeline-item { margin-bottom: 18px; }
+    .timeline-item span { font-weight: bold; color: #1d6fa5; }
 
-    .timeline-item span {
-      font-weight: bold;
-      color: #1d6fa5;
-    }
-
-    /* PARTNERS */
     .partners ul {
       list-style: none;
       padding-left: 0;
@@ -105,32 +96,12 @@
       border-bottom: 1px solid #eee;
     }
 
-    /* FORM */
-    form {
-      display: grid;
-      gap: 15px;
-      max-width: 500px;
-    }
-
-    input {
-      padding: 10px;
-      font-size: 15px;
-      border-radius: 4px;
-      border: 1px solid #ccc;
-    }
-
-    button {
-      background: #1d6fa5;
-      color: white;
-      border: none;
-      padding: 12px;
-      font-size: 16px;
-      cursor: pointer;
-      border-radius: 4px;
-    }
-
-    button:hover {
-      background: #14537a;
+    .resource-box {
+      background: #f8fbfd;
+      border: 1px solid #ddd;
+      padding: 18px;
+      border-radius: 5px;
+      margin-bottom: 20px;
     }
 
     footer {
@@ -140,9 +111,7 @@
       color: #666;
     }
 
-    /* MOBILE */
     @media (max-width: 768px) {
-      nav { flex-direction: column; }
       nav button { width: 100%; }
       .container { margin: 15px; padding: 18px; }
     }
@@ -164,89 +133,104 @@
 
 <nav>
   <button class="active" onclick="showTab('history', this)">History & America 250</button>
+  <button onclick="showTab('resources', this)">Student & Educator Resources</button>
   <button onclick="showTab('register', this)">2026 Registration</button>
   <button onclick="showTab('contact', this)">Contact</button>
 </nav>
 
 <div class="container">
 
-  <!-- HISTORY TAB -->
+  <!-- HISTORY -->
   <div id="history" class="tab active">
-
     <h2>The Occoquan River: A Waterway at the Birth of a Nation</h2>
+
     <p>
-      The Occoquan River has been a vital artery of life, commerce, and community for
-      thousands of years. Indigenous peoples relied on the river long before European
-      settlement, recognizing its strategic importance where tidal and freshwater
-      systems converge.
+      The Occoquan River has been a vital waterway for thousands of years. Indigenous
+      peoples first relied on it for transportation, food, and trade. During the
+      colonial era, the river became one of Virginia’s most productive inland ports.
     </p>
 
     <p>
-      By the early 18th century, the Occoquan River had emerged as one of colonial
-      Virginia’s most productive inland ports. Mills, warehouses, and shipyards along
-      its banks exported flour and goods throughout the colonies and the Caribbean,
-      helping build the economic independence necessary for revolution.
-    </p>
-
-    <h2>Occoquan and the American Revolution</h2>
-    <p>
-      During the Revolutionary War, Occoquan’s flour mills supplied provisions to
-      General George Washington’s Continental Army. The river’s location allowed vital
-      supplies to move efficiently while remaining protected from British naval forces.
-    </p>
-
-    <h2>America 250: A Living Legacy</h2>
-    <p>
-      As the United States commemorates its 250th anniversary in 2026, the Occoquan
-      River stands as a living reminder that the nation’s independence depended on
-      working waterways and the communities that sustained them.
+      In the years leading up to the American Revolution, flour milled along the
+      Occoquan River helped supply the Continental Army under General George Washington.
+      The river’s location provided a strategic advantage by supporting logistics while
+      remaining protected from British naval forces.
     </p>
 
     <div class="timeline">
       <div class="timeline-item"><span>Pre-1700s:</span> Indigenous use of the river</div>
-      <div class="timeline-item"><span>1720s–1770s:</span> Occoquan becomes a major port</div>
-      <div class="timeline-item"><span>1775–1783:</span> Supplies support the Continental Army</div>
-      <div class="timeline-item"><span>1804:</span> Town of Occoquan established</div>
-      <div class="timeline-item"><span>2026:</span> America’s Semiquincentennial</div>
+      <div class="timeline-item"><span>1720s–1770s:</span> Major colonial milling port</div>
+      <div class="timeline-item"><span>1775–1783:</span> Support for the Revolutionary War</div>
+      <div class="timeline-item"><span>2026:</span> America’s 250th Anniversary</div>
     </div>
 
     <div class="event-highlight">
       <strong>2026 Blessing of the Fleet</strong><br>
-      📅 May 16, 2026<br>
-      📍 Occoquan River, Virginia
+      📅 May 16, 2026 • 📍 Occoquan River, Virginia
       <div id="countdown"></div>
     </div>
 
-    <!-- PARTNERS -->
     <h2>Partner Acknowledgements</h2>
-
-    <p>
-      The Occoquan River Maritime Association gratefully acknowledges the collaboration
-      and support of our partners who help preserve maritime heritage, promote civic
-      engagement, and honor America’s Semiquincentennial.
-    </p>
-
     <div class="partners">
       <ul>
-        <li><strong>America250</strong> – National commemoration of the United States Semiquincentennial</li>
-        <li><strong>VA250</strong> – Virginia’s official America 250 commission</li>
+        <li><strong>America250</strong></li>
+        <li><strong>VA250</strong></li>
         <li><strong>Town of Occoquan</strong></li>
         <li><strong>Prince William County</strong></li>
-        <li><strong>Local Faith and Maritime Organizations</strong></li>
-        <li><strong>Community Volunteers and Sponsors</strong></li>
+        <li><strong>Community Volunteers & Sponsors</strong></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- RESOURCES -->
+  <div id="resources" class="tab">
+    <h2>Student & Educator Resources</h2>
+
+    <p>
+      ORMA is committed to supporting educators and students by providing local history
+      resources connected to America’s 250th Anniversary. These materials are designed
+      to encourage critical thinking, civic understanding, and place-based learning.
+    </p>
+
+    <div class="resource-box">
+      <h3>For Students</h3>
+      <ul>
+        <li>How rivers helped the American colonies grow and trade</li>
+        <li>The role of local communities during the American Revolution</li>
+        <li>Why waterways like the Occoquan were critical to independence</li>
+        <li>How maritime traditions continue today</li>
+      </ul>
+    </div>
+
+    <div class="resource-box">
+      <h3>For Educators</h3>
+      <ul>
+        <li>Local history connections to Revolutionary War studies</li>
+        <li>Primary-source discussion prompts</li>
+        <li>Field trip and walking tour opportunities</li>
+        <li>Alignment with Virginia Standards of Learning (SOLs)</li>
+      </ul>
+    </div>
+
+    <div class="resource-box">
+      <h3>Suggested Classroom Activities</h3>
+      <ul>
+        <li>Create a timeline of the Occoquan River during the 1700s</li>
+        <li>Map Revolutionary-era supply routes</li>
+        <li>Discuss how geography influences history</li>
+        <li>Compare colonial and modern river use</li>
       </ul>
     </div>
 
     <p style="font-size:14px; color:#555;">
-      Partner recognition does not imply endorsement.
+      Educators interested in customized programming or materials are encouraged to
+      contact ORMA.
     </p>
-
   </div>
 
-  <!-- REGISTER TAB -->
+  <!-- REGISTER -->
   <div id="register" class="tab">
     <h2>Register for the 2026 Blessing of the Fleet</h2>
-
     <form action="https://script.google.com/macros/s/AKfycbyUWBNGuZcsMfjqIllvyDw3joqpsfd5CjdcrVXdH8s0YY_eEc_TXTJPXSC21Zku0Fhr/exec" method="POST">
       <input name="name" placeholder="Full Name" required>
       <input name="email" type="email" placeholder="Email Address" required>
@@ -256,7 +240,7 @@
     </form>
   </div>
 
-  <!-- CONTACT TAB -->
+  <!-- CONTACT -->
   <div id="contact" class="tab">
     <h2>Contact ORMA</h2>
     <p>📧 info@occoquanriverma.org</p>
