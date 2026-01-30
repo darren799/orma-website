@@ -1,282 +1,281 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Occoquan River Maritime Association (ORMA)</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Occoquan River Maritime Association (ORMA)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  margin: 0;
-  background: #f4f7f9;
-  color: #333;
-}
-header {
-  background: #0b3c5d;
-  color: white;
-  padding: 25px;
-  text-align: center;
-}
-.banner-250 {
-  background: #b22234;
-  color: white;
-  padding: 10px;
-  font-weight: bold;
-  margin-top: 15px;
-  border-radius: 4px;
-}
-nav {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  background: #1d6fa5;
-}
-nav button {
-  background: none;
-  border: none;
-  color: white;
-  padding: 15px 20px;
-  cursor: pointer;
-  font-size: 16px;
-}
-nav button.active,
-nav button:hover {
-  background: #14537a;
-}
-.container {
-  max-width: 1100px;
-  margin: 30px auto;
-  padding: 25px;
-  background: white;
-  border-radius: 6px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-.tab { display: none; }
-.tab.active { display: block; }
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      background: #f4f7f9;
+      color: #333;
+    }
 
-h2 { color: #0b3c5d; margin-top: 30px; }
-h3 { color: #1d6fa5; }
+    header {
+      background: #0b3c5d;
+      color: #fff;
+      padding: 26px;
+      text-align: center;
+    }
 
-.timeline {
-  border-left: 3px solid #1d6fa5;
-  margin: 25px 0;
-  padding-left: 20px;
-}
-.timeline-item {
-  margin-bottom: 15px;
-}
-.timeline-item span {
-  font-weight: bold;
-  color: #1d6fa5;
-}
+    .banner-250 {
+      background: #b22234;
+      margin-top: 15px;
+      padding: 10px;
+      font-weight: bold;
+      border-radius: 4px;
+    }
 
-.event-highlight {
-  background: #eef6fb;
-  border-left: 5px solid #1d6fa5;
-  padding: 15px;
-  margin: 25px 0;
-}
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      background: #1d6fa5;
+    }
 
-#countdown {
-  font-weight: bold;
-  margin-top: 10px;
-}
+    nav button {
+      background: none;
+      border: none;
+      color: #fff;
+      padding: 15px 22px;
+      font-size: 16px;
+      cursor: pointer;
+    }
 
-.resource-box {
-  border: 1px solid #ddd;
-  background: #f9fcff;
-  padding: 20px;
-  border-radius: 6px;
-  margin-bottom: 30px;
-}
+    nav button.active,
+    nav button:hover {
+      background: #14537a;
+    }
 
-.print-btn {
-  margin-top: 10px;
-  padding: 8px 12px;
-  background: #1d6fa5;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
+    .container {
+      max-width: 1100px;
+      margin: 30px auto;
+      padding: 25px;
+      background: #fff;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
 
-.print-btn:hover {
-  background: #14537a;
-}
+    .tab { display: none; }
+    .tab.active { display: block; }
 
-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-table th, table td {
-  border: 1px solid #ccc;
-  padding: 10px;
-}
+    h2 { color: #0b3c5d; margin-top: 30px; }
+    h3 { color: #1d6fa5; }
 
-footer {
-  text-align: center;
-  padding: 15px;
-  font-size: 14px;
-  color: #666;
-}
+    .timeline {
+      border-left: 3px solid #1d6fa5;
+      padding-left: 20px;
+      margin: 25px 0;
+    }
 
-@media (max-width: 768px) {
-  nav button { width: 100%; }
-  .container { margin: 15px; padding: 18px; }
-}
-</style>
+    .timeline div {
+      margin-bottom: 12px;
+    }
+
+    .event-box {
+      background: #eef6fb;
+      border-left: 5px solid #1d6fa5;
+      padding: 15px;
+      margin: 25px 0;
+    }
+
+    #countdown {
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    .partners ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .partners li {
+      padding: 8px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .resource {
+      background: #f9fcff;
+      border: 1px solid #ddd;
+      padding: 20px;
+      border-radius: 6px;
+      margin-bottom: 30px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    table th, table td {
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+
+    button.print {
+      margin-top: 10px;
+      padding: 8px 12px;
+      background: #1d6fa5;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      font-size: 14px;
+      color: #666;
+    }
+
+    @media (max-width: 768px) {
+      nav button { width: 100%; }
+      .container { margin: 15px; padding: 18px; }
+    }
+  </style>
 </head>
 
 <body>
 
 <header>
-<h1>Occoquan River Maritime Association</h1>
-<p>Preserving History • Honoring Tradition • Building Community</p>
+  <h1>Occoquan River Maritime Association</h1>
+  <p>Preserving History • Honoring Tradition • Building Community</p>
 
-<div class="banner-250">
-Commemorating the 250th Anniversary of the United States of America • 1776–2026
-</div>
+  <div class="banner-250">
+    Commemorating the 250th Anniversary of the United States of America • 1776–2026
+  </div>
 
-<div id="google_translate_element"></div>
+  <div id="google_translate_element"></div>
 </header>
 
 <nav>
-<button class="active" onclick="showTab('history', this)">History</button>
-<button onclick="showTab('register', this)">2026 Registration</button>
-<button onclick="showTab('contact', this)">Contact</button>
-<button onclick="showTab('resources', this)">Students & Educators</button>
+  <button class="active" onclick="showTab('history', this)">History</button>
+  <button onclick="showTab('register', this)">2026 Registration</button>
+  <button onclick="showTab('contact', this)">Contact</button>
+  <button onclick="showTab('education', this)">Students & Educators</button>
 </nav>
 
 <div class="container">
 
 <!-- HISTORY -->
 <div id="history" class="tab active">
-<h2>The Occoquan River & America’s Founding</h2>
+  <h2>The Occoquan River & the Birth of a Nation</h2>
 
-<p>
-The Occoquan River was a strategic inland waterway during the colonial era.
-Flour milled along its banks supplied the Continental Army, while its protected
-location helped safeguard critical supply routes during the American Revolution.
-</p>
+  <p>
+    The Occoquan River has been a vital waterway for thousands of years. Indigenous
+    communities relied on it for travel, food, and trade. By the 18th century, it
+    became one of Virginia’s most productive inland ports.
+  </p>
 
-<div class="timeline">
-<div class="timeline-item"><span>Pre-1700s:</span> Indigenous communities rely on the river</div>
-<div class="timeline-item"><span>1720s–1770s:</span> Major colonial milling and trade center</div>
-<div class="timeline-item"><span>1775–1783:</span> Support for Washington’s army</div>
-<div class="timeline-item"><span>2026:</span> America’s Semiquincentennial</div>
-</div>
+  <p>
+    During the American Revolution, flour milled along the Occoquan supplied General
+    George Washington’s Continental Army. The river’s protected location helped keep
+    these supplies safe from British naval forces on the Potomac.
+  </p>
 
-<div class="event-highlight">
-<strong>2026 Blessing of the Fleet</strong><br>
-📅 May 16, 2026 • 📍 Occoquan River, Virginia
-<div id="countdown"></div>
-</div>
+  <div class="timeline">
+    <div><strong>Pre-1700s:</strong> Indigenous use of the river</div>
+    <div><strong>1720s–1770s:</strong> Colonial milling and trade center</div>
+    <div><strong>1775–1783:</strong> Support for the Revolutionary War</div>
+    <div><strong>2026:</strong> America’s Semiquincentennial</div>
+  </div>
+
+  <div class="event-box">
+    <strong>2026 Blessing of the Fleet</strong><br>
+    📅 May 16, 2026 • 📍 Occoquan River, Virginia
+    <div id="countdown"></div>
+  </div>
+
+  <h2>Partner Acknowledgements</h2>
+  <div class="partners">
+    <ul>
+      <li>America250</li>
+      <li>VA250</li>
+      <li>Town of Occoquan</li>
+      <li>Prince William County</li>
+      <li>Community Volunteers & Sponsors</li>
+    </ul>
+  </div>
 </div>
 
 <!-- REGISTER -->
 <div id="register" class="tab">
-<h2>Register for the 2026 Blessing of the Fleet</h2>
+  <h2>Register for the 2026 Blessing of the Fleet</h2>
 
-<form action="https://script.google.com/macros/s/AKfycbyUWBNGuZcsMfjqIllvyDw3joqpsfd5CjdcrVXdH8s0YY_eEc_TXTJPXSC21Zku0Fhr/exec" method="POST">
-<input name="name" placeholder="Full Name" required>
-<input name="email" type="email" placeholder="Email Address" required>
-<input name="vessel" placeholder="Vessel Name">
-<input name="length" type="number" placeholder="Vessel Length (ft)">
-<button type="submit">Register</button>
-</form>
+  <form action="https://script.google.com/macros/s/AKfycbyUWBNGuZcsMfjqIllvyDw3joqpsfd5CjdcrVXdH8s0YY_eEc_TXTJPXSC21Zku0Fhr/exec" method="POST">
+    <input name="name" placeholder="Full Name" required><br><br>
+    <input name="email" type="email" placeholder="Email Address" required><br><br>
+    <input name="vessel" placeholder="Vessel Name"><br><br>
+    <input name="length" type="number" placeholder="Vessel Length (ft)"><br><br>
+    <button type="submit">Register</button>
+  </form>
 </div>
 
 <!-- CONTACT -->
 <div id="contact" class="tab">
-<h2>Contact ORMA</h2>
-<p>📧 info@occoquanriverma.org</p>
-<p>📍 Occoquan, Virginia</p>
+  <h2>Contact ORMA</h2>
+  <p>📧 info@occoquanriverma.org</p>
+  <p>📍 Occoquan, Virginia</p>
 </div>
 
-<!-- STUDENTS & EDUCATORS -->
-<div id="resources" class="tab">
+<!-- EDUCATION -->
+<div id="education" class="tab">
 
-<h2>Student & Educator Resources</h2>
+  <h2>Student & Educator Resources</h2>
 
-<!-- RESOURCE 1 -->
-<div class="resource-box">
-<h3>1. Complete Lesson Plan</h3>
-<p><strong>Objective:</strong> Analyze how rivers supported colonial economies and military logistics.</p>
-<p><strong>Background:</strong> Rivers were the safest transportation routes of the 18th century.
-The Occoquan River linked mills, farms, and ports to the Continental Army.</p>
-<p><strong>Procedure:</strong></p>
-<ul>
-<li>Introduce colonial river geography</li>
-<li>Examine Revolutionary-era supply routes</li>
-<li>Discuss civilian contributions to independence</li>
-</ul>
-<p><strong>Assessment:</strong> Short written response or class discussion.</p>
-</div>
+  <div class="resource">
+    <h3>1. Lesson Plan</h3>
+    <p><strong>Objective:</strong> Understand how rivers supported the American Revolution.</p>
+    <p><strong>Procedure:</strong> Map analysis, discussion, reflection.</p>
+    <p><strong>Assessment:</strong> Short written response.</p>
+  </div>
 
-<!-- RESOURCE 2 -->
-<div class="resource-box">
-<h3>2. Printable Student Worksheet</h3>
-<ol>
-<li>Why were rivers more reliable than roads in the 1700s?</li>
-<li>What goods were produced along the Occoquan River?</li>
-<li>How did civilians support the Revolutionary War?</li>
-<li>Why does the Occoquan River remain important today?</li>
-</ol>
-<button class="print-btn" onclick="window.print()">Print Worksheet</button>
-</div>
+  <div class="resource">
+    <h3>2. Student Worksheet</h3>
+    <ol>
+      <li>Why were rivers safer than roads?</li>
+      <li>What goods moved along the Occoquan?</li>
+      <li>How did civilians help the war effort?</li>
+    </ol>
+    <button class="print" onclick="window.print()">Print Worksheet</button>
+  </div>
 
-<!-- RESOURCE 3 -->
-<div class="resource-box">
-<h3>3. Virtual Field Trip (Guided Script)</h3>
-<p>
-Imagine standing along the Occoquan River in 1776. You see mills grinding grain,
-boats loading flour, and merchants preparing shipments for Washington’s army.
-This river connected local labor to national independence.
-</p>
-</div>
+  <div class="resource">
+    <h3>3. Virtual Field Trip</h3>
+    <p>
+      Imagine the Occoquan River in 1776 — mills grinding grain, boats loading flour,
+      and communities supporting independence through daily labor.
+    </p>
+  </div>
 
-<!-- RESOURCE 4 -->
-<div class="resource-box">
-<h3>4. Primary-Source Discussion Questions</h3>
-<ul>
-<li><strong>Elementary:</strong> Why did people build towns near rivers?</li>
-<li><strong>Middle School:</strong> How did rivers influence wartime strategy?</li>
-<li><strong>High School:</strong> How did civilian labor contribute to independence?</li>
-</ul>
-</div>
+  <div class="resource">
+    <h3>4. Discussion Prompts</h3>
+    <ul>
+      <li>Why did geography matter in war?</li>
+      <li>How did ordinary people support independence?</li>
+      <li>How do waterways shape communities today?</li>
+    </ul>
+  </div>
 
-<!-- RESOURCE 5 -->
-<div class="resource-box">
-<h3>5. Virginia Standards of Learning Alignment</h3>
-<table>
-<tr>
-<th>Grade Band</th>
-<th>Learning Connection</th>
-</tr>
-<tr>
-<td>Grade 4</td>
-<td>Virginia geography and colonial economy</td>
-</tr>
-<tr>
-<td>Grade 5</td>
-<td>American Revolution causes and logistics</td>
-</tr>
-<tr>
-<td>Middle School</td>
-<td>Civic participation and regional history</td>
-</tr>
-<tr>
-<td>High School</td>
-<td>Primary sources and historical analysis</td>
-</tr>
-</table>
-</div>
+  <div class="resource">
+    <h3>5. Virginia SOL Alignment</h3>
+    <table>
+      <tr><th>Grade</th><th>Connection</th></tr>
+      <tr><td>4</td><td>Virginia geography and colonial life</td></tr>
+      <tr><td>5</td><td>American Revolution</td></tr>
+      <tr><td>MS</td><td>Civic and regional history</td></tr>
+      <tr><td>HS</td><td>Primary source analysis</td></tr>
+    </table>
+  </div>
 
 </div>
+
 </div>
 
 <footer>
-© 2026 Occoquan River Maritime Association • America’s Semiquincentennial
+  © 2026 Occoquan River Maritime Association • America’s Semiquincentennial
 </footer>
 
 <script>
@@ -290,9 +289,10 @@ function showTab(id, btn) {
 const eventDate = new Date("May 16, 2026 09:00:00").getTime();
 setInterval(() => {
   const d = eventDate - new Date().getTime();
-  if (d < 0) return;
-  document.getElementById("countdown").innerHTML =
-    `⏳ ${Math.floor(d / 86400000)} days until the Blessing of the Fleet`;
+  if (d > 0) {
+    document.getElementById("countdown").innerText =
+      `⏳ ${Math.floor(d / 86400000)} days until the Blessing of the Fleet`;
+  }
 }, 1000);
 </script>
 
