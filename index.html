@@ -64,63 +64,21 @@
     h2 { color: #0b3c5d; margin-top: 30px; }
     h3 { color: #1d6fa5; }
 
-    .timeline {
-      border-left: 3px solid #1d6fa5;
-      padding-left: 20px;
-      margin: 25px 0;
-    }
-
-    .timeline div {
-      margin-bottom: 12px;
-    }
-
     .event-box {
       background: #eef6fb;
-      border-left: 5px solid #1d6fa5;
-      padding: 15px;
+      border-left: 6px solid #1d6fa5;
+      padding: 20px;
       margin: 25px 0;
+    }
+
+    .event-box ul {
+      margin-left: 20px;
     }
 
     #countdown {
       font-weight: bold;
       margin-top: 10px;
-    }
-
-    .partners ul {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    .partners li {
-      padding: 8px 0;
-      border-bottom: 1px solid #eee;
-    }
-
-    .resource {
-      background: #f9fcff;
-      border: 1px solid #ddd;
-      padding: 20px;
-      border-radius: 6px;
-      margin-bottom: 30px;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-
-    table th, table td {
-      border: 1px solid #ccc;
-      padding: 10px;
-    }
-
-    button.print {
-      margin-top: 10px;
-      padding: 8px 12px;
-      background: #1d6fa5;
-      color: white;
-      border: none;
-      cursor: pointer;
+      font-size: 18px;
     }
 
     footer {
@@ -151,7 +109,7 @@
 </header>
 
 <nav>
-  <button class="active" onclick="showTab('history', this)">History</button>
+  <button class="active" onclick="showTab('home', this)">Home</button>
   <button onclick="showTab('register', this)">2026 Registration</button>
   <button onclick="showTab('contact', this)">Contact</button>
   <button onclick="showTab('education', this)">Students & Educators</button>
@@ -159,45 +117,60 @@
 
 <div class="container">
 
-<!-- HISTORY -->
-<div id="history" class="tab active">
-  <h2>The Occoquan River & the Birth of a Nation</h2>
+<!-- HOME -->
+<div id="home" class="tab active">
 
-  <p>
-    The Occoquan River has been a vital waterway for thousands of years. Indigenous
-    communities relied on it for travel, food, and trade. By the 18th century, it
-    became one of Virginia’s most productive inland ports.
-  </p>
-
-  <p>
-    During the American Revolution, flour milled along the Occoquan supplied General
-    George Washington’s Continental Army. The river’s protected location helped keep
-    these supplies safe from British naval forces on the Potomac.
-  </p>
-
-  <div class="timeline">
-    <div><strong>Pre-1700s:</strong> Indigenous use of the river</div>
-    <div><strong>1720s–1770s:</strong> Colonial milling and trade center</div>
-    <div><strong>1775–1783:</strong> Support for the Revolutionary War</div>
-    <div><strong>2026:</strong> America’s Semiquincentennial</div>
-  </div>
+  <h2>2026 ORMA Blessing of the Fleet</h2>
 
   <div class="event-box">
-    <strong>2026 Blessing of the Fleet</strong><br>
-    📅 May 16, 2026 • 📍 Occoquan River, Virginia
+    <p>
+      The <strong>Occoquan River Maritime Association Blessing of the Fleet</strong>
+      is a time-honored maritime tradition that brings together boaters, families,
+      clergy, and the wider community to offer prayers for safety, protection, and
+      good fortune for all who work or recreate on the water.
+    </p>
+
+    <p>
+      Rooted in centuries-old seafaring customs, the Blessing of the Fleet honors
+      the deep connection between faith, water, and maritime life. On the Occoquan
+      River, this ceremony reflects the region’s long history as a working waterway
+      that supported trade, industry, and ultimately the founding of the United States.
+    </p>
+
+    <h3>2026 Event Details</h3>
+    <ul>
+      <li><strong>Date:</strong> Saturday, May 16, 2026</li>
+      <li><strong>Location:</strong> Occoquan River, Occoquan, Virginia</li>
+      <li><strong>Participants:</strong> Recreational boats, commercial vessels, kayaks, and paddlecraft</li>
+      <li><strong>Open To:</strong> Boaters, families, visitors, and the public</li>
+    </ul>
+
+    <h3>What to Expect</h3>
+    <ul>
+      <li>A ceremonial blessing offered by local clergy</li>
+      <li>Vessels passing in review to receive the blessing</li>
+      <li>Community gathering along the riverfront</li>
+      <li>Recognition of maritime heritage and service</li>
+    </ul>
+
+    <h3>America 250 Significance</h3>
+    <p>
+      The 2026 Blessing of the Fleet holds special meaning as part of
+      <strong>America’s Semiquincentennial</strong>. During the American Revolution,
+      the Occoquan River supplied flour and provisions to General George Washington’s
+      Continental Army. This event honors that legacy by recognizing the river’s role
+      in sustaining both local livelihoods and national independence.
+    </p>
+
+    <p>
+      By blessing today’s vessels, ORMA symbolically connects modern mariners with
+      generations who relied on the Occoquan River in service to community, country,
+      and freedom.
+    </p>
+
     <div id="countdown"></div>
   </div>
 
-  <h2>Partner Acknowledgements</h2>
-  <div class="partners">
-    <ul>
-      <li>America250</li>
-      <li>VA250</li>
-      <li>Town of Occoquan</li>
-      <li>Prince William County</li>
-      <li>Community Volunteers & Sponsors</li>
-    </ul>
-  </div>
 </div>
 
 <!-- REGISTER -->
@@ -222,54 +195,11 @@
 
 <!-- EDUCATION -->
 <div id="education" class="tab">
-
   <h2>Student & Educator Resources</h2>
-
-  <div class="resource">
-    <h3>1. Lesson Plan</h3>
-    <p><strong>Objective:</strong> Understand how rivers supported the American Revolution.</p>
-    <p><strong>Procedure:</strong> Map analysis, discussion, reflection.</p>
-    <p><strong>Assessment:</strong> Short written response.</p>
-  </div>
-
-  <div class="resource">
-    <h3>2. Student Worksheet</h3>
-    <ol>
-      <li>Why were rivers safer than roads?</li>
-      <li>What goods moved along the Occoquan?</li>
-      <li>How did civilians help the war effort?</li>
-    </ol>
-    <button class="print" onclick="window.print()">Print Worksheet</button>
-  </div>
-
-  <div class="resource">
-    <h3>3. Virtual Field Trip</h3>
-    <p>
-      Imagine the Occoquan River in 1776 — mills grinding grain, boats loading flour,
-      and communities supporting independence through daily labor.
-    </p>
-  </div>
-
-  <div class="resource">
-    <h3>4. Discussion Prompts</h3>
-    <ul>
-      <li>Why did geography matter in war?</li>
-      <li>How did ordinary people support independence?</li>
-      <li>How do waterways shape communities today?</li>
-    </ul>
-  </div>
-
-  <div class="resource">
-    <h3>5. Virginia SOL Alignment</h3>
-    <table>
-      <tr><th>Grade</th><th>Connection</th></tr>
-      <tr><td>4</td><td>Virginia geography and colonial life</td></tr>
-      <tr><td>5</td><td>American Revolution</td></tr>
-      <tr><td>MS</td><td>Civic and regional history</td></tr>
-      <tr><td>HS</td><td>Primary source analysis</td></tr>
-    </table>
-  </div>
-
+  <p>
+    ORMA provides classroom-ready resources connecting local maritime history to
+    America’s founding and the 250th Anniversary of the United States.
+  </p>
 </div>
 
 </div>
