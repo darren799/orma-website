@@ -20,9 +20,13 @@
       text-align: center;
     }
 
-    header h1 {
-      margin: 0;
-      font-size: 30px;
+    .banner-250 {
+      background: #b22234;
+      color: white;
+      padding: 10px;
+      font-weight: bold;
+      margin-top: 15px;
+      border-radius: 4px;
     }
 
     nav {
@@ -40,8 +44,8 @@
       font-size: 16px;
     }
 
-    nav button:hover,
-    nav button.active {
+    nav button.active,
+    nav button:hover {
       background: #14537a;
     }
 
@@ -54,17 +58,10 @@
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
 
-    .tab {
-      display: none;
-    }
+    .tab { display: none; }
+    .tab.active { display: block; }
 
-    .tab.active {
-      display: block;
-    }
-
-    h2 {
-      color: #0b3c5d;
-    }
+    h2 { color: #0b3c5d; }
 
     .event-highlight {
       background: #eef6fb;
@@ -74,88 +71,31 @@
     }
 
     #countdown {
-      margin-top: 15px;
-      font-size: 18px;
       font-weight: bold;
+      margin-top: 10px;
     }
 
-    form {
-      display: grid;
-      gap: 15px;
-      max-width: 500px;
+    /* TIMELINE */
+    .timeline {
+      border-left: 3px solid #1d6fa5;
+      margin: 25px 0;
+      padding-left: 20px;
     }
 
-    label {
+    .timeline-item {
+      margin-bottom: 20px;
+    }
+
+    .timeline-item span {
       font-weight: bold;
+      color: #1d6fa5;
     }
 
-    input {
-      padding: 10px;
-      font-size: 15px;
-      border-radius: 4px;
-      border: 1px solid #ccc;
-    }
-
-    button.submit {
-      background: #1d6fa5;
-      color: white;
-      border: none;
-      padding: 12px;
-      font-size: 16px;
-      cursor: pointer;
-      border-radius: 4px;
-    }
-
-    button.submit:hover {
-      background: #14537a;
-    }
-
-    #google_translate_element {
-      margin-top: 12px;
-    }
-
-    #google_translate_element select {
-      padding: 6px;
-      border-radius: 4px;
-      border: none;
-      font-size: 14px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 15px;
-      font-size: 14px;
-      color: #666;
-    }
-
-    /* MOBILE-FIRST IMPROVEMENTS */
+    /* MOBILE */
     @media (max-width: 768px) {
-
-      header h1 {
-        font-size: 24px;
-      }
-
-      nav {
-        flex-direction: column;
-      }
-
-      nav button {
-        width: 100%;
-        border-bottom: 1px solid rgba(255,255,255,0.2);
-      }
-
-      .container {
-        margin: 15px;
-        padding: 18px;
-      }
-
-      form {
-        width: 100%;
-      }
-
-      input, button.submit {
-        font-size: 16px;
-      }
+      nav { flex-direction: column; }
+      nav button { width: 100%; }
+      .container { margin: 15px; }
     }
   </style>
 </head>
@@ -165,11 +105,16 @@
 <header>
   <h1>Occoquan River Maritime Association</h1>
   <p>Preserving History • Honoring Tradition • Building Community</p>
+
+  <div class="banner-250">
+    🇺🇸 Honoring America’s 250th Anniversary • 1776–2026
+  </div>
+
   <div id="google_translate_element"></div>
 </header>
 
 <nav>
-  <button class="active" onclick="showTab('history', this)">History</button>
+  <button class="active" onclick="showTab('history', this)">History & America 250</button>
   <button onclick="showTab('register', this)">2026 Registration</button>
   <button onclick="showTab('contact', this)">Contact</button>
 </nav>
@@ -178,124 +123,133 @@
 
   <!-- HISTORY TAB -->
   <div id="history" class="tab active">
-    <h2>The History of the Occoquan River</h2>
+    <h2>The Occoquan River: A Waterway at the Birth of a Nation</h2>
+
     <p>
-      The Occoquan River has been a vital waterway in Northern Virginia for centuries.
-      From Indigenous use to colonial trade and shipbuilding, it remains a defining
-      feature of the region’s maritime heritage.
+      The Occoquan River has served as a vital artery of life, commerce, and community
+      for thousands of years. Indigenous peoples relied on the river long before
+      European settlement, recognizing its strategic location where tidal and freshwater
+      meet.
     </p>
 
-    <h2>The Blessing of the Fleet</h2>
     <p>
-      The Blessing of the Fleet is a centuries-old maritime tradition offering prayers
-      for safety, calm seas, and prosperity for vessels and their crews.
+      By the early 18th century, the Occoquan River had become one of colonial Virginia’s
+      most productive inland ports. Flour mills, warehouses, and shipyards lined its
+      banks, exporting goods throughout the colonies and the Caribbean. This commerce
+      helped build the economic independence necessary for revolution.
     </p>
+
+    <h2>Occoquan and the American Revolution</h2>
+
+    <p>
+      During the Revolutionary War, Occoquan’s mills supplied flour to General George
+      Washington’s Continental Army. The river’s location allowed vital provisions to
+      move efficiently while remaining protected from British naval forces on the
+      Potomac River.
+    </p>
+
+    <p>
+      Local mariners, merchants, and millers played an essential role in sustaining
+      the Patriot cause. Their contributions demonstrate how working rivers like
+      the Occoquan helped make American independence possible.
+    </p>
+
+    <h2>America 250: A Living Legacy</h2>
+
+    <p>
+      In 2026, the United States commemorates its 250th anniversary. The Occoquan River
+      stands as a living reminder that America’s story was shaped not only in capitals
+      and battlefields, but along working waterfronts where ordinary citizens supported
+      extraordinary change.
+    </p>
+
+    <p>
+      ORMA proudly aligns with the mission of <strong>America250</strong> and
+      <strong>VA250</strong> by preserving maritime heritage, honoring service and faith,
+      and fostering stewardship of the river that helped sustain a young nation.
+    </p>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <span>Pre-1700s:</span> Indigenous communities rely on the Occoquan River for
+        transportation, food, and trade.
+      </div>
+      <div class="timeline-item">
+        <span>1720s–1770s:</span> Occoquan emerges as a major colonial port and milling
+        center.
+      </div>
+      <div class="timeline-item">
+        <span>1775–1783:</span> Flour from Occoquan supports Washington’s Continental Army.
+      </div>
+      <div class="timeline-item">
+        <span>1804:</span> Town of Occoquan officially established.
+      </div>
+      <div class="timeline-item">
+        <span>2026:</span> Occoquan River honored during America’s 250th Anniversary.
+      </div>
+    </div>
 
     <div class="event-highlight">
       <strong>2026 Blessing of the Fleet</strong><br>
-      📅 <strong>May 16, 2026</strong><br>
+      📅 May 16, 2026<br>
       📍 Occoquan River, Virginia
       <div id="countdown"></div>
     </div>
   </div>
 
-  <!-- REGISTER TAB -->
+  <!-- REGISTER -->
   <div id="register" class="tab">
     <h2>Register for the 2026 Blessing of the Fleet</h2>
 
-    <p>
-      Complete the form below to register your vessel and receive confirmation by email.
-    </p>
-
     <form
       action="https://script.google.com/macros/s/AKfycbyUWBNGuZcsMfjqIllvyDw3joqpsfd5CjdcrVXdH8s0YY_eEc_TXTJPXSC21Zku0Fhr/exec"
-      method="POST"
-    >
-      <label>
-        Full Name
-        <input name="name" type="text" required>
-      </label>
-
-      <label>
-        Email Address
-        <input name="email" type="email" required>
-      </label>
-
-      <label>
-        Vessel Name
-        <input name="vessel" type="text">
-      </label>
-
-      <label>
-        Vessel Length (ft)
-        <input name="length" type="number">
-      </label>
-
-      <button class="submit" type="submit">
-        Register for May 16, 2026
-      </button>
+      method="POST">
+      <input name="name" placeholder="Full Name" required>
+      <input name="email" type="email" placeholder="Email Address" required>
+      <input name="vessel" placeholder="Vessel Name">
+      <input name="length" type="number" placeholder="Vessel Length (ft)">
+      <button type="submit">Register</button>
     </form>
   </div>
 
-  <!-- CONTACT TAB -->
+  <!-- CONTACT -->
   <div id="contact" class="tab">
     <h2>Contact ORMA</h2>
-    <p>
-      📧 <strong>Email:</strong> info@occoquanriverma.org<br>
-      📍 <strong>Location:</strong> Occoquan, Virginia
-    </p>
+    <p>📧 info@occoquanriverma.org</p>
+    <p>📍 Occoquan, Virginia</p>
   </div>
 
 </div>
 
 <footer>
-  © 2026 Occoquan River Maritime Association. All rights reserved.
+  © 2026 Occoquan River Maritime Association • Supporting America250 & VA250
 </footer>
 
 <script>
-  function showTab(tabId, button) {
-    document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
-    document.querySelectorAll('nav button').forEach(btn => btn.classList.remove('active'));
-    document.getElementById(tabId).classList.add('active');
-    button.classList.add('active');
+  function showTab(id, btn) {
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    btn.classList.add('active');
   }
 
-  /* COUNTDOWN TIMER */
   const eventDate = new Date("May 16, 2026 09:00:00").getTime();
-
   setInterval(() => {
-    const now = new Date().getTime();
-    const distance = eventDate - now;
-
-    if (distance < 0) {
-      document.getElementById("countdown").innerHTML =
-        "🚤 The Blessing of the Fleet is happening today!";
-      return;
-    }
-
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-
+    const d = eventDate - new Date().getTime();
+    if (d < 0) return;
     document.getElementById("countdown").innerHTML =
-      `⏳ ${days} days, ${hours} hours, ${minutes} minutes until the Blessing of the Fleet`;
+      `⏳ ${Math.floor(d/86400000)} days until the Blessing of the Fleet`;
   }, 1000);
 </script>
 
-<!-- GOOGLE TRANSLATE -->
 <script>
   function googleTranslateElementInit() {
     new google.translate.TranslateElement(
-      {
-        pageLanguage: 'en',
-        includedLanguages: 'es,fr,de,it,pt,zh-CN,ja,ko',
-        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-      },
+      { pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE },
       'google_translate_element'
     );
   }
 </script>
-
 <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </body>
