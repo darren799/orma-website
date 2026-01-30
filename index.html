@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Occoquan River Maritime Association (ORMA)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      background: #f4f7f9;
+      color: #333;
+    }
+
+    header {
+      background: #0b3c5d;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #1d6fa5;
+    }
+
+    nav button {
+      background: none;
+      border: none;
+      color: white;
+      padding: 15px 25px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    nav button:hover,
+    nav button.active {
+      background: #14537a;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .tab {
+      display: none;
+    }
+
+    .tab.active {
+      display: block;
+    }
+
+    h2 {
+      color: #0b3c5d;
+    }
+
+    .event-highlight {
+      background: #eef6fb;
+      border-left: 5px solid #1d6fa5;
+      padding: 15px;
+      margin: 20px 0;
+    }
+
+    form {
+      display: grid;
+      gap: 15px;
+      max-width: 500px;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    input, textarea {
+      padding: 10px;
+      font-size: 15px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+
+    button.submit {
+      background: #1d6fa5;
+      color: white;
+      border: none;
+      padding: 12px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    button.submit:hover {
+      background: #14537a;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      font-size: 14px;
+      color: #666;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Occoquan River Maritime Association</h1>
+  <p>Preserving History • Honoring Tradition • Building Community</p>
+</header>
+
+<nav>
+  <button class="active" onclick="showTab('history')">History</button>
+  <button onclick="showTab('register')">2026 Registration</button>
+  <button onclick="showTab('contact')">Contact</button>
+</nav>
+
+<div class="container">
+
+  <!-- HISTORY TAB -->
+  <div id="history" class="tab active">
+    <h2>The History of the Occoquan River</h2>
+    <p>
+      The Occoquan River has served as a vital waterway in Northern Virginia for
+      centuries. From its early use by Indigenous peoples, to its role in colonial
+      trade, milling, and shipbuilding, the river has long been a lifeline for the
+      surrounding communities.
+    </p>
+
+    <p>
+      During the 18th and 19th centuries, the Town of Occoquan flourished as a
+      commercial port, exporting grain, lumber, and goods throughout the region.
+      Today, the river remains a treasured natural and cultural resource,
+      supporting recreation, wildlife, and maritime traditions.
+    </p>
+
+    <h2>The Blessing of the Fleet</h2>
+    <p>
+      The Blessing of the Fleet is a time-honored maritime tradition dating back
+      hundreds of years. The ceremony offers prayers for safety, prosperity, and
+      calm seas for vessels and those who sail them.
+    </p>
+
+    <p>
+      On the Occoquan River, this event brings together boaters, families, clergy,
+      and the community to celebrate our shared maritime heritage and to honor
+      those who make their lives on the water.
+    </p>
+
+    <div class="event-highlight">
+      <strong>2026 Blessing of the Fleet</strong><br>
+      📅 <strong>May 16, 2026</strong><br>
+      📍 Occoquan River, Virginia
+    </div>
+  </div>
+
+  <!-- REGISTER TAB -->
+  <div id="register" class="tab">
+    <h2>Register for the 2026 Blessing of the Fleet</h2>
+
+    <p>
+      Please complete the form below to register your vessel and receive event
+      updates by email.
+    </p>
+
+    <!-- 
+      Replace the ACTION URL below with your Google Form or
+      Google Apps Script endpoint that writes to your spreadsheet
+    -->
+    <form action="PASTE_YOUR_FORM_ENDPOINT_HERE" method="POST">
+      <div>
+        <label for="name">Full Name</label>
+        <input id="name" name="name" type="text" required>
+      </div>
+
+      <div>
+        <label for="email">Email Address</label>
+        <input id="email" name="email" type="email" required>
+      </div>
+
+      <div>
+        <label for="vessel">Vessel Name</label>
+        <input id="vessel" name="vessel" type="text">
+      </div>
+
+      <div>
+        <label for="length">Vessel Length (ft)</label>
+        <input id="length" name="length" type="number">
+      </div>
+
+      <button class="submit" type="submit">
+        Register for May 16, 2026
+      </button>
+    </form>
+  </div>
+
+  <!-- CONTACT TAB -->
+  <div id="contact" class="tab">
+    <h2>Contact ORMA</h2>
+
+    <p>
+      For questions about the Occoquan River Maritime Association or the
+      Blessing of the Fleet, please reach out to us.
+    </p>
+
+    <p>
+      📧 <strong>Email:</strong> info@occquanriverma.org<br>
+      📍 <strong>Location:</strong> Occoquan, Virginia
+    </p>
+
+    <p>
+      Follow us on social media for updates and event announcements.
+    </p>
+  </div>
+
+</div>
+
+<footer>
+  © 2026 Occoquan River Maritime Association. All rights reserved.
+</footer>
+
+<script>
+  function showTab(tabId) {
+    const tabs = document.querySelectorAll('.tab');
+    const buttons = document.querySelectorAll('nav button');
+
+    tabs.forEach(tab => tab.classList.remove('active'));
+    buttons.forEach(btn => btn.classList.remove('active'));
+
+    document.getElementById(tabId).classList.add('active');
+    event.target.classList.add('active');
+  }
+</script>
+
+</body>
+</html>
