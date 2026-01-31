@@ -60,6 +60,10 @@
       margin-top: 40px;
     }
 
+    h3 {
+      color: #1d6fa5;
+    }
+
     .event-box {
       background: #eef6fb;
       border-left: 6px solid #1d6fa5;
@@ -76,6 +80,29 @@
       text-decoration: none;
       border-radius: 4px;
       font-weight: bold;
+    }
+
+    .partner-box {
+      background: #f9f9f9;
+      border-left: 6px solid #ccc;
+      padding: 20px;
+      margin: 25px 0;
+    }
+
+    .partner-logos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .partner-logo {
+      border: 1px dashed #ccc;
+      padding: 20px;
+      font-size: 14px;
+      color: #777;
+      border-radius: 4px;
     }
 
     #countdown {
@@ -109,7 +136,6 @@
     Commemorating the 250th Anniversary of the United States of America • 1776–2026
   </div>
 
-  <!-- VA250 FRAMING STATEMENT -->
   <p style="font-style: italic; margin-top: 10px;">
     As part of the Commonwealth of Virginia’s commemoration of America’s 250th anniversary,
     the Occoquan River Maritime Association recognizes the people, waterways, and communities
@@ -122,6 +148,7 @@
 <nav>
   <a href="index.html">Home</a>
   <a href="history.html">History</a>
+  <a href="#partners">Partners</a>
   <a href="#register">Register</a>
   <a href="#contact">Contact</a>
 </nav>
@@ -147,7 +174,7 @@
 
   <a class="cta" href="history.html">Learn More About the History of the Occoquan River</a>
 
-  <!-- ORMA COMMUNITY SECTION -->
+  <!-- ORMA SECTION -->
   <h2>About the Occoquan River Maritime Association (ORMA)</h2>
 
   <p>
@@ -159,31 +186,17 @@
   <p>
     ORMA brings together boaters, marinas, yacht clubs, public safety partners,
     and local residents to encourage cooperation, stewardship, and respect for
-    the river. Its work centers on safe boating practices, care for the water,
-    and strengthening the community that depends on it.
+    the river.
   </p>
 
-  <p>
-    Through gatherings such as the <strong>Blessing of the Fleet</strong>, ORMA
-    creates space for reflection, remembrance, and connection—recognizing
-    those who have lived and labored on the river while affirming a shared
-    commitment to safety and mutual respect on the water today.
-  </p>
-
-  <p>
-    In the context of America’s 250th Anniversary, ORMA’s work reflects the
-    importance of community in shaping the nation’s story, and the role that
-    rivers like the Occoquan continue to play in bringing people together.
-  </p>
-
-  <!-- EVENT SECTION -->
+  <!-- EVENT -->
   <h2>2026 Blessing of the Fleet</h2>
 
   <p>
     In the context of America’s 250th Anniversary, the Blessing of the Fleet serves
-    as both a moment of remembrance and reflection—honoring those connected to
-    the river across generations, while reaffirming a shared commitment to safety,
-    respect, and community on the water.
+    as a moment of remembrance and reflection—honoring those connected to the river
+    across generations while reaffirming a shared commitment to safety and community
+    on the water.
   </p>
 
   <div class="event-box">
@@ -193,6 +206,46 @@
       <li><strong>Open To:</strong> Recreational and commercial vessels, families, and the public</li>
     </ul>
     <div id="countdown"></div>
+  </div>
+
+  <!-- PARTNERS -->
+  <h2 id="partners">2026 Blessing of the Fleet Partners</h2>
+
+  <div class="partner-box">
+    <h3>Public Safety & Maritime Services</h3>
+    <ul>
+      <li>Occoquan-Woodbridge-Lorton Volunteer Fire Department (OWLVFD)</li>
+      <li>Prince William County Fire & Rescue — Marine Division</li>
+      <li>United States Coast Guard Auxiliary</li>
+    </ul>
+
+    <h3>Marinas & Marine Services</h3>
+    <ul>
+      <li>Prince William Marina</li>
+      <li>Occoquan Harbor Marina</li>
+      <li>Belmont Bay Harbour Marina</li>
+      <li>Hamptons Landing / Potomac Marine</li>
+      <li>Holly Acres RV and Marine</li>
+      <li>Holly Acres Marine on the Water</li>
+    </ul>
+
+    <h3>Yacht Clubs & Maritime Organizations</h3>
+    <ul>
+      <li>Prince William Yacht Club</li>
+      <li>Occoquan Yacht Club</li>
+      <li>Fairfax Yacht Club</li>
+      <li>Brethren of the Harbor Yacht Club</li>
+      <li>Holly Acres Yacht Club</li>
+      <li>DMV Boat Owners Association</li>
+    </ul>
+
+    <h3>Partner Logos</h3>
+    <div class="partner-logos">
+      <div class="partner-logo">Partner Logo Placeholder</div>
+      <div class="partner-logo">Partner Logo Placeholder</div>
+      <div class="partner-logo">Partner Logo Placeholder</div>
+      <div class="partner-logo">Partner Logo Placeholder</div>
+    </div>
   </div>
 
   <!-- REGISTRATION -->
@@ -229,16 +282,10 @@
   setInterval(() => {
     const now = new Date().getTime();
     const distance = eventDate - now;
-
-    if (distance <= 0) {
-      document.getElementById("countdown").innerText =
-        "🚤 The Blessing of the Fleet is happening today!";
-      return;
-    }
-
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
     document.getElementById("countdown").innerText =
-      `⏳ ${days} days until the Blessing of the Fleet`;
+      distance > 0
+        ? `⏳ ${Math.floor(distance / (1000 * 60 * 60 * 24))} days until the Blessing of the Fleet`
+        : "🚤 The Blessing of the Fleet is happening today!";
   }, 1000);
 </script>
 
