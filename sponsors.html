@@ -1,28 +1,76 @@
-<h2>Express Interest in Sponsorship</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sponsorship | 2026 ORMA Blessing of the Fleet</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<form id="sponsorForm">
-  <label for="org">Organization or Individual Name</label>
-  <input id="org" name="organization" required>
+  <style>
+    body { margin:0; font-family:Arial, Helvetica, sans-serif; background:#f4f7f9; color:#333; }
+    header { background:#0b3c5d; color:#fff; padding:25px; text-align:center; }
+    main { max-width:900px; margin:30px auto; padding:25px; background:#fff; border-radius:6px; }
+    h2 { color:#0b3c5d; margin-top:30px; }
+    label { display:block; font-weight:bold; margin-top:15px; }
+    input, select, button { width:100%; padding:10px; margin-top:6px; }
+    button { background:#1d6fa5; color:#fff; border:none; border-radius:4px; cursor:pointer; }
+    footer { text-align:center; font-size:13px; color:#666; padding:18px; }
+  </style>
+</head>
 
-  <label for="contact">Contact Name</label>
-  <input id="contact" name="contact_name" required>
+<body>
 
-  <label for="email">Email Address</label>
-  <input id="email" name="email" type="email" required>
+<header>
+  <h1>Sponsorship Opportunities</h1>
+  <p>2026 ORMA Blessing of the Fleet</p>
+</header>
 
-  <label for="level">Sponsorship Level of Interest</label>
-  <select id="level" name="level">
-    <option>Community Sponsor</option>
-    <option>Maritime Sponsor</option>
-    <option>Steward Sponsor</option>
-    <option>Founding Sponsor</option>
-    <option>Request More Information</option>
-  </select>
+<main>
 
-  <button type="submit">Submit Sponsorship Interest</button>
+  <h2>Why Sponsor</h2>
+  <p>
+    Sponsorship support helps ensure the safety, accessibility, and continuity
+    of the Blessing of the Fleet while recognizing America’s 250th Anniversary.
+  </p>
 
-  <p id="sponsorStatus" role="status" aria-live="polite"></p>
-</form>
+  <h2>Sponsorship Levels</h2>
+  <ul>
+    <li><strong>Community Sponsor</strong> — General event support</li>
+    <li><strong>Maritime Sponsor</strong> — Safety and stewardship support</li>
+    <li><strong>Steward Sponsor</strong> — Education and accessibility support</li>
+    <li><strong>Founding Sponsor</strong> — Core event logistics and coordination</li>
+  </ul>
+
+  <h2>Express Interest</h2>
+
+  <form id="sponsorForm">
+    <label for="org">Organization or Individual Name</label>
+    <input id="org" name="organization" required>
+
+    <label for="contact">Contact Name</label>
+    <input id="contact" name="contact_name" required>
+
+    <label for="email">Email Address</label>
+    <input id="email" name="email" type="email" required>
+
+    <label for="level">Level of Interest</label>
+    <select id="level" name="level">
+      <option>Community Sponsor</option>
+      <option>Maritime Sponsor</option>
+      <option>Steward Sponsor</option>
+      <option>Founding Sponsor</option>
+      <option>Request More Information</option>
+    </select>
+
+    <button type="submit">Submit Sponsorship Interest</button>
+    <p id="sponsorStatus" role="status" aria-live="polite"></p>
+  </form>
+
+</main>
+
+<footer>
+  Sponsorship recognition is provided for informational purposes only and does not imply endorsement.
+</footer>
+
 <script>
   const sponsorForm = document.getElementById("sponsorForm");
   const sponsorStatus = document.getElementById("sponsorStatus");
@@ -49,16 +97,16 @@
       );
 
       if (response.ok) {
-        sponsorStatus.textContent =
-          "Thank you for your interest. ORMA will follow up shortly.";
+        sponsorStatus.textContent = "Thank you for your interest. ORMA will follow up shortly.";
         sponsorForm.reset();
       } else {
-        sponsorStatus.textContent =
-          "There was an issue submitting the form. Please try again.";
+        sponsorStatus.textContent = "There was an issue submitting the form. Please try again.";
       }
     } catch (error) {
-      sponsorStatus.textContent =
-        "Submission failed. Please check your connection and try again.";
+      sponsorStatus.textContent = "Submission failed. Please check your connection and try again.";
     }
   });
 </script>
+
+</body>
+</html>
