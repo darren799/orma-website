@@ -20,10 +20,6 @@
       text-align: center;
     }
 
-    header h1 {
-      margin-bottom: 5px;
-    }
-
     .banner-250 {
       background: #b22234;
       margin-top: 15px;
@@ -62,22 +58,11 @@
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
 
-    .tab {
-      display: none;
-    }
+    .tab { display: none; }
+    .tab.active { display: block; }
 
-    .tab.active {
-      display: block;
-    }
-
-    h2 {
-      color: #0b3c5d;
-      margin-top: 30px;
-    }
-
-    h3 {
-      color: #1d6fa5;
-    }
+    h2 { color: #0b3c5d; margin-top: 30px; }
+    h3 { color: #1d6fa5; }
 
     .event-box {
       background: #eef6fb;
@@ -97,30 +82,6 @@
       color: #0b3c5d;
     }
 
-    form {
-      max-width: 500px;
-      margin-top: 20px;
-    }
-
-    input, button {
-      width: 100%;
-      padding: 10px;
-      font-size: 16px;
-      margin-bottom: 12px;
-    }
-
-    button {
-      background: #1d6fa5;
-      color: #ffffff;
-      border: none;
-      cursor: pointer;
-      border-radius: 4px;
-    }
-
-    button:hover {
-      background: #14537a;
-    }
-
     footer {
       text-align: center;
       padding: 15px;
@@ -129,13 +90,8 @@
     }
 
     @media (max-width: 768px) {
-      nav button {
-        width: 100%;
-      }
-
-      #countdown {
-        font-size: 18px;
-      }
+      nav button { width: 100%; }
+      #countdown { font-size: 18px; }
     }
   </style>
 </head>
@@ -164,38 +120,62 @@
 <!-- HOME -->
 <div id="home" class="tab active">
 
-  <h2>About the Blessing of the Fleet</h2>
+  <h2>The Occoquan River & Town of Occoquan</h2>
+
+  <p>
+    The Occoquan River has been a lifeline of commerce, culture, and community
+    for thousands of years. Long before European settlement, Indigenous peoples
+    used the river for transportation, fishing, and trade, recognizing its unique
+    location where freshwater meets the tidal Potomac system.
+  </p>
+
+  <p>
+    By the early 18th century, the river had become one of colonial Virginia’s most
+    productive inland ports. The Town of Occoquan developed as a bustling center
+    for milling, shipbuilding, and trade. Its mills produced large quantities of
+    flour, which were exported throughout the American colonies and the Caribbean.
+  </p>
+
+  <p>
+    During the American Revolution, Occoquan’s strategic importance grew even greater.
+    Flour milled along the Occoquan River was supplied to General George Washington’s
+    Continental Army, helping sustain troops during critical campaigns. The river’s
+    inland location offered protection from British naval forces operating along the
+    Potomac River.
+  </p>
+
+  <p>
+    The Town of Occoquan was officially incorporated in 1804, but its identity as
+    a working waterfront was firmly established decades earlier. Today, Occoquan
+    remains one of the oldest preserved river towns in Northern Virginia, retaining
+    its historic character and strong connection to the water.
+  </p>
+
+  <h2>2026 Blessing of the Fleet</h2>
 
   <div class="event-box">
     <p>
       The <strong>ORMA Blessing of the Fleet</strong> is a traditional maritime ceremony
-      offering prayers for safety, protection, and prosperity for all who travel,
-      work, or recreate on the water. Rooted in centuries-old seafaring customs,
-      the blessing reflects the deep bond between community, faith, and maritime life.
+      offering prayers for safety, protection, and prosperity for all who navigate
+      the waters of the Occoquan River and beyond. Rooted in centuries-old seafaring
+      customs, the blessing honors the enduring relationship between faith, community,
+      and the maritime world.
     </p>
 
     <p>
-      On the Occoquan River, this ceremony carries special significance. During the
-      American Revolution, flour milled along the Occoquan supplied General George
-      Washington’s Continental Army, making the river a quiet but essential contributor
-      to American independence.
+      In 2026, this ceremony carries added significance as part of
+      <strong>America’s Semiquincentennial</strong>. By blessing today’s vessels,
+      ORMA symbolically connects modern mariners with the generations of river workers,
+      millers, and sailors who supported the birth of the United States.
     </p>
 
-    <h3>2026 Event Details</h3>
+    <h3>Event Details</h3>
     <ul>
       <li><strong>Date:</strong> Saturday, May 16, 2026</li>
       <li><strong>Location:</strong> Occoquan River, Occoquan, Virginia</li>
-      <li><strong>Who May Participate:</strong> Powerboats, sailboats, kayaks, paddlecraft</li>
+      <li><strong>Participants:</strong> Powerboats, sailboats, kayaks, paddlecraft</li>
       <li><strong>Open To:</strong> Boaters, families, visitors, and the public</li>
     </ul>
-
-    <h3>America 250 Significance</h3>
-    <p>
-      The 2026 Blessing of the Fleet is held in recognition of
-      <strong>America’s Semiquincentennial</strong>. By blessing today’s vessels,
-      ORMA honors the generations of mariners, millers, and river communities
-      who supported the birth of the United States through their labor and service.
-    </p>
 
     <div id="countdown"></div>
   </div>
@@ -206,19 +186,14 @@
 <div id="register" class="tab">
   <h2>Register for the 2026 Blessing of the Fleet</h2>
 
-  <p>
-    Boaters wishing to participate in the ceremonial blessing are encouraged
-    to register in advance.
-  </p>
-
   <form
     action="https://script.google.com/macros/s/AKfycbyUWBNGuZcsMfjqIllvyDw3joqpsfd5CjdcrVXdH8s0YY_eEc_TXTJPXSC21Zku0Fhr/exec"
     method="POST"
   >
-    <input name="name" placeholder="Full Name" required>
-    <input name="email" type="email" placeholder="Email Address" required>
-    <input name="vessel" placeholder="Vessel Name">
-    <input name="length" type="number" placeholder="Vessel Length (ft)">
+    <input name="name" placeholder="Full Name" required><br><br>
+    <input name="email" type="email" placeholder="Email Address" required><br><br>
+    <input name="vessel" placeholder="Vessel Name"><br><br>
+    <input name="length" type="number" placeholder="Vessel Length (ft)"><br><br>
     <button type="submit">Register Vessel</button>
   </form>
 </div>
@@ -226,7 +201,7 @@
 <!-- CONTACT -->
 <div id="contact" class="tab">
   <h2>Contact ORMA</h2>
-  <p>📧 darren@ormava.org</p>
+  <p>📧 info@occoquanriverma.org</p>
   <p>📍 Occoquan, Virginia</p>
 </div>
 
