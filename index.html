@@ -71,6 +71,28 @@
       margin: 25px 0;
     }
 
+    .photo-box {
+      background: #f0fbf7;
+      border-left: 6px solid #2aa876;
+      padding: 22px;
+      margin: 30px 0;
+    }
+
+    .photo-box a {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 16px;
+      background: #2aa876;
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+
+    .photo-box a:hover {
+      background: #1f8a61;
+    }
+
     #countdown {
       margin-top: 15px;
       font-size: 20px;
@@ -80,21 +102,9 @@
 
     /* Partners */
     .partners-section { margin-top: 35px; }
-
-    .partners-list {
-      columns: 2;
-      column-gap: 40px;
-    }
-
-    .partners-list ul {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    .partners-list li {
-      padding: 6px 0;
-      break-inside: avoid;
-    }
+    .partners-list { columns: 2; column-gap: 40px; }
+    .partners-list ul { list-style: none; padding-left: 0; }
+    .partners-list li { padding: 6px 0; break-inside: avoid; }
 
     .partner-logos {
       display: grid;
@@ -151,9 +161,15 @@
 
     footer {
       text-align: center;
-      padding: 15px;
+      padding: 18px;
       font-size: 14px;
       color: #666;
+    }
+
+    footer a {
+      color: #1d6fa5;
+      text-decoration: none;
+      font-weight: bold;
     }
 
     @media (max-width: 768px) {
@@ -200,46 +216,36 @@
 
   <p>
     By the early 18th century, the river had become one of colonial Virginia’s most
-    productive inland ports. Mills, warehouses, and shipyards lined its banks, and
-    the Town of Occoquan emerged as a bustling center for flour production and export.
-    Goods produced here were shipped throughout the American colonies and the Caribbean.
-  </p>
-
-  <p>
-    During the American Revolution, Occoquan played a critical but often overlooked
-    role. Flour milled along the Occoquan River was supplied to General George
-    Washington’s Continental Army. Because the river lay inland from British naval
-    patrols on the Potomac, it provided a relatively secure supply route during wartime.
-  </p>
-
-  <p>
-    The Town of Occoquan was formally incorporated in 1804, but its identity as a
-    working waterfront had already been firmly established. Today, Occoquan remains
-    one of the oldest preserved river towns in Northern Virginia.
+    productive inland ports. Flour milled along the Occoquan supplied General George
+    Washington’s Continental Army during the American Revolution.
   </p>
 
   <h2>2026 Blessing of the Fleet</h2>
 
   <div class="event-box">
-    <p>
-      The <strong>ORMA Blessing of the Fleet</strong> is a time-honored maritime tradition
-      offering prayers for safety, protection, and prosperity for all who work or
-      recreate on the water.
-    </p>
-
-    <p>
-      In 2026, the ceremony holds special meaning as part of
-      <strong>America’s Semiquincentennial</strong>, symbolically linking modern
-      mariners with the generations who supported the birth of the United States.
-    </p>
-
     <ul>
       <li><strong>Date:</strong> Saturday, May 16, 2026</li>
       <li><strong>Location:</strong> Occoquan River, Occoquan, Virginia</li>
       <li><strong>Open To:</strong> Recreational and commercial vessels, families, and the public</li>
     </ul>
-
     <div id="countdown"></div>
+  </div>
+
+  <!-- PHOTO UPLOAD -->
+  <div class="photo-box">
+    <h3>Share Your Photos</h3>
+    <p>
+      Help us capture the spirit of the 2026 Blessing of the Fleet and America’s
+      250th Anniversary. Boaters, families, and spectators are invited to share
+      their photos and videos.
+    </p>
+    <a href="https://example.com/photo-upload" target="_blank">
+      Upload Photos & Videos
+    </a>
+    <p style="font-size: 14px; margin-top: 8px;">
+      By uploading, you grant ORMA permission to use submitted images for
+      event promotion and historical documentation.
+    </p>
   </div>
 
 </div>
@@ -259,81 +265,14 @@
 
 <!-- PARTNERS -->
 <div id="partners" class="tab">
-
   <h2>2026 Blessing of the Fleet Partners</h2>
-
-  <p>
-    The Occoquan River Maritime Association gratefully acknowledges the following
-    partners. Listings are for recognition purposes and do not imply endorsement.
-  </p>
 
   <h3>Partner Logos</h3>
   <div class="partner-logos">
-    <!-- Repeat/replace with real logos as provided -->
-    <figure><img src="images/logo-placeholder.png" alt="Partner logo placeholder"><figcaption>Partner Logo</figcaption></figure>
-    <figure><img src="images/logo-placeholder.png" alt="Partner logo placeholder"><figcaption>Partner Logo</figcaption></figure>
-    <figure><img src="images/logo-placeholder.png" alt="Partner logo placeholder"><figcaption>Partner Logo</figcaption></figure>
-    <figure><img src="images/logo-placeholder.png" alt="Partner logo placeholder"><figcaption>Partner Logo</figcaption></figure>
+    <figure><img src="images/logo-placeholder.png" alt="Partner logo placeholder"><figcaption>Partner</figcaption></figure>
+    <figure><img src="images/logo-placeholder.png" alt="Partner logo placeholder"><figcaption>Partner</figcaption></figure>
+    <figure><img src="images/logo-placeholder.png" alt="Partner logo placeholder"><figcaption>Partner</figcaption></figure>
   </div>
-
-  <div class="partners-section">
-    <h3>Public Safety & Maritime Services</h3>
-    <div class="partners-list">
-      <ul>
-        <li>Occoquan-Woodbridge-Lorton Volunteer Fire Department (OWLVFD)</li>
-        <li>Prince William County Fire & Rescue — Marine Division</li>
-        <li>United States Coast Guard Auxiliary</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="partners-section">
-    <h3>Marinas & Marine Services</h3>
-    <div class="partners-list">
-      <ul>
-        <li>Prince William Marina</li>
-        <li>Occoquan Harbor Marina</li>
-        <li>Belmont Bay Harbour Marina</li>
-        <li>Hamptons Landing / Potomac Marine</li>
-        <li>Holly Acres RV and Marine</li>
-        <li>Holly Acres Marine on the Water</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="partners-section">
-    <h3>Yacht Clubs & Maritime Organizations</h3>
-    <div class="partners-list">
-      <ul>
-        <li>Prince William Yacht Club</li>
-        <li>Occoquan Yacht Club</li>
-        <li>Fairfax Yacht Club — Commodore</li>
-        <li>Brethren of the Harbor Yacht Club</li>
-        <li>Holly Acres Yacht Club</li>
-        <li>DMV Boat Owners Association</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="safety-callout">
-    <h3>Public Safety Appreciation</h3>
-    <p>
-      ORMA extends sincere appreciation to the public safety professionals whose
-      presence and coordination help ensure a safe and successful event for all.
-    </p>
-  </div>
-
-  <div class="partners-section">
-    <h3>Become a Partner</h3>
-    <form action="https://script.google.com/macros/s/AKfycbyUWBNGuZcsMfjqIllvyDw3joqpsfd5CjdcrVXdH8s0YY_eEc_TXTJPXSC21Zku0Fhr/exec" method="POST">
-      <input name="organization" placeholder="Organization Name" required>
-      <input name="contact_name" placeholder="Contact Name" required>
-      <input name="email" type="email" placeholder="Email Address" required>
-      <textarea name="message" placeholder="How would you like to partner?" rows="4"></textarea>
-      <button type="submit">Submit Partnership Inquiry</button>
-    </form>
-  </div>
-
 </div>
 
 <!-- CONTACT -->
@@ -346,7 +285,8 @@
 </div>
 
 <footer>
-  © 2026 Occoquan River Maritime Association • America’s Semiquincentennial
+  © 2026 Occoquan River Maritime Association • America’s Semiquincentennial<br>
+  <a href="https://example.com/photo-upload" target="_blank">Upload Event Photos</a>
 </footer>
 
 <script>
@@ -370,7 +310,7 @@
 
     const days = Math.floor(distance / (1000 * 60 * 60 * 24));
     const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
 
     document.getElementById("countdown").innerText =
       `⏳ ${days} days, ${hours} hours, ${minutes} minutes until the Blessing of the Fleet`;
