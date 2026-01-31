@@ -10,8 +10,8 @@
 
     .skip-link {
       position:absolute; left:-999px; top:10px;
-      background:#fff; color:#0b3c5d;
-      padding:10px; border:2px solid #0b3c5d;
+      background:#fff; color:#0b3c5d; padding:10px;
+      border:2px solid #0b3c5d; z-index:9999;
     }
     .skip-link:focus { left:10px; }
 
@@ -43,7 +43,7 @@
     }
 
     h2 { color:#0b3c5d; margin-top:40px; }
-    h3 { color:#1d6fa5; }
+    h3 { color:#1d6fa5; margin-top:25px; }
 
     .event-box, .partner-box {
       background:#f9f9f9;
@@ -51,7 +51,25 @@
       padding:20px; margin:25px 0;
     }
 
-    footer { text-align:center; padding:18px; font-size:14px; color:#666; }
+    label { display:block; font-weight:bold; margin-top:12px; }
+    input, button {
+      width:100%; padding:10px; margin-top:6px; font-size:16px;
+    }
+
+    button {
+      background:#1d6fa5; color:#fff;
+      border:none; border-radius:4px; cursor:pointer;
+    }
+
+    a:focus, button:focus, input:focus {
+      outline:3px solid #f5a623;
+      outline-offset:2px;
+    }
+
+    footer {
+      text-align:center; padding:18px;
+      font-size:14px; color:#666;
+    }
 
     @media (max-width:768px) {
       nav a { width:100%; text-align:center; }
@@ -75,6 +93,8 @@
     As part of the Commonwealth of Virginia’s commemoration of America’s 250th anniversary,
     ORMA recognizes the people, waterways, and communities that shaped our shared history.
   </p>
+
+  <div id="google_translate_element"></div>
 </header>
 
 <nav aria-label="Primary navigation">
@@ -90,16 +110,34 @@
 
   <h2>The Occoquan River</h2>
   <p>
-    The name <strong>Occoquan</strong> is derived from an Algonquian word meaning
-    “at the end of the water,” reflecting the river’s historic role as a gathering
-    place for travel, trade, and community.
+    The name <strong>Occoquan</strong> comes from an Algonquian term often interpreted as
+    “at the end of the water,” reflecting the river’s fall line and its long role as a
+    gathering place for travel, trade, and community.
+  </p>
+
+  <p>
+    The river has supported Indigenous communities, colonial industry, Revolutionary-era
+    supply routes, and today remains home to active marinas, yacht clubs, and maritime
+    organizations.
+  </p>
+
+  <h2>About the Occoquan River Maritime Association (ORMA)</h2>
+  <p>
+    The <strong>Occoquan River Maritime Association (ORMA)</strong> is a community-based
+    organization that brings together boaters, marinas, yacht clubs, public safety agencies,
+    and residents who share a connection to the Occoquan River.
+  </p>
+
+  <p>
+    ORMA promotes cooperation, stewardship, boating safety, and respect for the river while
+    supporting events and traditions that reflect the region’s maritime heritage.
   </p>
 
   <h2>2026 Blessing of the Fleet</h2>
   <p>
-    In recognition of America’s 250th Anniversary, the Blessing of the Fleet
-    serves as a moment of remembrance, reflection, and commitment to safety
-    on the water.
+    In recognition of America’s 250th Anniversary, the Blessing of the Fleet serves as a
+    moment of remembrance and reflection—honoring generations connected to the river and
+    reaffirming a shared commitment to safety and community on the water.
   </p>
 
   <div class="event-box">
@@ -112,15 +150,42 @@
   </div>
 
   <h2 id="partners">2026 Event Partners</h2>
+
   <div class="partner-box">
-    <p>
-      The Blessing of the Fleet is supported by marinas, yacht clubs,
-      maritime organizations, and public safety partners who contribute
-      their expertise and participation.
-    </p>
-    <p>
-      <a href="sponsors.html"><strong>Learn how to support the event as a sponsor →</strong></a>
-    </p>
+
+    <h3>Public Safety & Maritime Services</h3>
+    <ul>
+      <li><a href="https://www.owlvfd.org/" target="_blank">Occoquan-Woodbridge-Lorton Volunteer Fire Department (OWLVFD)</a></li>
+      <li><a href="https://www.pwcgov.org/government/dept/FR/Pages/default.aspx" target="_blank">Prince William County Fire & Rescue – Marine Division</a></li>
+      <li><a href="https://www.cgaux.org/" target="_blank">United States Coast Guard Auxiliary</a></li>
+    </ul>
+
+    <h3>Marinas & Marine Services</h3>
+    <ul>
+      <li><a href="https://www.pwmarina.com/" target="_blank">Prince William Marina</a>
+        (<a href="https://www.google.com/maps?q=Prince+William+Marina+VA" target="_blank">Map</a>)</li>
+      <li><a href="https://www.marinaohm.com/" target="_blank">Occoquan Harbor Marina</a>
+        (<a href="https://www.google.com/maps?q=Occoquan+Harbor+Marina+VA" target="_blank">Map</a>)</li>
+      <li><a href="https://belmontbayharbor.com/" target="_blank">Belmont Bay Harbor Marina</a>
+        (<a href="https://www.google.com/maps?q=Belmont+Bay+Harbor+Marina+VA" target="_blank">Map</a>)</li>
+      <li><a href="https://www.hamptonslandingmarina.com/" target="_blank">Hamptons Landing Marina</a>
+        (<a href="https://www.google.com/maps?q=Hamptons+Landing+Marina+VA" target="_blank">Map</a>)</li>
+      <li><a href="https://www.hollyacres.com/" target="_blank">Holly Acres RV and Marine</a>
+        (<a href="https://www.google.com/maps?q=Holly+Acres+RV+and+Marine+VA" target="_blank">Map</a>)</li>
+      <li><a href="https://www.hollyacresonthewater.com/" target="_blank">Holly Acres on the Water</a>
+        (<a href="https://www.google.com/maps?q=Holly+Acres+on+the+Water+VA" target="_blank">Map</a>)</li>
+    </ul>
+
+    <h3>Yacht Clubs & Maritime Organizations</h3>
+    <ul>
+      <li><a href="https://pwyc.org/" target="_blank">Prince William Yacht Club</a></li>
+      <li><a href="https://occoquanyachtclub.wixsite.com/occoquan-yacht-club" target="_blank">Occoquan Yacht Club</a></li>
+      <li><a href="https://www.fairfaxyachtclub.com/" target="_blank">Fairfax Yacht Club</a></li>
+      <li><a href="https://brethrenoftheharbour.org/" target="_blank">Brethren of the Harbor Yacht Club</a></li>
+      <li><a href="https://www.haycva.org/" target="_blank">Holly Acres Yacht Club</a></li>
+      <li><a href="https://www.dmvboc.org/" target="_blank">DMV Boat Owners Association</a></li>
+    </ul>
+
   </div>
 
   <h2 id="register">Register Your Vessel</h2>
@@ -145,7 +210,7 @@
 <footer>
   © 2026 Occoquan River Maritime Association • America’s Semiquincentennial
   <p style="font-size:12px;color:#777;">
-    Sponsorship and partner recognition is for informational purposes only and does not imply endorsement.
+    Partner and sponsor recognition is provided for informational purposes only and does not imply endorsement.
   </p>
 </footer>
 
@@ -153,12 +218,22 @@
   const eventDate = new Date("May 16, 2026 09:00:00").getTime();
   setInterval(() => {
     const now = new Date().getTime();
-    const distance = eventDate - now;
+    const d = eventDate - now;
     document.getElementById("countdown").innerText =
-      distance > 0 ? `⏳ ${Math.floor(distance / (1000*60*60*24))} days until the Blessing of the Fleet`
-                   : "🚤 The Blessing of the Fleet is happening today!";
+      d > 0 ? `⏳ ${Math.floor(d / (1000*60*60*24))} days until the Blessing of the Fleet`
+            : "🚤 The Blessing of the Fleet is happening today!";
   }, 1000);
 </script>
+
+<script>
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement(
+      { pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE },
+      'google_translate_element'
+    );
+  }
+</script>
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </body>
 </html>
