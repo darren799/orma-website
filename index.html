@@ -78,10 +78,8 @@
       color: #0b3c5d;
     }
 
-    /* PARTNERS */
-    .partners-section {
-      margin-top: 35px;
-    }
+    /* Partners */
+    .partners-section { margin-top: 35px; }
 
     .partners-list {
       columns: 2;
@@ -98,23 +96,30 @@
       break-inside: avoid;
     }
 
-    /* LOGOS */
     .partner-logos {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
       gap: 20px;
-      margin-top: 20px;
+      margin: 20px 0;
+    }
+
+    .partner-logos figure {
+      margin: 0;
+      text-align: center;
     }
 
     .partner-logos img {
       max-width: 100%;
-      height: auto;
       background: #f0f0f0;
       padding: 10px;
       border-radius: 6px;
     }
 
-    /* PUBLIC SAFETY CALLOUT */
+    .partner-logos figcaption {
+      font-size: 14px;
+      margin-top: 6px;
+    }
+
     .safety-callout {
       background: #fff7e6;
       border-left: 6px solid #f5a623;
@@ -122,7 +127,6 @@
       margin-top: 30px;
     }
 
-    /* FORMS */
     form {
       max-width: 500px;
       margin-top: 20px;
@@ -135,10 +139,6 @@
       margin-bottom: 12px;
     }
 
-    textarea {
-      resize: vertical;
-    }
-
     button {
       background: #1d6fa5;
       color: #ffffff;
@@ -147,9 +147,7 @@
       border-radius: 4px;
     }
 
-    button:hover {
-      background: #14537a;
-    }
+    button:hover { background: #14537a; }
 
     footer {
       text-align: center;
@@ -190,13 +188,49 @@
 
 <!-- HOME -->
 <div id="home" class="tab active">
+
+  <h2>The Occoquan River & the Town of Occoquan</h2>
+
+  <p>
+    The Occoquan River has been a vital waterway for thousands of years. Indigenous
+    peoples relied on the river for transportation, fishing, and trade long before
+    European settlement. Its location at the fall line—where freshwater meets the
+    tidal Potomac system—made it uniquely suited for commerce and industry.
+  </p>
+
+  <p>
+    By the early 18th century, the river had become one of colonial Virginia’s most
+    productive inland ports. Mills, warehouses, and shipyards lined its banks, and
+    the Town of Occoquan emerged as a bustling center for flour production and export.
+    Goods produced here were shipped throughout the American colonies and the Caribbean.
+  </p>
+
+  <p>
+    During the American Revolution, Occoquan played a critical but often overlooked
+    role. Flour milled along the Occoquan River was supplied to General George
+    Washington’s Continental Army. Because the river lay inland from British naval
+    patrols on the Potomac, it provided a relatively secure supply route during wartime.
+  </p>
+
+  <p>
+    The Town of Occoquan was formally incorporated in 1804, but its identity as a
+    working waterfront had already been firmly established. Today, Occoquan remains
+    one of the oldest preserved river towns in Northern Virginia.
+  </p>
+
   <h2>2026 Blessing of the Fleet</h2>
 
   <div class="event-box">
     <p>
-      The ORMA Blessing of the Fleet honors centuries-old maritime tradition while
-      commemorating America’s 250th Anniversary. The Occoquan River played a quiet
-      but vital role in supplying the Continental Army during the Revolutionary War.
+      The <strong>ORMA Blessing of the Fleet</strong> is a time-honored maritime tradition
+      offering prayers for safety, protection, and prosperity for all who work or
+      recreate on the water.
+    </p>
+
+    <p>
+      In 2026, the ceremony holds special meaning as part of
+      <strong>America’s Semiquincentennial</strong>, symbolically linking modern
+      mariners with the generations who supported the birth of the United States.
     </p>
 
     <ul>
@@ -207,6 +241,7 @@
 
     <div id="countdown"></div>
   </div>
+
 </div>
 
 <!-- REGISTER -->
@@ -228,42 +263,68 @@
   <h2>2026 Blessing of the Fleet Partners</h2>
 
   <p>
-    ORMA gratefully acknowledges the following partners. Listings are for recognition
-    purposes and do not imply endorsement.
+    The Occoquan River Maritime Association gratefully acknowledges the following
+    partners. Listings are for recognition purposes and do not imply endorsement.
   </p>
 
-  <!-- LOGOS -->
   <h3>Partner Logos</h3>
   <div class="partner-logos">
-    <img src="images/logo-placeholder.png" alt="Partner logo placeholder">
-    <img src="images/logo-placeholder.png" alt="Partner logo placeholder">
-    <img src="images/logo-placeholder.png" alt="Partner logo placeholder">
-    <img src="images/logo-placeholder.png" alt="Partner logo placeholder">
+    <!-- Repeat/replace with real logos as provided -->
+    <figure><img src="images/logo-placeholder.png" alt="Partner logo placeholder"><figcaption>Partner Logo</figcaption></figure>
+    <figure><img src="images/logo-placeholder.png" alt="Partner logo placeholder"><figcaption>Partner Logo</figcaption></figure>
+    <figure><img src="images/logo-placeholder.png" alt="Partner logo placeholder"><figcaption>Partner Logo</figcaption></figure>
+    <figure><img src="images/logo-placeholder.png" alt="Partner logo placeholder"><figcaption>Partner Logo</figcaption></figure>
   </div>
 
-  <!-- PUBLIC SAFETY -->
+  <div class="partners-section">
+    <h3>Public Safety & Maritime Services</h3>
+    <div class="partners-list">
+      <ul>
+        <li>Occoquan-Woodbridge-Lorton Volunteer Fire Department (OWLVFD)</li>
+        <li>Prince William County Fire & Rescue — Marine Division</li>
+        <li>United States Coast Guard Auxiliary</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="partners-section">
+    <h3>Marinas & Marine Services</h3>
+    <div class="partners-list">
+      <ul>
+        <li>Prince William Marina</li>
+        <li>Occoquan Harbor Marina</li>
+        <li>Belmont Bay Harbour Marina</li>
+        <li>Hamptons Landing / Potomac Marine</li>
+        <li>Holly Acres RV and Marine</li>
+        <li>Holly Acres Marine on the Water</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="partners-section">
+    <h3>Yacht Clubs & Maritime Organizations</h3>
+    <div class="partners-list">
+      <ul>
+        <li>Prince William Yacht Club</li>
+        <li>Occoquan Yacht Club</li>
+        <li>Fairfax Yacht Club — Commodore</li>
+        <li>Brethren of the Harbor Yacht Club</li>
+        <li>Holly Acres Yacht Club</li>
+        <li>DMV Boat Owners Association</li>
+      </ul>
+    </div>
+  </div>
+
   <div class="safety-callout">
     <h3>Public Safety Appreciation</h3>
     <p>
-      ORMA extends sincere appreciation to our public safety partners whose
-      professionalism and dedication help ensure the safety of all participants
-      on and around the Occoquan River during the Blessing of the Fleet.
+      ORMA extends sincere appreciation to the public safety professionals whose
+      presence and coordination help ensure a safe and successful event for all.
     </p>
-    <ul>
-      <li>Occoquan-Woodbridge-Lorton Volunteer Fire Department (OWLVFD)</li>
-      <li>Prince William County Fire & Rescue — Marine Division</li>
-      <li>United States Coast Guard Auxiliary</li>
-    </ul>
   </div>
 
-  <!-- BECOME A PARTNER -->
   <div class="partners-section">
     <h3>Become a Partner</h3>
-    <p>
-      Organizations interested in supporting the 2026 Blessing of the Fleet
-      are invited to contact ORMA using the form below.
-    </p>
-
     <form action="https://script.google.com/macros/s/AKfycbyUWBNGuZcsMfjqIllvyDw3joqpsfd5CjdcrVXdH8s0YY_eEc_TXTJPXSC21Zku0Fhr/exec" method="POST">
       <input name="organization" placeholder="Organization Name" required>
       <input name="contact_name" placeholder="Contact Name" required>
@@ -309,7 +370,7 @@
 
     const days = Math.floor(distance / (1000 * 60 * 60 * 24));
     const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60 * 60));
 
     document.getElementById("countdown").innerText =
       `⏳ ${days} days, ${hours} hours, ${minutes} minutes until the Blessing of the Fleet`;
