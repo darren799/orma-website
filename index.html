@@ -6,112 +6,55 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f4f7f9;
-      color: #333;
-    }
+    body { margin:0; font-family:Arial, Helvetica, sans-serif; background:#f4f7f9; color:#333; }
 
     .skip-link {
-      position: absolute;
-      left: -999px;
-      top: 10px;
-      background: #ffffff;
-      color: #0b3c5d;
-      padding: 10px 12px;
-      border-radius: 4px;
-      border: 2px solid #0b3c5d;
-      z-index: 9999;
+      position:absolute; left:-999px; top:10px;
+      background:#fff; color:#0b3c5d;
+      padding:10px; border:2px solid #0b3c5d;
     }
-    .skip-link:focus { left: 10px; }
+    .skip-link:focus { left:10px; }
 
-    header {
-      background: #0b3c5d;
-      color: #ffffff;
-      padding: 30px 20px;
-      text-align: center;
-    }
+    header { background:#0b3c5d; color:#fff; padding:30px 20px; text-align:center; }
 
     .banner-250 {
-      background: #b22234;
-      margin-top: 12px;
-      padding: 10px;
-      font-weight: bold;
-      border-radius: 4px;
+      background:#b22234; margin-top:12px; padding:10px;
+      font-weight:bold; border-radius:4px;
     }
 
     nav {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      background: #1d6fa5;
+      display:flex; flex-wrap:wrap; justify-content:center;
+      background:#1d6fa5;
     }
 
     nav a {
-      color: #ffffff;
-      padding: 15px 22px;
-      text-decoration: none;
-      font-size: 16px;
+      color:#fff; padding:15px 22px; text-decoration:none;
     }
 
-    nav a:hover,
-    nav a:focus {
-      background: #14537a;
-      outline: 3px solid #f5a623;
-      outline-offset: 2px;
+    nav a:hover, nav a:focus {
+      background:#14537a;
+      outline:3px solid #f5a623;
     }
 
-    .container {
-      max-width: 1100px;
-      margin: 30px auto;
-      padding: 25px;
-      background: #ffffff;
-      border-radius: 6px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    main {
+      max-width:1100px; margin:30px auto; padding:25px;
+      background:#fff; border-radius:6px;
+      box-shadow:0 2px 6px rgba(0,0,0,0.1);
     }
 
-    h2 { color: #0b3c5d; margin-top: 40px; }
-    h3 { color: #1d6fa5; }
+    h2 { color:#0b3c5d; margin-top:40px; }
+    h3 { color:#1d6fa5; }
 
-    label { display:block; font-weight:bold; margin: 10px 0 6px; }
-    input, button {
-      width: 100%;
-      padding: 10px;
-      font-size: 16px;
-      margin-bottom: 12px;
+    .event-box, .partner-box {
+      background:#f9f9f9;
+      border-left:6px solid #ccc;
+      padding:20px; margin:25px 0;
     }
 
-    button { cursor: pointer; }
+    footer { text-align:center; padding:18px; font-size:14px; color:#666; }
 
-    a:focus, button:focus, input:focus {
-      outline: 3px solid #f5a623;
-      outline-offset: 2px;
-    }
-
-    .event-box {
-      background: #eef6fb;
-      border-left: 6px solid #1d6fa5;
-      padding: 20px;
-      margin: 25px 0;
-    }
-
-    .partner-box {
-      background: #f9f9f9;
-      border-left: 6px solid #ccc;
-      padding: 20px;
-      margin: 25px 0;
-    }
-
-    footer {
-      text-align: center;
-      padding: 18px;
-      font-size: 14px;
-      color: #666;
-    }
-
-    @media (max-width: 768px) {
-      nav a { width: 100%; text-align: center; }
+    @media (max-width:768px) {
+      nav a { width:100%; text-align:center; }
     }
   </style>
 </head>
@@ -128,10 +71,9 @@
     Commemorating the 250th Anniversary of the United States of America • 1776–2026
   </div>
 
-  <p style="font-style: italic; margin-top: 10px;">
+  <p style="font-style:italic;margin-top:10px;">
     As part of the Commonwealth of Virginia’s commemoration of America’s 250th anniversary,
-    the Occoquan River Maritime Association recognizes the people, waterways, and communities
-    that shaped our shared history and continue to shape our future.
+    ORMA recognizes the people, waterways, and communities that shaped our shared history.
   </p>
 </header>
 
@@ -139,20 +81,26 @@
   <a href="index.html">Home</a>
   <a href="history.html">History</a>
   <a href="#partners">Partners</a>
+  <a href="sponsors.html">Sponsors</a>
   <a href="#register">Register</a>
   <a href="#contact">Contact</a>
 </nav>
 
-<main id="main" class="container" role="main">
+<main id="main" role="main">
 
   <h2>The Occoquan River</h2>
   <p>
-    The name <strong>Occoquan</strong> is derived from an Algonquian word commonly
-    interpreted as “at the end of the water,” referring to the river’s fall line
-    where navigable waters meet the rapids.
+    The name <strong>Occoquan</strong> is derived from an Algonquian word meaning
+    “at the end of the water,” reflecting the river’s historic role as a gathering
+    place for travel, trade, and community.
   </p>
 
   <h2>2026 Blessing of the Fleet</h2>
+  <p>
+    In recognition of America’s 250th Anniversary, the Blessing of the Fleet
+    serves as a moment of remembrance, reflection, and commitment to safety
+    on the water.
+  </p>
 
   <div class="event-box">
     <ul>
@@ -163,20 +111,28 @@
     <div id="countdown" role="status" aria-live="polite"></div>
   </div>
 
-  <h2 id="register">Register Your Vessel</h2>
+  <h2 id="partners">2026 Event Partners</h2>
+  <div class="partner-box">
+    <p>
+      The Blessing of the Fleet is supported by marinas, yacht clubs,
+      maritime organizations, and public safety partners who contribute
+      their expertise and participation.
+    </p>
+    <p>
+      <a href="sponsors.html"><strong>Learn how to support the event as a sponsor →</strong></a>
+    </p>
+  </div>
 
+  <h2 id="register">Register Your Vessel</h2>
   <form action="https://script.google.com/macros/s/AKfycbyUWBNGuZcsMfjqIllvyDw3joqpsfd5CjdcrVXdH8s0YY_eEc_TXTJPXSC21Zku0Fhr/exec" method="POST">
     <label for="name">Full Name</label>
-    <input id="name" name="name" autocomplete="name" required>
+    <input id="name" name="name" required>
 
     <label for="email">Email Address</label>
-    <input id="email" name="email" type="email" autocomplete="email" required>
+    <input id="email" name="email" type="email" required>
 
     <label for="vessel">Vessel Name (optional)</label>
     <input id="vessel" name="vessel">
-
-    <label for="length">Vessel Length in feet (optional)</label>
-    <input id="length" name="length" type="number" min="0">
 
     <button type="submit">Register Vessel</button>
   </form>
@@ -189,8 +145,7 @@
 <footer>
   © 2026 Occoquan River Maritime Association • America’s Semiquincentennial
   <p style="font-size:12px;color:#777;">
-    References to America’s 250th Anniversary and VA250 themes are for educational
-    and commemorative purposes only and do not imply official endorsement.
+    Sponsorship and partner recognition is for informational purposes only and does not imply endorsement.
   </p>
 </footer>
 
@@ -200,9 +155,8 @@
     const now = new Date().getTime();
     const distance = eventDate - now;
     document.getElementById("countdown").innerText =
-      distance > 0
-        ? `⏳ ${Math.floor(distance / (1000 * 60 * 60 * 24))} days until the Blessing of the Fleet`
-        : "🚤 The Blessing of the Fleet is happening today!";
+      distance > 0 ? `⏳ ${Math.floor(distance / (1000*60*60*24))} days until the Blessing of the Fleet`
+                   : "🚤 The Blessing of the Fleet is happening today!";
   }, 1000);
 </script>
 
