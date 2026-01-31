@@ -6,250 +6,87 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f4f7f9;
-      color: #333;
-    }
+    body { margin:0; font-family:Arial, Helvetica, sans-serif; background:#f4f7f9; color:#333; }
 
-    header {
-      background: #0b3c5d;
-      color: #ffffff;
-      padding: 20px;
-      text-align: center;
+    .skip-link {
+      position:absolute; left:-999px; top:10px;
+      background:#fff; color:#0b3c5d; padding:10px;
+      border:2px solid #0b3c5d;
     }
+    .skip-link:focus { left:10px; }
 
     nav {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      background: #1d6fa5;
+      background:#1d6fa5; text-align:center;
     }
-
     nav a {
-      color: #ffffff;
-      padding: 14px 20px;
-      text-decoration: none;
-      font-size: 16px;
+      color:#fff; padding:14px 20px; display:inline-block;
     }
+    nav a:focus { outline:3px solid #f5a623; }
 
-    nav a:hover {
-      background: #14537a;
-    }
-
-    /* HERO SECTION */
     .history-hero {
-      background-image: url("images/history/occoquan-history-timeline.png");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      min-height: 420px;
-      display: flex;
-      align-items: center;
+      background-image:url("images/history/occoquan-history-timeline.png");
+      background-size:cover;
+      background-position:center;
+      min-height:420px;
+      display:flex;
+      align-items:center;
     }
 
     .history-hero-overlay {
-      background: rgba(11, 60, 93, 0.75);
-      color: #ffffff;
-      padding: 40px;
-      max-width: 900px;
-      margin: 0 auto;
-      border-radius: 6px;
-      text-align: center;
-    }
-
-    .history-hero-overlay h1 {
-      margin-top: 0;
-      font-size: 2.2em;
-    }
-
-    .history-hero-overlay p {
-      font-size: 1.1em;
-      line-height: 1.6;
-    }
-
-    .history-hero-overlay a {
-      color: #ffffff;
-      font-weight: bold;
-      text-decoration: underline;
+      background:rgba(11,60,93,0.75);
+      color:#fff;
+      padding:40px;
+      max-width:900px;
+      margin:auto;
+      text-align:center;
     }
 
     .container {
-      max-width: 1100px;
-      margin: 30px auto;
-      padding: 25px;
-      background: #ffffff;
-      border-radius: 6px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      max-width:1100px;
+      margin:30px auto;
+      background:#fff;
+      padding:25px;
+      border-radius:6px;
     }
 
-    h2 {
-      color: #0b3c5d;
-      margin-top: 40px;
-    }
-
-    ul {
-      margin-left: 20px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 18px;
-      font-size: 14px;
-      color: #666;
-    }
-
-    @media (max-width: 768px) {
-      nav a {
-        width: 100%;
-        text-align: center;
-      }
-
-      .history-hero-overlay {
-        padding: 25px;
-      }
-    }
+    a:focus { outline:3px solid #f5a623; }
   </style>
 </head>
 
 <body>
 
-<header>
-  <h2>Occoquan River Maritime Association</h2>
-</header>
+<a class="skip-link" href="#main">Skip to main content</a>
 
-<nav>
+<nav aria-label="Primary navigation">
   <a href="index.html">Home</a>
   <a href="history.html">History</a>
-  <a href="index.html#register">Register</a>
-  <a href="index.html#contact">Contact</a>
 </nav>
 
-<!-- HERO WITH BACKGROUND IMAGE -->
 <section class="history-hero">
   <div class="history-hero-overlay">
     <h1>History of the Occoquan River</h1>
+    <p>A visual and historical overview of the people and waterways that shaped the river.</p>
     <p>
-      A visual and historical overview of the people, waterways, and communities
-      that shaped the Occoquan River across generations.
-    </p>
-    <p>
-      <a
-        href="images/history/occoquan-history-timeline.png"
-        target="_blank"
-        rel="noopener"
-      >
+      <a href="images/history/occoquan-history-timeline.png" target="_blank" rel="noopener">
         View full-size history timeline
       </a>
     </p>
   </div>
 </section>
 
-<div class="container">
-
-  <!-- INTRO -->
-  <p>
-    The Occoquan River has long served as a place of connection—linking people,
-    commerce, and communities across generations. Its history reflects the broader
-    story of Virginia and the nation, shaped by Indigenous presence, colonial industry,
-    the struggle for independence, and an enduring maritime tradition.
-  </p>
-
-  <!-- INDIGENOUS HISTORY -->
+<main id="main" class="container" role="main">
   <h2>Indigenous Presence</h2>
+  <p>Long before European settlement, Algonquian-speaking peoples lived along the Occoquan.</p>
 
-  <p>
-    Long before European settlement, the Occoquan River was home to Algonquian-speaking
-    Indigenous peoples who relied on the river for sustenance, travel, and trade.
-    The river’s fall line—where navigable waters meet the rapids—made it a natural
-    gathering place and point of exchange.
-  </p>
+  <h2>Colonial & Revolutionary Era</h2>
+  <p>The river became a key inland port supplying flour to the Continental Army.</p>
 
-  <ul>
-    <li><strong>Doeg (Dogues):</strong> Closely associated with the Occoquan River, with a documented village near the river’s falls.</li>
-    <li><strong>Tauxenent:</strong> A related group living within the broader Occoquan–Potomac watershed.</li>
-    <li><strong>Powhatan Confederacy:</strong> A political and cultural alliance of Algonquian-speaking tribes that governed much of eastern Virginia during the early colonial period.</li>
-  </ul>
-
-  <!-- COLONIAL / REVOLUTION -->
-  <h2>Colonial Industry and the American Revolution</h2>
-
-  <p>
-    During the colonial period, the Occoquan River developed into one of Virginia’s
-    most productive inland ports. Mills powered by the river processed grain into
-    flour that was transported downriver to the Potomac River and beyond.
-  </p>
-
-  <p>
-    During the American Revolution, this flour supply became part of the logistical
-    network that supported the Continental Army. The river’s inland location helped
-    protect these supply routes from British naval forces, linking the Occoquan River
-    to the broader struggle for independence.
-  </p>
-
-  <!-- AFRICAN AMERICAN HISTORY -->
-  <h2>African American History</h2>
-
-  <p>
-    The history of the Occoquan River is also closely connected to African American
-    experience. Enslaved Africans and African Americans performed much of the labor
-    that sustained mills, warehouses, agriculture, and river commerce during the
-    colonial and early national periods.
-  </p>
-
-  <p>
-    Rivers such as the Occoquan functioned as corridors of movement and connection
-    within Northern Virginia. These waterways formed part of the broader landscape
-    in which individuals sought opportunity, community, and, in some cases, freedom.
-  </p>
-
-  <p>
-    Following emancipation, African Americans continued to live and work in and
-    around the Town of Occoquan, contributing to maritime trades, local industry,
-    and community life through Reconstruction and into the modern era.
-  </p>
-
-  <!-- MODERN MARITIME -->
   <h2>A Living Maritime Community</h2>
-
-  <p>
-    Today, the Occoquan River remains an active and vibrant maritime corridor.
-    It is home to marinas, yacht clubs, and maritime organizations that reflect
-    the river’s continuing role in community life and stewardship.
-  </p>
-
-  <p>
-    Modern maritime activity on the Occoquan connects past and present—carrying
-    forward traditions of seamanship, cooperation, and respect for the water
-    that have defined the river for generations.
-  </p>
-
-  <!-- BLESSING CONTEXT -->
-  <h2>The Blessing of the Fleet</h2>
-
-  <p>
-    The Blessing of the Fleet is a long-standing maritime tradition rooted in the
-    shared desire for safety, protection, and community on the water. Historically,
-    such blessings offered mariners a moment of reflection before embarking on
-    journeys shaped by uncertainty and risk.
-  </p>
-
-  <p>
-    In the context of America’s 250th Anniversary, the Blessing of the Fleet on the
-    Occoquan River serves as both remembrance and reflection—honoring those who have
-    lived, labored, and traveled these waters, while affirming a shared commitment
-    to safety and stewardship today.
-  </p>
-
-</div>
+  <p>Today the river remains active, stewarded by marinas, clubs, and community members.</p>
+</main>
 
 <footer>
-  © 2026 Occoquan River Maritime Association • America’s Semiquincentennial
-  <p style="font-size: 12px; color: #777; margin-top: 10px;">
-    References to America’s 250th Anniversary and VA250 themes are for educational
-    and commemorative purposes only and do not imply official endorsement.
-  </p>
+  © 2026 Occoquan River Maritime Association
 </footer>
 
 </body>
