@@ -6,41 +6,146 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
-    body { margin:0; font-family:Arial, Helvetica, sans-serif; background:#f4f7f9; color:#333; }
-    header { background:#0b3c5d; color:#fff; padding:25px; text-align:center; }
-    main { max-width:900px; margin:30px auto; padding:25px; background:#fff; border-radius:6px; }
-    h2 { color:#0b3c5d; margin-top:30px; }
-    label { display:block; font-weight:bold; margin-top:15px; }
-    input, select, button { width:100%; padding:10px; margin-top:6px; }
-    button { background:#1d6fa5; color:#fff; border:none; border-radius:4px; cursor:pointer; }
-    footer { text-align:center; font-size:13px; color:#666; padding:18px; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f4f7f9;
+      color: #333;
+    }
+
+    /* Accessibility: Skip link */
+    .skip-link {
+      position: absolute;
+      left: -999px;
+      top: 10px;
+      background: #ffffff;
+      color: #0b3c5d;
+      padding: 10px 12px;
+      border-radius: 4px;
+      border: 2px solid #0b3c5d;
+      z-index: 9999;
+    }
+    .skip-link:focus { left: 10px; }
+
+    header {
+      background: #0b3c5d;
+      color: #ffffff;
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    nav {
+      background: #1d6fa5;
+      text-align: center;
+    }
+
+    nav a {
+      color: #ffffff;
+      padding: 15px 20px;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    nav a:hover,
+    nav a:focus {
+      background: #14537a;
+      outline: 3px solid #f5a623;
+      outline-offset: 2px;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 25px;
+      background: #ffffff;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    h1, h2 {
+      color: #0b3c5d;
+    }
+
+    h2 {
+      margin-top: 30px;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-top: 15px;
+    }
+
+    input, select, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 6px;
+      font-size: 16px;
+    }
+
+    button {
+      background: #1d6fa5;
+      color: #ffffff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    a:focus, button:focus, input:focus, select:focus {
+      outline: 3px solid #f5a623;
+      outline-offset: 2px;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 13px;
+      color: #666;
+      padding: 18px;
+    }
+
+    @media (max-width: 768px) {
+      nav a {
+        display: block;
+      }
+    }
   </style>
 </head>
 
 <body>
 
+<a class="skip-link" href="#main">Skip to main content</a>
+
 <header>
   <h1>Sponsorship Opportunities</h1>
-  <p>2026 ORMA Blessing of the Fleet</p>
+  <p>2026 ORMA Blessing of the Fleet • Occoquan River</p>
 </header>
 
-<main>
+<nav aria-label="Primary navigation">
+  <a href="index.html">Home</a>
+  <a href="history.html">History</a>
+  <a href="partners.html">Partners</a>
+  <a href="sponsors.html">Sponsors</a>
+</nav>
+
+<main id="main" role="main">
 
   <h2>Why Sponsor</h2>
   <p>
     Sponsorship support helps ensure the safety, accessibility, and continuity
-    of the Blessing of the Fleet while recognizing America’s 250th Anniversary.
+    of the Blessing of the Fleet while commemorating America’s 250th Anniversary.
+    Sponsors support community engagement, maritime tradition, and stewardship
+    of the Occoquan River.
   </p>
 
   <h2>Sponsorship Levels</h2>
   <ul>
     <li><strong>Community Sponsor</strong> — General event support</li>
     <li><strong>Maritime Sponsor</strong> — Safety and stewardship support</li>
-    <li><strong>Steward Sponsor</strong> — Education and accessibility support</li>
+    <li><strong>Steward Sponsor</strong> — Accessibility and educational support</li>
     <li><strong>Founding Sponsor</strong> — Core event logistics and coordination</li>
   </ul>
 
-  <h2>Express Interest</h2>
+  <h2>Express Interest in Sponsorship</h2>
 
   <form id="sponsorForm">
     <label for="org">Organization or Individual Name</label>
@@ -68,7 +173,10 @@
 </main>
 
 <footer>
-  Sponsorship recognition is provided for informational purposes only and does not imply endorsement.
+  © 2026 Occoquan River Maritime Association • America’s Semiquincentennial
+  <p style="font-size:12px;color:#777;">
+    Sponsorship recognition is provided for informational purposes only and does not imply endorsement.
+  </p>
 </footer>
 
 <script>
@@ -97,13 +205,16 @@
       );
 
       if (response.ok) {
-        sponsorStatus.textContent = "Thank you for your interest. ORMA will follow up shortly.";
+        sponsorStatus.textContent =
+          "Thank you for your interest. ORMA will follow up shortly.";
         sponsorForm.reset();
       } else {
-        sponsorStatus.textContent = "There was an issue submitting the form. Please try again.";
+        sponsorStatus.textContent =
+          "There was an issue submitting the form. Please try again.";
       }
     } catch (error) {
-      sponsorStatus.textContent = "Submission failed. Please check your connection and try again.";
+      sponsorStatus.textContent =
+        "Submission failed. Please check your connection and try again.";
     }
   });
 </script>
