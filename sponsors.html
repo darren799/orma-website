@@ -23,3 +23,42 @@
 
   <p id="sponsorStatus" role="status" aria-live="polite"></p>
 </form>
+<script>
+  const sponsorForm = document.getElementById("sponsorForm");
+  const sponsorStatus = document.getElementById("sponsorStatus");
+
+  sponsorForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    sponsorStatus.textContent = "Submitting sponsorship interest…";
+
+    const data = {
+      organization: sponsorForm.organization.value,
+      contact_name: sponsorForm.contact_name.value,
+      email: sponsorForm.email.value,
+      level: sponsorForm.level.value
+    };
+
+    try {
+      const response = await fetch(
+        "https://script.google.com/macros/s/AKfycbxJcEphVfTiRv_tWIV-7t5Qk24Z7LsL-LgQBP4chiBkyVCz4qkBWGnAUeyJrYxw_nHOhw/exec",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data)
+        }
+      );
+
+      if (response.ok) {
+        sponsorStatus.textContent =
+          "Thank you for your interest. ORMA will follow up shortly.";
+        sponsorForm.reset();
+      } else {
+        sponsorStatus.textContent =
+          "There was an issue submitting the form. Please try again.";
+      }
+    } catch (error) {
+      sponsorStatus.textContent =
+        "Submission failed. Please check your connection and try again.";
+    }
+  });
+</script>
