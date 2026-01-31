@@ -46,6 +46,7 @@
       outline-offset: 2px;
     }
 
+    /* History hero section */
     .history-hero {
       background-image: url("images/history/occoquan-history-timeline.png");
       background-size: cover;
@@ -63,6 +64,20 @@
       max-width: 900px;
       border-radius: 6px;
       text-align: center;
+    }
+
+    /* FIX: Ensure hero links are visible on dark background */
+    .history-hero-overlay a {
+      color: #ffffff;
+      font-weight: bold;
+      text-decoration: underline;
+    }
+
+    .history-hero-overlay a:hover,
+    .history-hero-overlay a:focus {
+      color: #f5a623;
+      outline: 3px solid #f5a623;
+      outline-offset: 3px;
     }
 
     main {
