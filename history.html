@@ -6,50 +6,99 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
-    body { margin:0; font-family:Arial, Helvetica, sans-serif; background:#f4f7f9; color:#333; }
-
-    .skip-link {
-      position:absolute; left:-999px; top:10px;
-      background:#fff; color:#0b3c5d; padding:10px;
-      border:2px solid #0b3c5d;
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f4f7f9;
+      color: #333;
     }
-    .skip-link:focus { left:10px; }
+
+    /* Accessibility: Skip link */
+    .skip-link {
+      position: absolute;
+      left: -999px;
+      top: 10px;
+      background: #ffffff;
+      color: #0b3c5d;
+      padding: 10px 12px;
+      border-radius: 4px;
+      border: 2px solid #0b3c5d;
+      z-index: 9999;
+    }
+    .skip-link:focus { left: 10px; }
 
     nav {
-      background:#1d6fa5; text-align:center;
+      background: #1d6fa5;
+      text-align: center;
     }
+
     nav a {
-      color:#fff; padding:14px 20px; display:inline-block;
+      color: #ffffff;
+      padding: 15px 20px;
+      text-decoration: none;
+      display: inline-block;
     }
-    nav a:focus { outline:3px solid #f5a623; }
+
+    nav a:hover,
+    nav a:focus {
+      background: #14537a;
+      outline: 3px solid #f5a623;
+      outline-offset: 2px;
+    }
 
     .history-hero {
-      background-image:url("images/history/occoquan-history-timeline.png");
-      background-size:cover;
-      background-position:center;
-      min-height:420px;
-      display:flex;
-      align-items:center;
+      background-image: url("images/history/occoquan-history-timeline.png");
+      background-size: cover;
+      background-position: center;
+      min-height: 460px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .history-hero-overlay {
-      background:rgba(11,60,93,0.75);
-      color:#fff;
-      padding:40px;
-      max-width:900px;
-      margin:auto;
-      text-align:center;
+      background: rgba(11, 60, 93, 0.78);
+      color: #ffffff;
+      padding: 40px;
+      max-width: 900px;
+      border-radius: 6px;
+      text-align: center;
     }
 
-    .container {
-      max-width:1100px;
-      margin:30px auto;
-      background:#fff;
-      padding:25px;
-      border-radius:6px;
+    main {
+      max-width: 1100px;
+      margin: 30px auto;
+      padding: 25px;
+      background: #ffffff;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
 
-    a:focus { outline:3px solid #f5a623; }
+    h1, h2 {
+      color: #0b3c5d;
+    }
+
+    h2 {
+      margin-top: 40px;
+    }
+
+    a:focus {
+      outline: 3px solid #f5a623;
+      outline-offset: 2px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 18px;
+      font-size: 14px;
+      color: #666;
+    }
+
+    @media (max-width: 768px) {
+      .history-hero-overlay {
+        padding: 25px;
+      }
+    }
   </style>
 </head>
 
@@ -60,33 +109,114 @@
 <nav aria-label="Primary navigation">
   <a href="index.html">Home</a>
   <a href="history.html">History</a>
+  <a href="sponsors.html">Sponsors</a>
 </nav>
 
-<section class="history-hero">
+<section class="history-hero" role="img" aria-label="Illustrated timeline showing the history of the Occoquan River">
   <div class="history-hero-overlay">
     <h1>History of the Occoquan River</h1>
-    <p>A visual and historical overview of the people and waterways that shaped the river.</p>
+    <p>
+      A river shaped by Indigenous communities, colonial industry,
+      maritime tradition, and generations of people connected to the water.
+    </p>
     <p>
       <a href="images/history/occoquan-history-timeline.png" target="_blank" rel="noopener">
-        View full-size history timeline
+        View full-size history timeline image
       </a>
     </p>
   </div>
 </section>
 
-<main id="main" class="container" role="main">
-  <h2>Indigenous Presence</h2>
-  <p>Long before European settlement, Algonquian-speaking peoples lived along the Occoquan.</p>
+<main id="main" role="main">
 
-  <h2>Colonial & Revolutionary Era</h2>
-  <p>The river became a key inland port supplying flour to the Continental Army.</p>
+  <h2>Indigenous Peoples and the Meaning of “Occoquan”</h2>
+  <p>
+    Long before European settlement, the Occoquan River was home to Indigenous
+    Algonquian-speaking peoples, including groups often associated with the
+    Doeg and other Powhatan-affiliated tribes. The river provided food,
+    transportation, and trade routes essential to daily life.
+  </p>
+  <p>
+    The name <strong>Occoquan</strong> is commonly interpreted as meaning
+    “at the end of the water,” referring to the river’s fall line where
+    navigable waters meet rapids—an important gathering and exchange point
+    for Native communities.
+  </p>
 
-  <h2>A Living Maritime Community</h2>
-  <p>Today the river remains active, stewarded by marinas, clubs, and community members.</p>
+  <h2>Colonial Industry and the American Revolution</h2>
+  <p>
+    By the 18th century, the Occoquan River became one of colonial Virginia’s
+    most important inland ports. Mills along the river produced flour that
+    was shipped downriver and exported throughout the Atlantic world.
+  </p>
+  <p>
+    During the American Revolution, Occoquan mills supplied flour to the
+    Continental Army, making the river a critical contributor to the fight
+    for independence. This role ties the river directly to the story
+    commemorated during America’s 250th Anniversary.
+  </p>
+
+  <h2>African American History Along the River</h2>
+  <p>
+    Enslaved African Americans labored in mills, on farms, and along the
+    riverfront, forming an essential but often overlooked part of the
+    Occoquan River’s history. After emancipation, African American
+    communities continued to live and work in the region, contributing
+    to its maritime, industrial, and civic life.
+  </p>
+  <p>
+    Their stories are part of the broader narrative of resilience, labor,
+    and community that shaped the Occoquan and the nation.
+  </p>
+
+  <h2>Maritime Life and the Modern Occoquan</h2>
+  <p>
+    Today, the Occoquan River remains an active and vibrant waterway, home to
+    numerous marinas including Prince William Marina, Occoquan Harbor Marina,
+    Belmont Bay Harbor Marina, and Holly Acres on the Water Marina.
+  </p>
+  <p>
+    The river also supports yacht clubs and maritime organizations such as
+    the Prince William Yacht Club, Fairfax Yacht Club, Brethren of the Harbor
+    Yacht Club, Holly Acres Yacht Club, and the DMV Boat Owners Association,
+    all of which contribute to a living maritime community.
+  </p>
+
+  <h2>The Blessing of the Fleet</h2>
+  <p>
+    The Blessing of the Fleet is a maritime tradition with roots in fishing
+    and seafaring communities around the world. Historically, these ceremonies
+    sought protection for vessels and those who worked on the water, while
+    also bringing communities together in shared reflection.
+  </p>
+  <p>
+    In the context of the Occoquan River and America’s 250th Anniversary,
+    the Blessing of the Fleet serves as a commemorative event—honoring the
+    river’s role in the nation’s history, remembering those who depended
+    on its waters, and reaffirming a commitment to safety, stewardship,
+    and community.
+  </p>
+
+  <h2>ORMA and Community Stewardship</h2>
+  <p>
+    The Occoquan River Maritime Association (ORMA) supports the preservation
+    and celebration of the river’s maritime heritage by bringing together
+    boaters, marinas, public safety partners, and residents.
+  </p>
+  <p>
+    Through events such as the Blessing of the Fleet, ORMA helps connect
+    past and present, ensuring that the Occoquan River’s history remains
+    a living part of the community.
+  </p>
+
 </main>
 
 <footer>
-  © 2026 Occoquan River Maritime Association
+  © 2026 Occoquan River Maritime Association • America’s Semiquincentennial
+  <p style="font-size:12px;color:#777;">
+    Historical content is presented for educational and commemorative purposes
+    and does not imply official endorsement.
+  </p>
 </footer>
 
 </body>
