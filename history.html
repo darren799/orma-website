@@ -1,121 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>History of the Occoquan River | ORMA</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>History of the Occoquan River | ORMA</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    body { margin:0; font-family:Arial, Helvetica, sans-serif; background:#f4f7f9; color:#333; }
+<style>
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f4f7f9;color:#333;}
 
-    header { background:#0b3c5d; color:#fff; padding:30px 20px; text-align:center; }
+header.site-header{
+  background:#0b3c5d;
+  color:#fff;
+  padding:30px 20px;
+  text-align:center;
+}
 
-    nav {
-      background:#1d6fa5;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      padding:0 12px;
-      position:sticky;
-      top:0;
-      z-index:1000;
-    }
+.site-logo{
+  max-width:140px;
+  margin:0 auto 10px;
+  display:block;
+}
 
-    .hamburger {
-      background:none;
-      border:none;
-      color:#fff;
-      font-size:26px;
-      padding:12px 10px;
-      cursor:pointer;
-      border-radius:6px;
-    }
+nav{
+  background:#1d6fa5;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:0 12px;
+}
 
-    .hamburger:focus {
-      outline:3px solid #f5a623;
-      outline-offset:2px;
-    }
+.hamburger{
+  background:none;
+  border:none;
+  color:#fff;
+  font-size:26px;
+  padding:12px;
+}
 
-    .nav-links {
-      display:flex;
-      flex-wrap:wrap;
-    }
+.nav-links{display:flex;}
+nav a{
+  color:#fff;
+  padding:15px 18px;
+  text-decoration:none;
+  border-radius:6px;
+}
+nav a[aria-current="page"]{
+  background:#14537a;
+  font-weight:bold;
+}
 
-    nav a {
-      color:#fff;
-      padding:15px 18px;
-      text-decoration:none;
-      border-radius:6px;
-    }
+@media(max-width:768px){
+  .nav-links{display:none;width:100%;flex-direction:column;}
+  .nav-links.show{display:flex;}
+  nav a{text-align:center;}
+}
 
-    nav a:hover, nav a:focus {
-      background:#14537a;
-      outline:3px solid #f5a623;
-      outline-offset:2px;
-    }
+main{
+  position:relative;
+  max-width:1100px;
+  margin:30px auto;
+  padding:25px;
+  background:#fff;
+  border-radius:6px;
+  box-shadow:0 2px 6px rgba(0,0,0,0.1);
+}
 
-    nav a[aria-current="page"] {
-      background:#14537a;
-      font-weight:bold;
-    }
+main::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:url("images/history/occoquan-history-timeline.png") center 90px no-repeat;
+  background-size:320px;
+  opacity:0.04;
+  pointer-events:none;
+}
 
-    @media (max-width:768px) {
-      .nav-links { display:none; width:100%; flex-direction:column; }
-      .nav-links.show { display:flex; }
-      nav a { width:100%; text-align:center; }
-    }
+h2{color:#0b3c5d;margin-top:35px;}
 
-    main {
-      max-width:1100px;
-      margin:30px auto;
-      padding:25px;
-      background:#fff;
-      border-radius:6px;
-      box-shadow:0 2px 6px rgba(0,0,0,0.1);
-    }
-
-    h2 { color:#0b3c5d; margin-top:35px; }
-
-    .history-hero {
-      background:url("images/history/occoquan-history-timeline.png") center/cover no-repeat;
-      padding:80px 20px;
-      color:#fff;
-      border-radius:6px;
-      margin-bottom:30px;
-    }
-
-    .history-hero h2 {
-      color:#fff;
-      background:rgba(0,0,0,0.55);
-      display:inline-block;
-      padding:12px 18px;
-      border-radius:6px;
-    }
-
-    .history-hero a {
-      color:#fff;
-      font-weight:bold;
-      text-decoration:underline;
-    }
-
-    footer {
-      text-align:center;
-      padding:18px;
-      font-size:14px;
-      color:#666;
-    }
-  </style>
+footer{
+  text-align:center;
+  padding:18px;
+  font-size:14px;
+  color:#666;
+}
+</style>
 </head>
 
 <body>
 
-<header>
+<header class="site-header">
+  <img src="images/branding/orma-logo.png"
+       alt="Occoquan River Maritime Association logo"
+       class="site-logo">
   <h1>History of the Occoquan River</h1>
   <p>Context for the 2026 ORMA Blessing of the Fleet</p>
 </header>
 
 <nav aria-label="Primary navigation">
-  <button class="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">☰</button>
+  <button class="hamburger" aria-expanded="false" aria-controls="navLinks">☰</button>
   <div class="nav-links" id="navLinks">
     <a href="index.html">Home</a>
     <a href="history.html" aria-current="page">History</a>
@@ -126,51 +108,47 @@
 
 <main>
 
-  <section class="history-hero">
-    <h2>Occoquan River Through Time</h2>
-    <p>
-      <a href="images/history/occoquan-history-timeline.png" target="_blank" rel="noopener">
-        View full-size history timeline image
-      </a>
-    </p>
-  </section>
+<h2>Indigenous Foundations</h2>
+<p>
+  The Occoquan River takes its name from an Algonquian word commonly interpreted as
+  “at the end of the water.” Indigenous peoples, including the Doeg and related
+  Algonquian-speaking communities, lived along the river for generations, using it
+  for fishing, travel, and trade.
+</p>
 
-  <h2>Indigenous History</h2>
-  <p>
-    The Occoquan River takes its name from an Algonquian term commonly interpreted as
-    “at the end of the water.” Indigenous peoples, including the Doeg and related
-    Algonquian-speaking communities, lived along the river and relied on it for
-    transportation, fishing, and trade.
-  </p>
+<h2>Colonial Industry and the Revolutionary Era</h2>
+<p>
+  By the 18th century, the Occoquan River became a vital industrial corridor.
+  Mills and ports near the fall line supplied flour and materials to the
+  Continental Army during the American Revolution.
+</p>
 
-  <h2>Colonial and Revolutionary Era</h2>
-  <p>
-    During the colonial period, the river became an important industrial and
-    transportation corridor. Mills, warehouses, and ports developed near the fall
-    line, supplying flour and goods to the Continental Army during the Revolutionary
-    War.
-  </p>
+<h2>African American History</h2>
+<p>
+  Enslaved and later free African Americans were integral to the river’s economy,
+  working in mills, on boats, and in riverfront communities. Their labor and
+  resilience are inseparable from the Occoquan’s story.
+</p>
 
-  <h2>African American History</h2>
-  <p>
-    Enslaved and later free African Americans played a vital role in the river’s
-    economic life, working in mills, on boats, and in riverfront communities.
-    Their contributions are an essential part of the Occoquan’s story.
-  </p>
+<h2>Maritime Community Today</h2>
+<p>
+  Today the river supports Prince William Marina, Occoquan Harbor Marina,
+  Belmont Bay Harbor Marina, Holly Acres on the Water, and a network of yacht clubs
+  and maritime organizations that sustain both working and recreational boating.
+</p>
 
-  <h2>Maritime Community Today</h2>
-  <p>
-    Today, the Occoquan River is home to Prince William Marina, Occoquan Harbor Marina,
-    Belmont Bay Harbor Marina, Holly Acres on the Water, and multiple yacht clubs and
-    maritime organizations that continue the river’s working and recreational traditions.
-  </p>
+<h2>The Blessing of the Fleet</h2>
+<p>
+  Blessings of the fleet historically sought protection for those who earn their
+  living on the water. The 2026 ORMA Blessing of the Fleet continues this tradition
+  while commemorating America’s 250th Anniversary.
+</p>
 
-  <h2>The Blessing of the Fleet</h2>
-  <p>
-    Historically, blessings of the fleet emerged as a way to seek protection for those
-    who make their livelihoods on the water. In 2026, the ORMA Blessing of the Fleet
-    honors that tradition while commemorating America’s 250th Anniversary.
-  </p>
+<p>
+  <a href="images/history/occoquan-history-timeline.png" target="_blank">
+    View full-size history timeline image
+  </a>
+</p>
 
 </main>
 
@@ -179,13 +157,9 @@
 </footer>
 
 <script>
-  const btn = document.querySelector('.hamburger');
-  const nav = document.getElementById('navLinks');
-  btn.addEventListener('click', () => {
-    const expanded = btn.getAttribute('aria-expanded') === 'true';
-    btn.setAttribute('aria-expanded', String(!expanded));
-    nav.classList.toggle('show');
-  });
+const btn=document.querySelector('.hamburger');
+const nav=document.getElementById('navLinks');
+btn.addEventListener('click',()=>{nav.classList.toggle('show');});
 </script>
 
 </body>
