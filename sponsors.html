@@ -6,10 +6,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-body { margin:0; font-family:Arial, Helvetica, sans-serif; background:#f4f7f9; color:#333; }
-header { background:#0b3c5d; color:#fff; padding:30px 20px; text-align:center; }
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f4f7f9;color:#333;}
 
-nav {
+header.site-header{
+  background:#0b3c5d;
+  color:#fff;
+  padding:30px 20px;
+  text-align:center;
+}
+
+.site-logo{
+  max-width:140px;
+  margin:0 auto 10px;
+  display:block;
+}
+
+nav{
   background:#1d6fa5;
   display:flex;
   justify-content:space-between;
@@ -17,31 +29,46 @@ nav {
   padding:0 12px;
 }
 
-.hamburger { background:none; border:none; color:#fff; font-size:26px; }
-.nav-links { display:flex; flex-wrap:wrap; }
+.hamburger{background:none;border:none;color:#fff;font-size:26px;padding:12px;}
+.nav-links{display:flex;}
+nav a{color:#fff;padding:15px 18px;text-decoration:none;border-radius:6px;}
+nav a[aria-current="page"]{background:#14537a;font-weight:bold;}
 
-nav a { color:#fff; padding:15px 18px; text-decoration:none; border-radius:6px; }
-nav a[aria-current="page"] { background:#14537a; font-weight:bold; }
-
-@media (max-width:768px) {
-  .nav-links { display:none; width:100%; flex-direction:column; }
-  .nav-links.show { display:flex; }
-  nav a { width:100%; text-align:center; }
+@media(max-width:768px){
+  .nav-links{display:none;width:100%;flex-direction:column;}
+  .nav-links.show{display:flex;}
+  nav a{text-align:center;}
 }
 
-main {
+main{
+  position:relative;
   max-width:900px;
   margin:30px auto;
   padding:25px;
   background:#fff;
   border-radius:6px;
 }
+
+main::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:url("images/branding/orma-logo.png") center 90px no-repeat;
+  background-size:280px;
+  opacity:0.04;
+  pointer-events:none;
+}
+
+h2{color:#0b3c5d;margin-top:35px;}
 </style>
 </head>
 
 <body>
 
-<header>
+<header class="site-header">
+  <img src="images/branding/orma-logo.png"
+       alt="Occoquan River Maritime Association logo"
+       class="site-logo">
   <h1>Sponsorship Opportunities</h1>
 </header>
 
@@ -56,46 +83,38 @@ main {
 </nav>
 
 <main>
-  <p>
-    Sponsorship support helps ensure the safety, accessibility, and continuity of the
-    2026 ORMA Blessing of the Fleet while honoring America’s 250th Anniversary.
-  </p>
 
-  <h2>Sponsorship Levels</h2>
-  <ul>
-    <li>Community Sponsor</li>
-    <li>Maritime Sponsor</li>
-    <li>Steward Sponsor</li>
-    <li>Founding Sponsor</li>
-  </ul>
+<p>
+  Sponsorship helps support safety, stewardship, and accessibility for the
+  2026 ORMA Blessing of the Fleet while commemorating America’s 250th Anniversary.
+</p>
 
-  <h2>Express Interest</h2>
+<h2>Sponsorship Levels</h2>
+<ul>
+  <li>Community Sponsor</li>
+  <li>Maritime Sponsor</li>
+  <li>Steward Sponsor</li>
+  <li>Founding Sponsor</li>
+</ul>
 
-  <form id="sponsorForm">
-    <label>Organization Name
-      <input name="organization" required>
-    </label>
+<h2>Express Interest</h2>
 
-    <label>Contact Name
-      <input name="contact_name" required>
-    </label>
+<form id="sponsorForm">
+  <label>Organization Name<input name="organization" required></label>
+  <label>Contact Name<input name="contact_name" required></label>
+  <label>Email Address<input type="email" name="email" required></label>
+  <label>Sponsorship Level
+    <select name="level">
+      <option>Community Sponsor</option>
+      <option>Maritime Sponsor</option>
+      <option>Steward Sponsor</option>
+      <option>Founding Sponsor</option>
+    </select>
+  </label>
+  <button type="submit">Submit Sponsorship Interest</button>
+  <p id="status"></p>
+</form>
 
-    <label>Email Address
-      <input type="email" name="email" required>
-    </label>
-
-    <label>Sponsorship Level
-      <select name="level">
-        <option>Community Sponsor</option>
-        <option>Maritime Sponsor</option>
-        <option>Steward Sponsor</option>
-        <option>Founding Sponsor</option>
-      </select>
-    </label>
-
-    <button type="submit">Submit Sponsorship Interest</button>
-    <p id="status"></p>
-  </form>
 </main>
 
 <footer>
@@ -103,31 +122,20 @@ main {
 </footer>
 
 <script>
-const btn = document.querySelector('.hamburger');
-const nav = document.getElementById('navLinks');
-btn.addEventListener('click', () => {
-  nav.classList.toggle('show');
-});
-</script>
+const btn=document.querySelector('.hamburger');
+const nav=document.getElementById('navLinks');
+btn.addEventListener('click',()=>{nav.classList.toggle('show');});
 
-<script>
-document.getElementById("sponsorForm").addEventListener("submit", async e => {
+document.getElementById("sponsorForm").addEventListener("submit",async e=>{
   e.preventDefault();
-  document.getElementById("status").textContent = "Submitting…";
-
-  const data = Object.fromEntries(new FormData(e.target).entries());
-
-  const res = await fetch(
+  document.getElementById("status").textContent="Submitting…";
+  const data=Object.fromEntries(new FormData(e.target).entries());
+  const res=await fetch(
     "https://script.google.com/macros/s/AKfycbxJcEphVfTiRv_tWIV-7t5Qk24Z7LsL-LgQBP4chiBkyVCz4qkBWGnAUeyJrYxw_nHOhw/exec",
-    {
-      method:"POST",
-      headers:{ "Content-Type":"application/json" },
-      body:JSON.stringify(data)
-    }
+    {method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(data)}
   );
-
-  document.getElementById("status").textContent =
-    res.ok ? "Thank you — ORMA will follow up." : "Submission error. Please try again.";
+  document.getElementById("status").textContent=
+    res.ok?"Thank you — ORMA will follow up.":"Submission error. Please try again.";
 });
 </script>
 
