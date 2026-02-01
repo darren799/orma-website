@@ -6,10 +6,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-body { margin:0; font-family:Arial, Helvetica, sans-serif; background:#f4f7f9; color:#333; }
-header { background:#0b3c5d; color:#fff; padding:30px 20px; text-align:center; }
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f4f7f9;color:#333;}
 
-nav {
+header.site-header{
+  background:#0b3c5d;
+  color:#fff;
+  padding:30px 20px;
+  text-align:center;
+}
+
+.site-logo{
+  max-width:140px;
+  margin:0 auto 10px;
+  display:block;
+}
+
+nav{
   background:#1d6fa5;
   display:flex;
   justify-content:space-between;
@@ -17,19 +29,19 @@ nav {
   padding:0 12px;
 }
 
-.hamburger { background:none; border:none; color:#fff; font-size:26px; }
-.nav-links { display:flex; flex-wrap:wrap; }
+.hamburger{background:none;border:none;color:#fff;font-size:26px;padding:12px;}
+.nav-links{display:flex;}
+nav a{color:#fff;padding:15px 18px;text-decoration:none;border-radius:6px;}
+nav a[aria-current="page"]{background:#14537a;font-weight:bold;}
 
-nav a { color:#fff; padding:15px 18px; text-decoration:none; border-radius:6px; }
-nav a[aria-current="page"] { background:#14537a; font-weight:bold; }
-
-@media (max-width:768px) {
-  .nav-links { display:none; width:100%; flex-direction:column; }
-  .nav-links.show { display:flex; }
-  nav a { width:100%; text-align:center; }
+@media(max-width:768px){
+  .nav-links{display:none;width:100%;flex-direction:column;}
+  .nav-links.show{display:flex;}
+  nav a{text-align:center;}
 }
 
-main {
+main{
+  position:relative;
   max-width:1100px;
   margin:30px auto;
   padding:25px;
@@ -37,14 +49,27 @@ main {
   border-radius:6px;
 }
 
-h2 { color:#0b3c5d; margin-top:35px; }
-li { margin-bottom:8px; }
+main::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:url("images/branding/orma-logo.png") center 90px no-repeat;
+  background-size:300px;
+  opacity:0.04;
+  pointer-events:none;
+}
+
+h2{color:#0b3c5d;margin-top:35px;}
+li{margin-bottom:8px;}
 </style>
 </head>
 
 <body>
 
-<header>
+<header class="site-header">
+  <img src="images/branding/orma-logo.png"
+       alt="Occoquan River Maritime Association logo"
+       class="site-logo">
   <h1>Community Partners</h1>
 </header>
 
@@ -93,11 +118,9 @@ li { margin-bottom:8px; }
 </footer>
 
 <script>
-const btn = document.querySelector('.hamburger');
-const nav = document.getElementById('navLinks');
-btn.addEventListener('click', () => {
-  nav.classList.toggle('show');
-});
+const btn=document.querySelector('.hamburger');
+const nav=document.getElementById('navLinks');
+btn.addEventListener('click',()=>{nav.classList.toggle('show');});
 </script>
 
 </body>
