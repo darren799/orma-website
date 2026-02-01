@@ -13,6 +13,7 @@
       position:absolute; left:-999px; top:10px;
       background:#fff; color:#0b3c5d; padding:10px;
       border:2px solid #0b3c5d; z-index:9999;
+      border-radius:4px;
     }
     .skip-link:focus { left:10px; }
 
@@ -21,20 +22,88 @@
     .banner-250 {
       background:#b22234; margin-top:12px; padding:10px;
       font-weight:bold; border-radius:4px;
+      display:inline-block;
     }
 
+    /* NAV (desktop + mobile hamburger) */
     nav {
-      display:flex; flex-wrap:wrap; justify-content:center;
       background:#1d6fa5;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:0 12px;
+      position:sticky;
+      top:0;
+      z-index:1000;
+    }
+
+    .brand-spacer {
+      height:1px; width:1px; overflow:hidden; position:absolute; left:-9999px;
+    }
+
+    .hamburger {
+      background:none;
+      border:none;
+      color:#fff;
+      font-size:26px;
+      padding:12px 10px;
+      cursor:pointer;
+      border-radius:6px;
+    }
+    .hamburger:focus {
+      outline:3px solid #f5a623;
+      outline-offset:2px;
+    }
+
+    .nav-links {
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      align-items:center;
     }
 
     nav a {
-      color:#fff; padding:15px 22px; text-decoration:none;
+      color:#fff;
+      padding:15px 18px;
+      text-decoration:none;
+      display:inline-block;
+      border-radius:6px;
     }
 
     nav a:hover, nav a:focus {
       background:#14537a;
       outline:3px solid #f5a623;
+      outline-offset:2px;
+    }
+
+    /* Highlight active page */
+    nav a[aria-current="page"] {
+      background:#14537a;
+      font-weight:bold;
+    }
+
+    /* Mobile menu behavior */
+    @media (max-width: 768px) {
+      nav {
+        flex-wrap:wrap;
+        justify-content:flex-start;
+      }
+
+      .nav-links {
+        display:none;
+        width:100%;
+        flex-direction:column;
+        align-items:stretch;
+        padding-bottom:10px;
+      }
+      .nav-links.show {
+        display:flex;
+      }
+      nav a {
+        width:100%;
+        text-align:center;
+        padding:14px 12px;
+      }
     }
 
     main {
@@ -50,11 +119,13 @@
       background:#f9f9f9;
       border-left:6px solid #ccc;
       padding:20px; margin:25px 0;
+      border-radius:6px;
     }
 
     label { display:block; font-weight:bold; margin-top:12px; }
     input, button {
       width:100%; padding:10px; margin-top:6px; font-size:16px;
+      box-sizing:border-box;
     }
 
     button {
@@ -70,10 +141,6 @@
     footer {
       text-align:center; padding:18px;
       font-size:14px; color:#666;
-    }
-
-    @media (max-width:768px) {
-      nav a { width:100%; text-align:center; }
     }
   </style>
 </head>
@@ -95,21 +162,29 @@
     ORMA recognizes the people, waterways, and communities that shaped our shared history.
   </p>
 
-  <div id="google_translate_element"></div>
+  <div id="google_translate_element" aria-label="Translate this page"></div>
 </header>
 
 <nav aria-label="Primary navigation">
-  <a href="index.html" aria-current="page">Home</a>
-  <a href="history.html">History</a>
-  <a href="partners.html">Partners</a>
-  <a href="sponsors.html">Sponsors</a>
-  <a href="#register">Register</a>
-  <a href="#contact">Contact</a>
+  <span class="brand-spacer">ORMA Navigation</span>
+
+  <button class="hamburger" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+    ☰
+  </button>
+
+  <div class="nav-links" id="navLinks">
+    <a href="index.html" aria-current="page">Home</a>
+    <a href="history.html">History</a>
+    <a href="partners.html">Partners</a>
+    <a href="sponsors.html">Sponsors</a>
+    <a href="#register">Register</a>
+    <a href="#contact">Contact</a>
+  </div>
 </nav>
 
 <main id="main" role="main">
 
-  <!-- UPDATED SECTION: Contextual bridge instead of full history -->
+  <!-- Home-page bridge (Option A), not redundant with History page -->
   <h2>The Occoquan River</h2>
   <p>
     Flowing through the heart of the community, the Occoquan River has long connected
@@ -117,9 +192,7 @@
     the region’s maritime traditions.
   </p>
   <p>
-    <a href="history.html">
-      Learn more about the history of the Occoquan River
-    </a>
+    <a href="history.html">Learn more about the history of the Occoquan River</a>
   </p>
 
   <h2>About the Occoquan River Maritime Association (ORMA)</h2>
@@ -128,7 +201,6 @@
     organization that brings together boaters, marinas, yacht clubs, public safety agencies,
     and residents who share a connection to the Occoquan River.
   </p>
-
   <p>
     ORMA promotes cooperation, stewardship, boating safety, and respect for the river while
     supporting events and traditions that reflect the region’s maritime heritage.
@@ -147,17 +219,17 @@
       <li><strong>Location:</strong> Occoquan River, Occoquan, Virginia</li>
       <li><strong>Open To:</strong> Recreational and commercial vessels, families, and the public</li>
     </ul>
-    <div id="countdown" role="status" aria-live="polite"></div>
+    <div id="countdown" role="status" aria-live="polite" style="margin-top:10px;font-weight:bold;"></div>
   </div>
 
   <h2 id="register">Register Your Vessel for the 2026 Blessing of the Fleet</h2>
 
   <form action="https://script.google.com/macros/s/AKfycbyUWBNGuZcsMfjqIllvyDw3joqpsfd5CjdcrVXdH8s0YY_eEc_TXTJPXSC21Zku0Fhr/exec" method="POST">
     <label for="name">Full Name</label>
-    <input id="name" name="name" required>
+    <input id="name" name="name" autocomplete="name" required>
 
     <label for="email">Email Address</label>
-    <input id="email" name="email" type="email" required>
+    <input id="email" name="email" type="email" autocomplete="email" required>
 
     <label for="vessel">Vessel Name</label>
     <input id="vessel" name="vessel" required>
@@ -166,7 +238,7 @@
   </form>
 
   <h2 id="contact">Contact ORMA</h2>
-  <p>📧 darren@ormava.org</p>
+  <p>📧 <a href="mailto:darren@ormava.org">darren@ormava.org</a></p>
 
 </main>
 
@@ -178,17 +250,54 @@
 </footer>
 
 <script>
-  const eventDate = new Date("May 16, 2026 09:00:00").getTime();
-  setInterval(() => {
-    const now = new Date().getTime();
-    const d = eventDate - now;
-    document.getElementById("countdown").innerText =
-      d > 0 ? `⏳ ${Math.floor(d / (1000*60*60*24))} days until the Blessing of the Fleet`
-            : "🚤 The Blessing of the Fleet is happening today!";
-  }, 1000);
+  // Mobile nav toggle (accessible)
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
+
+  menuToggle.addEventListener('click', () => {
+    const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+    menuToggle.setAttribute('aria-expanded', String(!expanded));
+    menuToggle.setAttribute('aria-label', expanded ? 'Open menu' : 'Close menu');
+    navLinks.classList.toggle('show');
+  });
+
+  // Close menu when a link is clicked (mobile UX)
+  navLinks.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      if (window.matchMedia('(max-width: 768px)').matches) {
+        navLinks.classList.remove('show');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.setAttribute('aria-label', 'Open menu');
+      }
+    });
+  });
 </script>
 
 <script>
+  // Countdown timer
+  const eventDate = new Date("May 16, 2026 09:00:00").getTime();
+
+  function updateCountdown() {
+    const now = new Date().getTime();
+    const d = eventDate - now;
+
+    const el = document.getElementById("countdown");
+    if (!el) return;
+
+    if (d > 0) {
+      const days = Math.floor(d / (1000 * 60 * 60 * 24));
+      el.innerText = `⏳ ${days} days until the Blessing of the Fleet`;
+    } else {
+      el.innerText = "🚤 The Blessing of the Fleet is happening today!";
+    }
+  }
+
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+</script>
+
+<script>
+  // Google Translate widget
   function googleTranslateElementInit() {
     new google.translate.TranslateElement(
       { pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE },
