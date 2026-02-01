@@ -1,155 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>2026 ORMA Blessing of the Fleet | Occoquan River</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="The 2026 ORMA Blessing of the Fleet on the Occoquan River commemorates America’s 250th Anniversary through maritime tradition, community, and stewardship.">
+<meta charset="UTF-8">
+<title>2026 ORMA Blessing of the Fleet | Occoquan River</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="The 2026 ORMA Blessing of the Fleet on the Occoquan River commemorates America’s 250th Anniversary through maritime tradition, community, and stewardship.">
 
-  <style>
-    body { margin:0; font-family:Arial, Helvetica, sans-serif; background:#f4f7f9; color:#333; }
+<style>
+body { margin:0; font-family:Arial, Helvetica, sans-serif; background:#f4f7f9; color:#333; }
 
-    .skip-link {
-      position:absolute; left:-999px; top:10px;
-      background:#fff; color:#0b3c5d; padding:10px;
-      border:2px solid #0b3c5d; z-index:9999;
-      border-radius:4px;
-    }
-    .skip-link:focus { left:10px; }
+.skip-link{position:absolute;left:-999px;top:10px;background:#fff;color:#0b3c5d;padding:10px;border:2px solid #0b3c5d;z-index:9999;}
+.skip-link:focus{left:10px;}
 
-    header { background:#0b3c5d; color:#fff; padding:30px 20px; text-align:center; }
+header.site-header{
+  background:#0b3c5d;
+  color:#fff;
+  padding:30px 20px;
+  text-align:center;
+}
 
-    .banner-250 {
-      background:#b22234; margin-top:12px; padding:10px;
-      font-weight:bold; border-radius:4px;
-      display:inline-block;
-    }
+.site-logo{
+  max-width:140px;
+  height:auto;
+  margin:0 auto 10px;
+  display:block;
+}
 
-    /* NAV (desktop + mobile hamburger) */
-    nav {
-      background:#1d6fa5;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      padding:0 12px;
-      position:sticky;
-      top:0;
-      z-index:1000;
-    }
+.banner-250{
+  background:#b22234;
+  padding:10px;
+  font-weight:bold;
+  border-radius:4px;
+  display:inline-block;
+  margin-top:12px;
+}
 
-    .brand-spacer {
-      height:1px; width:1px; overflow:hidden; position:absolute; left:-9999px;
-    }
+nav{
+  background:#1d6fa5;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:0 12px;
+}
 
-    .hamburger {
-      background:none;
-      border:none;
-      color:#fff;
-      font-size:26px;
-      padding:12px 10px;
-      cursor:pointer;
-      border-radius:6px;
-    }
-    .hamburger:focus {
-      outline:3px solid #f5a623;
-      outline-offset:2px;
-    }
+.hamburger{
+  background:none;
+  border:none;
+  color:#fff;
+  font-size:26px;
+  padding:12px;
+}
 
-    .nav-links {
-      display:flex;
-      flex-wrap:wrap;
-      justify-content:center;
-      align-items:center;
-    }
+.nav-links{
+  display:flex;
+}
 
-    nav a {
-      color:#fff;
-      padding:15px 18px;
-      text-decoration:none;
-      display:inline-block;
-      border-radius:6px;
-    }
+nav a{
+  color:#fff;
+  padding:15px 18px;
+  text-decoration:none;
+  border-radius:6px;
+}
 
-    nav a:hover, nav a:focus {
-      background:#14537a;
-      outline:3px solid #f5a623;
-      outline-offset:2px;
-    }
+nav a[aria-current="page"]{
+  background:#14537a;
+  font-weight:bold;
+}
 
-    /* Highlight active page */
-    nav a[aria-current="page"] {
-      background:#14537a;
-      font-weight:bold;
-    }
+@media(max-width:768px){
+  .nav-links{display:none;width:100%;flex-direction:column;}
+  .nav-links.show{display:flex;}
+  nav a{text-align:center;}
+}
 
-    /* Mobile menu behavior */
-    @media (max-width: 768px) {
-      nav {
-        flex-wrap:wrap;
-        justify-content:flex-start;
-      }
+main{
+  position:relative;
+  max-width:1100px;
+  margin:30px auto;
+  padding:25px;
+  background:#fff;
+  border-radius:6px;
+  box-shadow:0 2px 6px rgba(0,0,0,0.1);
+}
 
-      .nav-links {
-        display:none;
-        width:100%;
-        flex-direction:column;
-        align-items:stretch;
-        padding-bottom:10px;
-      }
-      .nav-links.show {
-        display:flex;
-      }
-      nav a {
-        width:100%;
-        text-align:center;
-        padding:14px 12px;
-      }
-    }
+main::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:url("images/branding/orma-logo.png") center 80px no-repeat;
+  background-size:280px;
+  opacity:0.04;
+  pointer-events:none;
+}
 
-    main {
-      max-width:1100px; margin:30px auto; padding:25px;
-      background:#fff; border-radius:6px;
-      box-shadow:0 2px 6px rgba(0,0,0,0.1);
-    }
+h2{color:#0b3c5d;margin-top:40px;}
 
-    h2 { color:#0b3c5d; margin-top:40px; }
-    h3 { color:#1d6fa5; margin-top:25px; }
+.event-box{
+  background:#f9f9f9;
+  border-left:6px solid #ccc;
+  padding:20px;
+  margin:25px 0;
+}
 
-    .event-box {
-      background:#f9f9f9;
-      border-left:6px solid #ccc;
-      padding:20px; margin:25px 0;
-      border-radius:6px;
-    }
-
-    label { display:block; font-weight:bold; margin-top:12px; }
-    input, button {
-      width:100%; padding:10px; margin-top:6px; font-size:16px;
-      box-sizing:border-box;
-    }
-
-    button {
-      background:#1d6fa5; color:#fff;
-      border:none; border-radius:4px; cursor:pointer;
-    }
-
-    a:focus, button:focus, input:focus {
-      outline:3px solid #f5a623;
-      outline-offset:2px;
-    }
-
-    footer {
-      text-align:center; padding:18px;
-      font-size:14px; color:#666;
-    }
-  </style>
+footer{
+  text-align:center;
+  padding:18px;
+  font-size:14px;
+  color:#666;
+}
+</style>
 </head>
 
 <body>
-
 <a class="skip-link" href="#main">Skip to main content</a>
 
-<header>
+<header class="site-header">
+  <img src="images/branding/orma-logo.png" alt="Occoquan River Maritime Association logo" class="site-logo">
   <h1>2026 ORMA Blessing of the Fleet</h1>
   <p>Occoquan River Maritime Association • Occoquan, Virginia</p>
 
@@ -158,20 +124,15 @@
   </div>
 
   <p style="font-style:italic;margin-top:10px;">
-    As part of the Commonwealth of Virginia’s commemoration of America’s 250th anniversary,
-    ORMA recognizes the people, waterways, and communities that shaped our shared history.
+    In alignment with the Commonwealth of Virginia’s America250 commemoration,
+    ORMA honors the waterways, communities, and maritime traditions that shaped our shared history.
   </p>
 
-  <div id="google_translate_element" aria-label="Translate this page"></div>
+  <div id="google_translate_element"></div>
 </header>
 
 <nav aria-label="Primary navigation">
-  <span class="brand-spacer">ORMA Navigation</span>
-
-  <button class="hamburger" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
-    ☰
-  </button>
-
+  <button class="hamburger" aria-expanded="false" aria-controls="navLinks">☰</button>
   <div class="nav-links" id="navLinks">
     <a href="index.html" aria-current="page">Home</a>
     <a href="history.html">History</a>
@@ -182,128 +143,67 @@
   </div>
 </nav>
 
-<main id="main" role="main">
+<main id="main">
+<h2>The Occoquan River</h2>
+<p>
+  Flowing through the heart of the community, the Occoquan River continues to connect
+  people, commerce, and culture.
+</p>
+<p><a href="history.html">Learn more about the history of the Occoquan River</a></p>
 
-  <!-- Home-page bridge (Option A), not redundant with History page -->
-  <h2>The Occoquan River</h2>
-  <p>
-    Flowing through the heart of the community, the Occoquan River has long connected
-    people, commerce, and culture. Its story spans generations and continues to shape
-    the region’s maritime traditions.
-  </p>
-  <p>
-    <a href="history.html">Learn more about the history of the Occoquan River</a>
-  </p>
+<h2>About ORMA</h2>
+<p>
+  The <strong>Occoquan River Maritime Association (ORMA)</strong> is a community-based organization
+  that brings together boaters, marinas, yacht clubs, public safety agencies, and residents
+  in support of stewardship, safety, and maritime heritage.
+</p>
 
-  <h2>About the Occoquan River Maritime Association (ORMA)</h2>
-  <p>
-    The <strong>Occoquan River Maritime Association (ORMA)</strong> is a community-based
-    organization that brings together boaters, marinas, yacht clubs, public safety agencies,
-    and residents who share a connection to the Occoquan River.
-  </p>
-  <p>
-    ORMA promotes cooperation, stewardship, boating safety, and respect for the river while
-    supporting events and traditions that reflect the region’s maritime heritage.
-  </p>
+<h2>2026 Blessing of the Fleet</h2>
+<p>
+  The Blessing of the Fleet honors maritime tradition while reflecting on America’s 250th Anniversary
+  and the generations who have lived, worked, and traveled along the Occoquan River.
+</p>
 
-  <h2>2026 Blessing of the Fleet</h2>
-  <p>
-    In recognition of America’s 250th Anniversary, the Blessing of the Fleet serves as a
-    moment of remembrance and reflection—honoring generations connected to the river and
-    reaffirming a shared commitment to safety and community on the water.
-  </p>
+<div class="event-box">
+  <ul>
+    <li><strong>Date:</strong> Saturday, May 16, 2026</li>
+    <li><strong>Location:</strong> Occoquan River, Occoquan, Virginia</li>
+    <li><strong>Open To:</strong> Recreational and commercial vessels, families, and the public</li>
+  </ul>
+  <div id="countdown"></div>
+</div>
 
-  <div class="event-box">
-    <ul>
-      <li><strong>Date:</strong> Saturday, May 16, 2026</li>
-      <li><strong>Location:</strong> Occoquan River, Occoquan, Virginia</li>
-      <li><strong>Open To:</strong> Recreational and commercial vessels, families, and the public</li>
-    </ul>
-    <div id="countdown" role="status" aria-live="polite" style="margin-top:10px;font-weight:bold;"></div>
-  </div>
+<h2 id="register">Register Your Vessel for the 2026 Blessing of the Fleet</h2>
+<form action="https://script.google.com/macros/s/AKfycbyUWBNGuZcsMfjqIllvyDw3joqpsfd5CjdcrVXdH8s0YY_eEc_TXTJPXSC21Zku0Fhr/exec" method="POST">
+  <label>Full Name<input name="name" required></label>
+  <label>Email<input type="email" name="email" required></label>
+  <label>Vessel Name<input name="vessel" required></label>
+  <button type="submit">Register Vessel</button>
+</form>
 
-  <h2 id="register">Register Your Vessel for the 2026 Blessing of the Fleet</h2>
-
-  <form action="https://script.google.com/macros/s/AKfycbyUWBNGuZcsMfjqIllvyDw3joqpsfd5CjdcrVXdH8s0YY_eEc_TXTJPXSC21Zku0Fhr/exec" method="POST">
-    <label for="name">Full Name</label>
-    <input id="name" name="name" autocomplete="name" required>
-
-    <label for="email">Email Address</label>
-    <input id="email" name="email" type="email" autocomplete="email" required>
-
-    <label for="vessel">Vessel Name</label>
-    <input id="vessel" name="vessel" required>
-
-    <button type="submit">Register Vessel</button>
-  </form>
-
-  <h2 id="contact">Contact ORMA</h2>
-  <p>📧 <a href="mailto:darren@ormava.org">darren@ormava.org</a></p>
-
+<h2 id="contact">Contact ORMA</h2>
+<p>📧 <a href="mailto:darren@ormava.org">darren@ormava.org</a></p>
 </main>
 
 <footer>
-  © 2026 Occoquan River Maritime Association • America’s Semiquincentennial
-  <p style="font-size:12px;color:#777;">
-    Partner and sponsor recognition is provided for informational purposes only and does not imply endorsement.
-  </p>
+  © 2026 Occoquan River Maritime Association • America’s Semiquincentennial<br>
+  Partner and sponsor recognition is provided for informational purposes only and does not imply endorsement.
 </footer>
 
 <script>
-  // Mobile nav toggle (accessible)
-  const menuToggle = document.getElementById('menuToggle');
-  const navLinks = document.getElementById('navLinks');
+const btn=document.querySelector('.hamburger');
+const nav=document.getElementById('navLinks');
+btn.addEventListener('click',()=>{nav.classList.toggle('show');});
 
-  menuToggle.addEventListener('click', () => {
-    const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
-    menuToggle.setAttribute('aria-expanded', String(!expanded));
-    menuToggle.setAttribute('aria-label', expanded ? 'Open menu' : 'Close menu');
-    navLinks.classList.toggle('show');
-  });
+const eventDate=new Date("May 16, 2026 09:00:00").getTime();
+setInterval(()=>{const d=eventDate-new Date().getTime();
+document.getElementById("countdown").innerText=
+d>0?`⏳ ${Math.floor(d/86400000)} days until the Blessing of the Fleet`:"🚤 The Blessing of the Fleet is happening today!";
+},1000);
 
-  // Close menu when a link is clicked (mobile UX)
-  navLinks.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => {
-      if (window.matchMedia('(max-width: 768px)').matches) {
-        navLinks.classList.remove('show');
-        menuToggle.setAttribute('aria-expanded', 'false');
-        menuToggle.setAttribute('aria-label', 'Open menu');
-      }
-    });
-  });
-</script>
-
-<script>
-  // Countdown timer
-  const eventDate = new Date("May 16, 2026 09:00:00").getTime();
-
-  function updateCountdown() {
-    const now = new Date().getTime();
-    const d = eventDate - now;
-
-    const el = document.getElementById("countdown");
-    if (!el) return;
-
-    if (d > 0) {
-      const days = Math.floor(d / (1000 * 60 * 60 * 24));
-      el.innerText = `⏳ ${days} days until the Blessing of the Fleet`;
-    } else {
-      el.innerText = "🚤 The Blessing of the Fleet is happening today!";
-    }
-  }
-
-  updateCountdown();
-  setInterval(updateCountdown, 1000);
-</script>
-
-<script>
-  // Google Translate widget
-  function googleTranslateElementInit() {
-    new google.translate.TranslateElement(
-      { pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE },
-      'google_translate_element'
-    );
-  }
+function googleTranslateElementInit(){
+new google.translate.TranslateElement({pageLanguage:'en'},'google_translate_element');
+}
 </script>
 <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
