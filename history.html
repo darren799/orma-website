@@ -6,233 +6,187 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f4f7f9;
-      color: #333;
-    }
+    body { margin:0; font-family:Arial, Helvetica, sans-serif; background:#f4f7f9; color:#333; }
 
-    /* Accessibility: Skip link */
-    .skip-link {
-      position: absolute;
-      left: -999px;
-      top: 10px;
-      background: #ffffff;
-      color: #0b3c5d;
-      padding: 10px 12px;
-      border-radius: 4px;
-      border: 2px solid #0b3c5d;
-      z-index: 9999;
-    }
-    .skip-link:focus { left: 10px; }
+    header { background:#0b3c5d; color:#fff; padding:30px 20px; text-align:center; }
 
     nav {
-      background: #1d6fa5;
-      text-align: center;
+      background:#1d6fa5;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:0 12px;
+      position:sticky;
+      top:0;
+      z-index:1000;
+    }
+
+    .hamburger {
+      background:none;
+      border:none;
+      color:#fff;
+      font-size:26px;
+      padding:12px 10px;
+      cursor:pointer;
+      border-radius:6px;
+    }
+
+    .hamburger:focus {
+      outline:3px solid #f5a623;
+      outline-offset:2px;
+    }
+
+    .nav-links {
+      display:flex;
+      flex-wrap:wrap;
     }
 
     nav a {
-      color: #ffffff;
-      padding: 15px 20px;
-      text-decoration: none;
-      display: inline-block;
+      color:#fff;
+      padding:15px 18px;
+      text-decoration:none;
+      border-radius:6px;
     }
 
-    nav a:hover,
-    nav a:focus {
-      background: #14537a;
-      outline: 3px solid #f5a623;
-      outline-offset: 2px;
+    nav a:hover, nav a:focus {
+      background:#14537a;
+      outline:3px solid #f5a623;
+      outline-offset:2px;
     }
 
-    /* History hero section */
-    .history-hero {
-      background-image: url("images/history/occoquan-history-timeline.png");
-      background-size: cover;
-      background-position: center;
-      min-height: 460px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    nav a[aria-current="page"] {
+      background:#14537a;
+      font-weight:bold;
     }
 
-    .history-hero-overlay {
-      background: rgba(11, 60, 93, 0.78);
-      color: #ffffff;
-      padding: 40px;
-      max-width: 900px;
-      border-radius: 6px;
-      text-align: center;
-    }
-
-    /* FIX: Ensure hero links are visible on dark background */
-    .history-hero-overlay a {
-      color: #ffffff;
-      font-weight: bold;
-      text-decoration: underline;
-    }
-
-    .history-hero-overlay a:hover,
-    .history-hero-overlay a:focus {
-      color: #f5a623;
-      outline: 3px solid #f5a623;
-      outline-offset: 3px;
+    @media (max-width:768px) {
+      .nav-links { display:none; width:100%; flex-direction:column; }
+      .nav-links.show { display:flex; }
+      nav a { width:100%; text-align:center; }
     }
 
     main {
-      max-width: 1100px;
-      margin: 30px auto;
-      padding: 25px;
-      background: #ffffff;
-      border-radius: 6px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      max-width:1100px;
+      margin:30px auto;
+      padding:25px;
+      background:#fff;
+      border-radius:6px;
+      box-shadow:0 2px 6px rgba(0,0,0,0.1);
     }
 
-    h1, h2 {
-      color: #0b3c5d;
+    h2 { color:#0b3c5d; margin-top:35px; }
+
+    .history-hero {
+      background:url("images/history/occoquan-history-timeline.png") center/cover no-repeat;
+      padding:80px 20px;
+      color:#fff;
+      border-radius:6px;
+      margin-bottom:30px;
     }
 
-    h2 {
-      margin-top: 40px;
+    .history-hero h2 {
+      color:#fff;
+      background:rgba(0,0,0,0.55);
+      display:inline-block;
+      padding:12px 18px;
+      border-radius:6px;
     }
 
-    a:focus {
-      outline: 3px solid #f5a623;
-      outline-offset: 2px;
+    .history-hero a {
+      color:#fff;
+      font-weight:bold;
+      text-decoration:underline;
     }
 
     footer {
-      text-align: center;
-      padding: 18px;
-      font-size: 14px;
-      color: #666;
-    }
-
-    @media (max-width: 768px) {
-      .history-hero-overlay {
-        padding: 25px;
-      }
+      text-align:center;
+      padding:18px;
+      font-size:14px;
+      color:#666;
     }
   </style>
 </head>
 
 <body>
 
-<a class="skip-link" href="#main">Skip to main content</a>
+<header>
+  <h1>History of the Occoquan River</h1>
+  <p>Context for the 2026 ORMA Blessing of the Fleet</p>
+</header>
 
 <nav aria-label="Primary navigation">
-  <a href="index.html">Home</a>
-  <a href="history.html">History</a>
-  <a href="sponsors.html">Sponsors</a>
+  <button class="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">☰</button>
+  <div class="nav-links" id="navLinks">
+    <a href="index.html">Home</a>
+    <a href="history.html" aria-current="page">History</a>
+    <a href="partners.html">Partners</a>
+    <a href="sponsors.html">Sponsors</a>
+  </div>
 </nav>
 
-<section class="history-hero" role="img" aria-label="Illustrated timeline showing the history of the Occoquan River">
-  <div class="history-hero-overlay">
-    <h1>History of the Occoquan River</h1>
-    <p>
-      A river shaped by Indigenous communities, colonial industry,
-      maritime tradition, and generations of people connected to the water.
-    </p>
+<main>
+
+  <section class="history-hero">
+    <h2>Occoquan River Through Time</h2>
     <p>
       <a href="images/history/occoquan-history-timeline.png" target="_blank" rel="noopener">
         View full-size history timeline image
       </a>
     </p>
-  </div>
-</section>
+  </section>
 
-<main id="main" role="main">
-
-  <h2>Indigenous Peoples and the Meaning of “Occoquan”</h2>
+  <h2>Indigenous History</h2>
   <p>
-    Long before European settlement, the Occoquan River was home to Indigenous
-    Algonquian-speaking peoples, including groups often associated with the
-    Doeg and other Powhatan-affiliated tribes. The river provided food,
-    transportation, and trade routes essential to daily life.
-  </p>
-  <p>
-    The name <strong>Occoquan</strong> is commonly interpreted as meaning
-    “at the end of the water,” referring to the river’s fall line where
-    navigable waters meet rapids—an important gathering and exchange point
-    for Native communities.
+    The Occoquan River takes its name from an Algonquian term commonly interpreted as
+    “at the end of the water.” Indigenous peoples, including the Doeg and related
+    Algonquian-speaking communities, lived along the river and relied on it for
+    transportation, fishing, and trade.
   </p>
 
-  <h2>Colonial Industry and the American Revolution</h2>
+  <h2>Colonial and Revolutionary Era</h2>
   <p>
-    By the 18th century, the Occoquan River became one of colonial Virginia’s
-    most important inland ports. Mills along the river produced flour that
-    was shipped downriver and exported throughout the Atlantic world.
-  </p>
-  <p>
-    During the American Revolution, Occoquan mills supplied flour to the
-    Continental Army, making the river a critical contributor to the fight
-    for independence. This role ties the river directly to the story
-    commemorated during America’s 250th Anniversary.
+    During the colonial period, the river became an important industrial and
+    transportation corridor. Mills, warehouses, and ports developed near the fall
+    line, supplying flour and goods to the Continental Army during the Revolutionary
+    War.
   </p>
 
-  <h2>African American History Along the River</h2>
+  <h2>African American History</h2>
   <p>
-    Enslaved African Americans labored in mills, on farms, and along the
-    riverfront, forming an essential but often overlooked part of the
-    Occoquan River’s history. After emancipation, African American
-    communities continued to live and work in the region, contributing
-    to its maritime, industrial, and civic life.
-  </p>
-  <p>
-    Their stories are part of the broader narrative of resilience, labor,
-    and community that shaped the Occoquan and the nation.
+    Enslaved and later free African Americans played a vital role in the river’s
+    economic life, working in mills, on boats, and in riverfront communities.
+    Their contributions are an essential part of the Occoquan’s story.
   </p>
 
-  <h2>Maritime Life and the Modern Occoquan</h2>
+  <h2>Maritime Community Today</h2>
   <p>
-    Today, the Occoquan River remains an active and vibrant waterway, home to
-    numerous marinas including Prince William Marina, Occoquan Harbor Marina,
-    Belmont Bay Harbor Marina, and Holly Acres on the Water Marina.
-  </p>
-  <p>
-    The river also supports yacht clubs and maritime organizations such as
-    the Prince William Yacht Club, Fairfax Yacht Club, Brethren of the Harbor
-    Yacht Club, Holly Acres Yacht Club, and the DMV Boat Owners Association,
-    all of which contribute to a living maritime community.
+    Today, the Occoquan River is home to Prince William Marina, Occoquan Harbor Marina,
+    Belmont Bay Harbor Marina, Holly Acres on the Water, and multiple yacht clubs and
+    maritime organizations that continue the river’s working and recreational traditions.
   </p>
 
   <h2>The Blessing of the Fleet</h2>
   <p>
-    The Blessing of the Fleet is a maritime tradition with roots in fishing
-    and seafaring communities around the world. Historically, these ceremonies
-    sought protection for vessels and those who worked on the water, while
-    also bringing communities together in shared reflection.
-  </p>
-  <p>
-    In the context of the Occoquan River and America’s 250th Anniversary,
-    the Blessing of the Fleet serves as a commemorative event—honoring the
-    river’s role in the nation’s history, remembering those who depended
-    on its waters, and reaffirming a commitment to safety, stewardship,
-    and community.
-  </p>
-
-  <h2>ORMA and Community Stewardship</h2>
-  <p>
-    The Occoquan River Maritime Association (ORMA) supports the preservation
-    and celebration of the river’s maritime heritage by bringing together
-    boaters, marinas, public safety partners, and residents.
-  </p>
-  <p>
-    Through events such as the Blessing of the Fleet, ORMA helps connect
-    past and present, ensuring that the Occoquan River’s history remains
-    a living part of the community.
+    Historically, blessings of the fleet emerged as a way to seek protection for those
+    who make their livelihoods on the water. In 2026, the ORMA Blessing of the Fleet
+    honors that tradition while commemorating America’s 250th Anniversary.
   </p>
 
 </main>
 
 <footer>
   © 2026 Occoquan River Maritime Association • America’s Semiquincentennial
-  <p style="font-size:12px;color:#777;">
-    Historical content is presented for educational and commemorative purposes
-    and does not imply official endorsement.
-  </p>
 </footer>
+
+<script>
+  const btn = document.querySelector('.hamburger');
+  const nav = document.getElementById('navLinks');
+  btn.addEventListener('click', () => {
+    const expanded = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!expanded));
+    nav.classList.toggle('show');
+  });
+</script>
 
 </body>
 </html>
