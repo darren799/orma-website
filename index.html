@@ -7,10 +7,24 @@
 <meta name="description" content="The 2026 ORMA Blessing of the Fleet on the Occoquan River commemorates America’s 250th Anniversary through maritime tradition, community, and stewardship.">
 
 <style>
-body { margin:0; font-family:Arial, Helvetica, sans-serif; background:#f4f7f9; color:#333; }
+body {
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  background:#f4f7f9;
+  color:#333;
+}
 
-.skip-link{position:absolute;left:-999px;top:10px;background:#fff;color:#0b3c5d;padding:10px;border:2px solid #0b3c5d;z-index:9999;}
-.skip-link:focus{left:10px;}
+.skip-link{
+  position:absolute;
+  left:-999px;
+  top:10px;
+  background:#fff;
+  color:#0b3c5d;
+  padding:10px;
+  border:2px solid #0b3c5d;
+  z-index:9999;
+}
+.skip-link:focus{ left:10px; }
 
 header.site-header{
   background:#0b3c5d;
@@ -19,11 +33,22 @@ header.site-header{
   text-align:center;
 }
 
+/* LOGO */
+.logo-link{
+  display:inline-block;
+}
+
 .site-logo{
-  max-width:140px;
+  max-width:180px;
+  width:100%;
   height:auto;
-  margin:0 auto 10px;
+  margin:0 auto 15px;
   display:block;
+
+  background:#ffffff;
+  padding:10px;
+  border-radius:50%;
+  box-shadow:0 2px 6px rgba(0,0,0,0.15);
 }
 
 .banner-250{
@@ -35,6 +60,7 @@ header.site-header{
   margin-top:12px;
 }
 
+/* NAV */
 nav{
   background:#1d6fa5;
   display:flex;
@@ -49,6 +75,7 @@ nav{
   color:#fff;
   font-size:26px;
   padding:12px;
+  cursor:pointer;
 }
 
 .nav-links{
@@ -68,11 +95,21 @@ nav a[aria-current="page"]{
 }
 
 @media(max-width:768px){
-  .nav-links{display:none;width:100%;flex-direction:column;}
-  .nav-links.show{display:flex;}
-  nav a{text-align:center;}
+  .nav-links{
+    display:none;
+    width:100%;
+    flex-direction:column;
+  }
+  .nav-links.show{ display:flex; }
+  nav a{ text-align:center; }
+
+  .site-logo{
+    max-width:140px;
+    padding:8px;
+  }
 }
 
+/* MAIN */
 main{
   position:relative;
   max-width:1100px;
@@ -83,6 +120,7 @@ main{
   box-shadow:0 2px 6px rgba(0,0,0,0.1);
 }
 
+/* Watermark */
 main::before{
   content:"";
   position:absolute;
@@ -93,7 +131,10 @@ main::before{
   pointer-events:none;
 }
 
-h2{color:#0b3c5d;margin-top:40px;}
+h2{
+  color:#0b3c5d;
+  margin-top:40px;
+}
 
 .event-box{
   background:#f9f9f9;
@@ -112,10 +153,18 @@ footer{
 </head>
 
 <body>
+
 <a class="skip-link" href="#main">Skip to main content</a>
 
 <header class="site-header">
-  <img src="images/branding/orma-logo.png" alt="Occoquan River Maritime Association logo" class="site-logo">
+  <a href="index.html" class="logo-link">
+    <img
+      src="images/branding/orma-logo.png"
+      alt="Occoquan River Maritime Association logo"
+      class="site-logo"
+    >
+  </a>
+
   <h1>2026 ORMA Blessing of the Fleet</h1>
   <p>Occoquan River Maritime Association • Occoquan, Virginia</p>
 
@@ -144,6 +193,7 @@ footer{
 </nav>
 
 <main id="main">
+
 <h2>The Occoquan River</h2>
 <p>
   Flowing through the heart of the community, the Occoquan River continues to connect
@@ -183,6 +233,7 @@ footer{
 
 <h2 id="contact">Contact ORMA</h2>
 <p>📧 <a href="mailto:darren@ormava.org">darren@ormava.org</a></p>
+
 </main>
 
 <footer>
@@ -191,18 +242,26 @@ footer{
 </footer>
 
 <script>
-const btn=document.querySelector('.hamburger');
-const nav=document.getElementById('navLinks');
-btn.addEventListener('click',()=>{nav.classList.toggle('show');});
+const btn = document.querySelector('.hamburger');
+const nav = document.getElementById('navLinks');
+btn.addEventListener('click', () => {
+  nav.classList.toggle('show');
+});
 
-const eventDate=new Date("May 16, 2026 09:00:00").getTime();
-setInterval(()=>{const d=eventDate-new Date().getTime();
-document.getElementById("countdown").innerText=
-d>0?`⏳ ${Math.floor(d/86400000)} days until the Blessing of the Fleet`:"🚤 The Blessing of the Fleet is happening today!";
-},1000);
+const eventDate = new Date("May 16, 2026 09:00:00").getTime();
+setInterval(() => {
+  const d = eventDate - new Date().getTime();
+  document.getElementById("countdown").innerText =
+    d > 0
+      ? `⏳ ${Math.floor(d / 86400000)} days until the Blessing of the Fleet`
+      : "🚤 The Blessing of the Fleet is happening today!";
+}, 1000);
 
-function googleTranslateElementInit(){
-new google.translate.TranslateElement({pageLanguage:'en'},'google_translate_element');
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement(
+    { pageLanguage: 'en' },
+    'google_translate_element'
+  );
 }
 </script>
 <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
