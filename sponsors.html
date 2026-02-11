@@ -6,7 +6,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f4f7f9;color:#333;}
+body{
+  margin:0;
+  font-family:Arial,Helvetica,sans-serif;
+  background:#f4f7f9;
+  color:#333;
+}
 
 header.site-header{
   background:#0b3c5d;
@@ -29,15 +34,43 @@ nav{
   padding:0 12px;
 }
 
-.hamburger{background:none;border:none;color:#fff;font-size:26px;padding:12px;}
-.nav-links{display:flex;}
-nav a{color:#fff;padding:15px 18px;text-decoration:none;border-radius:6px;}
-nav a[aria-current="page"]{background:#14537a;font-weight:bold;}
+.hamburger{
+  background:none;
+  border:none;
+  color:#fff;
+  font-size:26px;
+  padding:12px;
+  cursor:pointer;
+}
+
+.nav-links{
+  display:flex;
+}
+
+nav a{
+  color:#fff;
+  padding:15px 18px;
+  text-decoration:none;
+  border-radius:6px;
+}
+
+nav a[aria-current="page"]{
+  background:#14537a;
+  font-weight:bold;
+}
 
 @media(max-width:768px){
-  .nav-links{display:none;width:100%;flex-direction:column;}
-  .nav-links.show{display:flex;}
-  nav a{text-align:center;}
+  .nav-links{
+    display:none;
+    width:100%;
+    flex-direction:column;
+  }
+  .nav-links.show{
+    display:flex;
+  }
+  nav a{
+    text-align:center;
+  }
 }
 
 main{
@@ -49,26 +82,38 @@ main{
   border-radius:6px;
 }
 
+/* Watermark Logo */
 main::before{
   content:"";
   position:absolute;
   inset:0;
-  background:url("images/branding/orma-logo.png") center 90px no-repeat;
+  background:url("/images/branding/orma-logo-v2.png") center 90px no-repeat;
   background-size:280px;
   opacity:0.04;
   pointer-events:none;
 }
 
-h2{color:#0b3c5d;margin-top:35px;}
+h2{
+  color:#0b3c5d;
+  margin-top:35px;
+}
+
+footer{
+  text-align:center;
+  padding:18px;
+  font-size:14px;
+  color:#666;
+}
 </style>
 </head>
 
 <body>
 
 <header class="site-header">
-  <img src="images/branding/orma-logo.png"
-       alt="Occoquan River Maritime Association logo"
-       class="site-logo">
+  <img 
+    src="/images/branding/orma-logo-v2.png"
+    alt="Occoquan River Maritime Association logo"
+    class="site-logo">
   <h1>Sponsorship Opportunities</h1>
 </header>
 
@@ -122,20 +167,26 @@ h2{color:#0b3c5d;margin-top:35px;}
 </footer>
 
 <script>
-const btn=document.querySelector('.hamburger');
-const nav=document.getElementById('navLinks');
-btn.addEventListener('click',()=>{nav.classList.toggle('show');});
+const btn = document.querySelector('.hamburger');
+const nav = document.getElementById('navLinks');
+btn.addEventListener('click', () => {
+  nav.classList.toggle('show');
+});
 
-document.getElementById("sponsorForm").addEventListener("submit",async e=>{
+document.getElementById("sponsorForm").addEventListener("submit", async e => {
   e.preventDefault();
-  document.getElementById("status").textContent="Submitting…";
-  const data=Object.fromEntries(new FormData(e.target).entries());
-  const res=await fetch(
+  document.getElementById("status").textContent = "Submitting…";
+  const data = Object.fromEntries(new FormData(e.target).entries());
+  const res = await fetch(
     "https://script.google.com/macros/s/AKfycbxJcEphVfTiRv_tWIV-7t5Qk24Z7LsL-LgQBP4chiBkyVCz4qkBWGnAUeyJrYxw_nHOhw/exec",
-    {method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(data)}
+    {
+      method:"POST",
+      headers:{"Content-Type":"application/json"},
+      body:JSON.stringify(data)
+    }
   );
-  document.getElementById("status").textContent=
-    res.ok?"Thank you — ORMA will follow up.":"Submission error. Please try again.";
+  document.getElementById("status").textContent =
+    res.ok ? "Thank you — ORMA will follow up." : "Submission error. Please try again.";
 });
 </script>
 
