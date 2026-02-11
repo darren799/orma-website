@@ -6,7 +6,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f4f7f9;color:#333;}
+body{
+  margin:0;
+  font-family:Arial,Helvetica,sans-serif;
+  background:#f4f7f9;
+  color:#333;
+}
 
 header.site-header{
   background:#0b3c5d;
@@ -35,24 +40,37 @@ nav{
   color:#fff;
   font-size:26px;
   padding:12px;
+  cursor:pointer;
 }
 
-.nav-links{display:flex;}
+.nav-links{
+  display:flex;
+}
+
 nav a{
   color:#fff;
   padding:15px 18px;
   text-decoration:none;
   border-radius:6px;
 }
+
 nav a[aria-current="page"]{
   background:#14537a;
   font-weight:bold;
 }
 
 @media(max-width:768px){
-  .nav-links{display:none;width:100%;flex-direction:column;}
-  .nav-links.show{display:flex;}
-  nav a{text-align:center;}
+  .nav-links{
+    display:none;
+    width:100%;
+    flex-direction:column;
+  }
+  .nav-links.show{
+    display:flex;
+  }
+  nav a{
+    text-align:center;
+  }
 }
 
 main{
@@ -65,17 +83,21 @@ main{
   box-shadow:0 2px 6px rgba(0,0,0,0.1);
 }
 
+/* Watermark Timeline Image */
 main::before{
   content:"";
   position:absolute;
   inset:0;
-  background:url("images/history/occoquan-history-timeline.png") center 90px no-repeat;
+  background:url("/images/history/occoquan-history-timeline.png") center 90px no-repeat;
   background-size:320px;
   opacity:0.04;
   pointer-events:none;
 }
 
-h2{color:#0b3c5d;margin-top:35px;}
+h2{
+  color:#0b3c5d;
+  margin-top:35px;
+}
 
 footer{
   text-align:center;
@@ -89,9 +111,11 @@ footer{
 <body>
 
 <header class="site-header">
-  <img src="images/branding/orma-logo.png"
-       alt="Occoquan River Maritime Association logo"
-       class="site-logo">
+  <img 
+    src="/images/branding/orma-logo-v2.png"
+    alt="Occoquan River Maritime Association logo"
+    class="site-logo">
+
   <h1>History of the Occoquan River</h1>
   <p>Context for the 2026 ORMA Blessing of the Fleet</p>
 </header>
@@ -145,7 +169,7 @@ footer{
 </p>
 
 <p>
-  <a href="images/history/occoquan-history-timeline.png" target="_blank">
+  <a href="/images/history/occoquan-history-timeline.png" target="_blank">
     View full-size history timeline image
   </a>
 </p>
@@ -157,9 +181,12 @@ footer{
 </footer>
 
 <script>
-const btn=document.querySelector('.hamburger');
-const nav=document.getElementById('navLinks');
-btn.addEventListener('click',()=>{nav.classList.toggle('show');});
+const btn = document.querySelector('.hamburger');
+const nav = document.getElementById('navLinks');
+
+btn.addEventListener('click', () => {
+  nav.classList.toggle('show');
+});
 </script>
 
 </body>
