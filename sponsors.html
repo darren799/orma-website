@@ -30,7 +30,6 @@
   </div>
 </nav>
 
-<!-- Added logo-watermark class -->
 <main class="logo-watermark">
 
 <p>
@@ -70,29 +69,8 @@
   © 2026 Occoquan River Maritime Association
 </footer>
 
-<script>
-const btn = document.querySelector('.hamburger');
-const nav = document.getElementById('navLinks');
-btn.addEventListener('click', () => {
-  nav.classList.toggle('show');
-});
-
-document.getElementById("sponsorForm").addEventListener("submit", async e => {
-  e.preventDefault();
-  document.getElementById("status").textContent = "Submitting…";
-  const data = Object.fromEntries(new FormData(e.target).entries());
-  const res = await fetch(
-    "https://script.google.com/macros/s/AKfycbxJcEphVfTiRv_tWIV-7t5Qk24Z7LsL-LgQBP4chiBkyVCz4qkBWGnAUeyJrYxw_nHOhw/exec",
-    {
-      method:"POST",
-      headers:{"Content-Type":"application/json"},
-      body:JSON.stringify(data)
-    }
-  );
-  document.getElementById("status").textContent =
-    res.ok ? "Thank you — ORMA will follow up." : "Submission error. Please try again.";
-});
-</script>
+<!-- External Global Script -->
+<script src="/js/scripts.js"></script>
 
 </body>
 </html>
