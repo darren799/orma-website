@@ -2,11 +2,30 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>2026 ORMA Blessing of the Fleet | Occoquan River</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>2026 ORMA Blessing of the Fleet | Occoquan River</title>
 <meta name="description" content="The 2026 ORMA Blessing of the Fleet on the Occoquan River commemorates America’s 250th Anniversary through maritime tradition, community, and stewardship.">
 
-<!-- External Stylesheet -->
+<!-- Canonical -->
+<link rel="canonical" href="https://www.ormanva.org/">
+
+<!-- Favicon -->
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+<!-- Open Graph -->
+<meta property="og:title" content="2026 ORMA Blessing of the Fleet">
+<meta property="og:description" content="Commemorating America’s 250th Anniversary on the Occoquan River.">
+<meta property="og:image" content="https://www.ormanva.org/images/branding/orma-logo-v2.png">
+<meta property="og:url" content="https://www.ormanva.org/">
+<meta property="og:type" content="website">
+
+<!-- Performance: Preconnect for Google Translate -->
+<link rel="preconnect" href="https://translate.google.com">
+<link rel="dns-prefetch" href="https://translate.google.com">
+
+<!-- Styles -->
 <link rel="stylesheet" href="/css/styles.css">
 
 </head>
@@ -16,7 +35,7 @@
 <a class="skip-link" href="#main">Skip to main content</a>
 
 <header class="site-header">
-  <a href="index.html">
+  <a href="/" aria-label="ORMA Home">
     <img
       src="/images/branding/orma-logo-v2.png"
       alt="Occoquan River Maritime Association logo"
@@ -40,12 +59,16 @@
 </header>
 
 <nav aria-label="Primary navigation">
-  <button class="hamburger" aria-expanded="false" aria-controls="navLinks">☰</button>
+  <button class="hamburger"
+          aria-label="Toggle navigation menu"
+          aria-expanded="false"
+          aria-controls="navLinks">☰</button>
+
   <div class="nav-links" id="navLinks">
-    <a href="index.html" aria-current="page">Home</a>
-    <a href="history.html">History</a>
-    <a href="partners.html">Partners</a>
-    <a href="sponsors.html">Sponsors</a>
+    <a href="/" aria-current="page">Home</a>
+    <a href="/history.html">History</a>
+    <a href="/partners.html">Partners</a>
+    <a href="/sponsors.html">Sponsors</a>
     <a href="#register">Register</a>
     <a href="#contact">Contact</a>
   </div>
@@ -58,7 +81,7 @@
   Flowing through the heart of the community, the Occoquan River continues to connect
   people, commerce, and culture.
 </p>
-<p><a href="history.html">Learn more about the history of the Occoquan River</a></p>
+<p><a href="/history.html">Learn more about the history of the Occoquan River</a></p>
 
 <h2>About ORMA</h2>
 <p>
@@ -79,14 +102,20 @@
     <li><strong>Location:</strong> Occoquan River, Occoquan, Virginia</li>
     <li><strong>Open To:</strong> Recreational and commercial vessels, families, and the public</li>
   </ul>
-  <div id="countdown"></div>
+  <div id="countdown" aria-live="polite"></div>
 </div>
 
-<h2 id="register">Register Your Vessel for the 2026 Blessing of the Fleet</h2>
+<h2 id="register">Register Your Vessel</h2>
 <form action="https://script.google.com/macros/s/AKfycbyUWBNGuZcsMfjqIllvyDw3joqpsfd5CjdcrVXdH8s0YY_eEc_TXTJPXSC21Zku0Fhr/exec" method="POST">
-  <label>Full Name<input name="name" required></label>
-  <label>Email<input type="email" name="email" required></label>
-  <label>Vessel Name<input name="vessel" required></label>
+  <label>Full Name
+    <input name="name" required>
+  </label>
+  <label>Email
+    <input type="email" name="email" required>
+  </label>
+  <label>Vessel Name
+    <input name="vessel" required>
+  </label>
   <button type="submit">Register Vessel</button>
 </form>
 
@@ -100,10 +129,10 @@
   Partner and sponsor recognition is provided for informational purposes only and does not imply endorsement.
 </footer>
 
-<!-- External Global Script (Deferred for Performance) -->
+<!-- Global Script (Deferred) -->
 <script src="/js/scripts.js" defer></script>
 
-<!-- Google Translate (Homepage Only) -->
+<!-- Google Translate (kept synchronous for callback reliability) -->
 <script>
 function googleTranslateElementInit() {
   new google.translate.TranslateElement(
@@ -112,7 +141,7 @@ function googleTranslateElementInit() {
   );
 }
 </script>
-<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </body>
 </html>
