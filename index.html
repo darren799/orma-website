@@ -51,7 +51,6 @@
   </div>
 </nav>
 
-<!-- Added logo-watermark class -->
 <main id="main" class="logo-watermark">
 
 <h2>The Occoquan River</h2>
@@ -101,22 +100,11 @@
   Partner and sponsor recognition is provided for informational purposes only and does not imply endorsement.
 </footer>
 
+<!-- External Global Script -->
+<script src="/js/scripts.js"></script>
+
+<!-- Google Translate (Homepage Only) -->
 <script>
-const btn = document.querySelector('.hamburger');
-const nav = document.getElementById('navLinks');
-btn.addEventListener('click', () => {
-  nav.classList.toggle('show');
-});
-
-const eventDate = new Date("May 16, 2026 09:00:00").getTime();
-setInterval(() => {
-  const d = eventDate - new Date().getTime();
-  document.getElementById("countdown").innerText =
-    d > 0
-      ? `⏳ ${Math.floor(d / 86400000)} days until the Blessing of the Fleet`
-      : "🚤 The Blessing of the Fleet is happening today!";
-}, 1000);
-
 function googleTranslateElementInit() {
   new google.translate.TranslateElement(
     { pageLanguage: 'en' },
